@@ -47,6 +47,7 @@ class User
   field :name
   field :provider 
   field :uid
+
   #validates_presence_of :name
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
   
