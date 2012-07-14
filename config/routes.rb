@@ -1,4 +1,6 @@
 Tribally::Application.routes.draw do
+  resources :tribes
+
   authenticated :user do
     root :to => 'home#index'
   end

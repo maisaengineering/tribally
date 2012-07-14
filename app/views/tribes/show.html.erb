@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tribe name:</b>
+  <%= @tribe.tribe_name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @tribe.category %>
+</p>
+
+<p>
+  <b>Members:</b>
+  <%= @tribe.tribe_members %>
+</p>
+
+<p>
+  <b>Offers:</b>
+  <%= @tribe.offers %>
+</p>
+
+<p>
+  <b>Amount saved:</b>
+  <%= @tribe.amount_saved %>
+</p>
+
+
+<%= link_to 'Edit', edit_tribe_path(@tribe) %> |
+<%= link_to 'Back', tribes_path %>

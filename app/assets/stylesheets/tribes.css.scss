@@ -1,0 +1,29 @@
+// Place all the styles related to the tribes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.info h2 {
+    clear: left;
+    font-size: 160%;
+    font-weight: normal;
+    margin: 0 0 5px;
+}
+
+.info div {
+    color: #555555;
+    font-size: 95%;
+    line-height: 135%;
+}
+
+label.desc, legend.desc {
+    border: medium none;
+    color: #222222;
+    display: block;
+    font-size: 95%;
+    font-weight: bold;
+    line-height: 150%;
+    margin: 0;
+    padding: 0 0 3px;
+    white-space: normal;
+    width: 100%;
+}
