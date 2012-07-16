@@ -11,14 +11,9 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
-.fb_navigation{
-    float:left;
-    margin-left:400px;
-    margin-top:28px;
-}
 .sign_up_navigation{
     float:left;
-    margin-left:10px;
+    margin-left:400px;
     margin-top:30px;
 }
 .login_navigation{
