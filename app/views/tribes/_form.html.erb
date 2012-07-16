@@ -1,0 +1,51 @@
+
+<%= form_for(@tribe) do |f| %>
+  <% if @tribe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tribe.errors.count, "error") %> prohibited this tribe from being saved:</h2>
+
+      <ul>
+      <% @tribe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= current_user.facebook %> 
+  
+  <div class="field">
+    <% @tribe.products.each_with_index do |product, index| %>      
+      <%= f.fields_for "product_attributes[]", product do |product_fields| %>
+        <%= product_fields.label :product_name, "Tribe's first product" %>
+        <%= product_fields.text_field :product_name %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :location, "Tribe's first product" %>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :tribe_name, "Tribe name" %>
+    <%= f.text_field :tribe_name %>
+  </div>
+  <div class="field">
+    <%= f.label :category, "Tribe category (optional)" %>
+    <%= f.select :category, options_for_select([  
+      ["Art and craft", "Art and craft"],	 
+      ["Baby","Baby"],
+      ["Business","Business"]
+      ]), :class => "styleselect", :include_blank => true %>
+  </div>
+
+  <div id="add_participant">
+    <b class="color999">Participants</b>
+    <div id="participant">
+      <%= render :partial => 'invitations', :locals => {:form => f} %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

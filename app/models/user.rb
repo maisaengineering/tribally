@@ -1,7 +1,12 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
+  include Mongoid::Timestamps::Updated
+  
   extend Rolify
   rolify
+  
+  has_one :member
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -44,12 +49,13 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
   index :email, :unique => true
-  field :name
+  field :fname
+  field :lname
   field :provider 
   field :uid
 
   #validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
+  attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info

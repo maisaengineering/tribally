@@ -1,8 +1,8 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 0px; }
 body { 
-	padding-top: 60px;
-	padding-left: 20px;
+	padding-top: 0px;
+	padding-left: 0px;
 }
 
 @import "twitter/bootstrap/responsive";
@@ -32,3 +32,63 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
+
+.container{
+    width: 1000px;
+    border: 1px solid #000;
+}
+
+.brand{
+    margin-left:5px;
+}
+
+.navbar{
+    width:980px;
+    margin-left:10px;
+}
+
+.navbar .nav > li > a{
+    color:#fff;
+    font-weight:bold;
+    font-size:15px;
+    font-family:Trebuchet MS;
+}
+
+.navbar .nav > li > a:hover{
+    color:#000;
+}
+
+.navbar .container{
+    background-color:#019BE1;
+    margin-left:-25px;
+    margin-right:-25px;
+    border:none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow:none;
+}
+
+.navbar-search .search-query{
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #fff;
+    box-shadow:none;
+}
+
+.dropdown .caret, .open .caret{
+    opacity: 1;
+}
+
+.dropdown .pull-right{
+    margin-left:20px;
+}
+
+.navbar .pull-right .dropdown-menu, .navbar .dropdown-menu.pull-right {
+    left: auto;
+    right: 15px;
+}
+
+.navbar-search{
+    margin-left:20px;
+}
