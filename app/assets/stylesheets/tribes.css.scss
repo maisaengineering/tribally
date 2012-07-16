@@ -27,3 +27,14 @@ label.desc, legend.desc {
     white-space: normal;
     width: 100%;
 }
+
+#add_participant{ 
+    white-space:nowrap; 
+}
+#participant
+{
+    display: block;
+    height: 52px;
+    margin-top: -18px;
+    overflow: hidden;
+}
