@@ -15,7 +15,7 @@
     line-height: 135%;
 }
 
-label.desc, legend.desc {
+label{
     border: medium none;
     color: #222222;
     display: block;
@@ -37,4 +37,11 @@ label.desc, legend.desc {
     height: 52px;
     margin-top: -18px;
     overflow: hidden;
+}
+
+#devider{
+    border-bottom: 1px dotted #CCCCCC;
+    clear: both;
+    height: 10px;
+    margin-bottom: 20px;
 }
