@@ -55,6 +55,7 @@ class User
   field :provider 
   field :uid
   field :token
+  field :image_url
 
   #validates_presence_of :name
   attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
