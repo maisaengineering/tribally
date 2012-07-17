@@ -49,16 +49,57 @@ class User
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
   index :email, :unique => true
+  field :name
   field :fname
   field :lname
   field :provider 
   field :uid
+  field :token
 
   #validates_presence_of :name
   attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
+    data = access_token.extra.raw_info    
+    provider = access_token.provider
+    
+    if provider == 'facebook'            
+      email =  data.email
+      name =  data.name
+      first_name =  data.first_name
+      last_name =  data.last_name          
+      image_path =  access_token.info.image          
+      uid =  data.id
+    else                                       
+      render :text => '--- provider, #{@provider_route}, not supported ---'  
+      return
+    end
+    
+    if uid != '' and provider != ''
+      auth = User.where(:provider => provider).and(:uid => uid).first        
+      raise auth.inspect
+      if !auth.nil?
+        flash[:notice] = "Signed in successfully"
+        sign_in_and_redirect(:user, auth.user)
+      else  
+        user = User.find_or_initialize_by_email(:email => email)
+        auth_hash = {:provider => provider, :uid => uid, :name => name, :email => email, :fname => first_name, :lname => last_name, :token => access_token.credentials.token}
+        user.apply_omniauth(auth_hash)        
+        if user.save!
+          flash[:notice] = "New user signed in successfully." 
+          sign_in_and_redirect(:user, user)          
+        else
+          redirect_to new_user_registration_path
+        end
+      end
+    end
+    
+    
+    
+    
+    
+    
+    
     if user = User.where(:email => data.email).first
       user
     else # Create a user with a stub password. 
