@@ -13,7 +13,7 @@
 
 .sign_up_navigation{
     float:left;
-    margin-left:400px;
+    margin-left:390px;
     margin-top:30px;
 }
 .login_navigation{
@@ -31,6 +31,8 @@
 }
 .menu_bar{
     font-size: 15px;
-    font-weight: bold;
-    
+    font-weight: bold; 
+}
+li {
+    list-style: none;
 }
