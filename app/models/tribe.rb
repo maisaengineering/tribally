@@ -3,6 +3,8 @@ class Tribe
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   
+  validates_presence_of :tribe_name, :location
+  
   belongs_to :member
   embeds_many :products
   
