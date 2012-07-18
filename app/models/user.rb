@@ -48,30 +48,30 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
-  index :email, :unique => true
+  index :email, :unique => true  
   field :fname
   field :lname
   field :provider 
   field :uid
+  field :token
+  field :image_url
 
   #validates_presence_of :name
-  attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid
+  attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid, :token, :image_url
   
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
-    if user = User.where(:email => data.email).first
-      user
-    else # Create a user with a stub password. 
-      User.create!(:email => data.email, :password => Devise.friendly_token[0,20]) 
-    end
+  def facebook
+    FbGraph::User.new('me', :access_token => self.fbauth.token).fetch
   end
 
+  def fbauth
+    self.authentications.find_by_provider('facebook')
+  end
+  
   def self.new_with_session(params, session)
-      super.tap do |user|
-        if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-          user.email = data["email"]
-
-        end
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"]
       end
+    end
   end
 end

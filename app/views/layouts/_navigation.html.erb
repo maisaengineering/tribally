@@ -1,11 +1,44 @@
-<table>
+<table class="main_navigation">
   <td>
     <%= link_to image_tag("/assets/tribally_logo.png"), root_path, :class => 'brand' %>
+  </td>
+ 
+  <td class="login_navigation">
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>           
+    <% else %> 
+      <div id="loginContainer">
+        <div id="loginButton">
+          <div class="span">Login</div>
+        </div>
+          <div style="clear:both"></div>
+          <div id="loginBox">                
+              <div id="loginForm">
+                 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                  <div class="signin_input"><%= f.email_field :email, :placeholder => 'Email' %></div>
+
+                  <div  class="signin_input"><%= f.password_field :password, :placeholder => 'Password' %></div>
+
+                  <% if devise_mapping.rememberable? -%>
+                    <p class="checkbox_input"><%= f.check_box :remember_me %>
+                      <span class="checkbox_remember">Remember me</span></p>
+                  <% end -%>
+
+                  <div class="signin_button"><%= f.submit "Sign in" %></div>
+                  <% end %>
+                  <div class="forget_password_text">
+                    <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+                      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                    <% end -%>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <% end %>
   </td>
   
   <td class="sign_up_navigation">
     <% if user_signed_in? %>
-      <%= link_to 'Tribe', tribes_path %> 
       <%= link_to 'Edit account', edit_user_registration_path %>
       <% if current_user.has_role? :admin %>
         <%= link_to 'Admin', users_path %>
@@ -16,12 +49,6 @@
     <% end %>
   </td>
   
-  <td class="login_navigation">
-    <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>           
-    <% else %>
-      <%= link_to 'Login', new_user_session_path %>  
-    <% end %>
-  </td>
+  
   
 </table>
