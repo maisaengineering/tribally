@@ -19,10 +19,11 @@ class TribesController < ApplicationController
 
   def create
     @tribe = Tribe.new(params[:tribe])
-    
+    # TODO CREATE MEMBER
     if @tribe.save
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else
+      @tribe.products.build
       render action: "new"
     end
   end
@@ -42,5 +43,6 @@ class TribesController < ApplicationController
   def destroy
     @tribe = Tribe.find(params[:id])
     @tribe.destroy
+    redirect_to tribes_path
   end
 end

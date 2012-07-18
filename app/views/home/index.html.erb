@@ -1,5 +1,17 @@
 <h3>Home</h3>
+<!--
 <% @users.each do |user| %>
   <p>User: <%=link_to user.fname, user %></p>
 <% end %>
-<br />
+-->
+  
+    <%  if current_user.image_url? %>
+      <%= image_tag current_user.image_url, :class => 'current_user_iamge' %>
+    <% else %>
+      <%=  image_tag "/assets/image_thumb.png", :class => 'current_user_iamge' %>
+    <% end %> 
+  
+  <br /> <br />
+  <div class="request_product_box">
+    Request product
+  </div>

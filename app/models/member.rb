@@ -3,9 +3,9 @@ class Member
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   
-  belongs_to :user
-  has_many :tribes
+  belongs_to :user  
+  #embedded_in :tribe
     
-  field :transaction_history, :type => Array
-  field :delivery_address, :type => Array
+  field :transaction_history, :type => String
+  field :delivery_address, :type => String
 end
