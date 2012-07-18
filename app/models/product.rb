@@ -4,7 +4,7 @@ class Product
   include Mongoid::Timestamps::Updated
   
   embeds_many :offers
-  embedded_in :tribe
+  #embedded_in :tribe 
   
   field :business_name, :type => String
   field :members, :type => Array

@@ -19,7 +19,7 @@ class TribesController < ApplicationController
 
   def create
     @tribe = Tribe.new(params[:tribe])
-    
+    # TODO CREATE MEMBER
     if @tribe.save
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else
