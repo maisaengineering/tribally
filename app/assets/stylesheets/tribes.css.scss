@@ -42,6 +42,14 @@ label{
 #devider{
     border-bottom: 1px dotted #CCCCCC;
     clear: both;
-    height: 10px;
-    margin-bottom: 20px;
+    margin-bottom:10px;
+}
+
+.req {
+    color: red !important;
+    display: inline;
+    float: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
