@@ -20,6 +20,9 @@ class User
   validates_presence_of :email
   validates_presence_of :encrypted_password
   
+
+validates_uniqueness_of :username, :email
+validates :email, :email_format => true
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
