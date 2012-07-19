@@ -13,7 +13,7 @@
   <% end %> 
 
   <%#= current_user.facebook %>
-  
+
   <div class="field">
     <% @tribe.products.each_with_index do |product, index| %>      
       <%= f.fields_for "product_attributes[]", product do |product_fields| %>
@@ -59,7 +59,7 @@
   <div id="add_participant">
     <b class="color999">Participants</b>
     <div id="participant">
-      <%#= render :partial => 'invitations', :locals => {:form => f} %>
+      <%= render :partial => 'invitations', :locals => {:form => f} %>
     </div>
   </div>
   <div class="actions">

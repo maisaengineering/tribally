@@ -6,6 +6,8 @@ class User
   extend Rolify
   rolify
   
+  cattr_accessor :current_user
+  
   has_one :member
   
   # Include default devise modules. Others available are:
@@ -60,7 +62,7 @@ class User
   attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid, :token, :image_url
   
   def facebook
-    FbGraph::User.new('me', :access_token => self.fbauth.token).fetch
+    FbGraph::User.new('me', :access_token => User.current_user.token).fetch
   end
 
   def fbauth
