@@ -12,8 +12,8 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body>
-    <div id="main_background">
+  <body id="main_background">
+    <div>
       <div class="container">    
         <div>
           <%= render 'layouts/navigation' %>
@@ -26,13 +26,15 @@
           <%= yield %>
         </div>
       </div>
-      <div class="footer_box">
-        
-      </div>
+      
+     <!-- <div class="footer_box"></div>
       <div class="footer_container">
         <%= render 'layouts/footer' %>
       </div>
+     -->
+     
    </div>
+    
     <script>  										       
           window.fbAsyncInit = function() {
                   FB.init({     
