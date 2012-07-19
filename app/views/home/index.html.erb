@@ -1,9 +1,5 @@
 <h3>Home</h3>
-<!--
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.fname, user %></p>
-<% end %>
--->
+
 <table>
   <td>
     <%  if current_user.image_url? %>
@@ -36,12 +32,44 @@
   
   <br />
   <div class="products_main_container">
-    <div>
-      product
+    <div class="product_offers_time_box">
+      <table>
+        <td>
+          <div>
+            Hide
+          </div>
+        </td>
+        <td>
+          <div class="product_offers_small_box">
+            Product
+          </div>
+        </td>
+        <td>
+          <div class="products_want_this_box">
+            I want this
+          </div>
+        </td>
+        <td>
+          <div class="products_contdown_time_box">
+            Contdown Time
+          </div>
+        </td>
+      </table>
     </div>
+    
     <div class="products_sub_container">
-     we're looking for good quality whey protein isolate powder. Taste is important, as is purity and quality.
+      <div class="products_description_box">
+         we're looking for good quality whey protein isolate powder. Taste is important, as is purity and quality.
+      </div>
+      <div>
+        Offers Received
+        <div class="products_list_table">
+          
+        </div>
+        
+      </div>
     </div>
+    
     <div class="products_comments_box">
     comments
     </div>

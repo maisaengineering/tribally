@@ -36,6 +36,37 @@ li {
     padding: 0px 25px 25px 25px;
 }
 
+.footer_box{
+    background:#fff;
+    border:2px dotted #D1D1D1;
+}
+.footer_container{
+    margin-left:15%;
+    width:998px;
+    height:250px;
+}
+.footer_aboutus_box{
+    width:300px;
+    text-align:center;
+}
+.footer_contactus_box{
+    width:300px;
+    text-align:center;
+}
+.fb_likebox{
+    width:245px;
+    height:156px;
+    overflow:hidden;
+    margin-top:-15px;
+    margin-left:-10px;
+}
+.fb_like_borderbox{
+    overflow:hidden;
+    width:245px;
+    height:156px;
+    border:0px solid red;
+}
+
 /* Start menubar */
 .menu_first{
     float:left;
@@ -284,14 +315,14 @@ input#user_password{
 }
 
 .request_input_box{
-    width:200px;
+    width:210px;
     height:20px;
     margin-left:30px;
     margin-top:10px;
 }
 .request_input_box_border{
     background:#fff;
-    width:270px;
+    width:278px;
     height:50px;
     border:1px solid #D6DBE5;
     border-radius:3px;
@@ -310,7 +341,6 @@ input#user_password{
 
 /* Start products container */
 .products_main_container{
-    background:#F4F4F4;
     width:948px;
     height:auto;
     border:1px solid #D1D1D1;
@@ -320,14 +350,60 @@ input#user_password{
 .products_sub_container{
     background:#fff;
     width:946px;
-    height:100px;
-    margin-top: 80px;
+    height:500px;
+    margin-top: 0px;
     border:1px solid #D1D1D1;
     border-radius: 5px;
 }
+.product_offers_time_box{
+    background:#F4F4F4;
+    width:946px;
+    height:105px;
+    border:1px solid #D1D1D1;
+    border-radius: 3px 3px 0px 0px;
+    
+}
+.product_offers_small_box{
+    background:#fff;
+    width:280px;
+    height:70px;
+    margin-left:30px;
+    margin-top:15px;
+    border:1px solid #D1D1D1;
+    border-radius:5px;
+}
+.products_want_this_box{
+    background:#fff;
+    width:280px;
+    height:70px;
+    margin-left:60px;
+    margin-top:15px;
+    border:1px solid #D1D1D1;
+    border-radius:5px;    
+}
+.products_contdown_time_box{
+    background:#fff;
+    width:200px;
+    height:70px;
+    margin-left:30px;
+    margin-top:15px;
+    border:1px solid #D1D1D1;
+    border-radius:5px; 
+}
+.products_description_box{
+    width:948px;
+    height:50px;
+    border-bottom:3px dotted #D1D1D1;
+    
+}
 
-
-
+.products_list_table{
+    background:#019BE1;
+    width:926px;
+    height:30px;
+    margin-left:10px;
+    border-radius: 10px 10px 0px 0px;
+}
 
 /* End products container */
 
