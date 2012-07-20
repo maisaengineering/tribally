@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
+<p>
+<b>Tribe first product:</b>  
+<% @tribe.product_attributes.each do |each_product| %>
+  <%= each_product['product_name'] %>
+<% end %>
+</p>  
+<p>
+  <b>Tribe location:</b>
+  <%= @tribe.location %>
+</p>
 
 <p>
   <b>Tribe name:</b>
@@ -6,20 +15,8 @@
 </p>
 
 <p>
-  <b>Category:</b>
+  <b>Tribe category:</b>
   <%= @tribe.category %>
 </p>
 
-<p>
-  <b>Offers:</b>
-  <%= @tribe.offers %>
-</p>
-
-<p>
-  <b>Amount saved:</b>
-  <%= @tribe.amount_saved %>
-</p>
-
-
-<%= link_to 'Edit', edit_tribe_path(@tribe) %> |
 <%= link_to 'Back', tribes_path %>
