@@ -405,3 +405,9 @@ input#user_password{
 }
 
 /* End products comments container */
+
+#product_description{
+    width:210px;
+    height:100px;
+    display:block;
+}
