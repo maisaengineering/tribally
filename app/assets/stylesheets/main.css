@@ -16,13 +16,15 @@ li {
 
 #main_background{
     background:#98D4F9;
+    height:50%;
+    
 }
 .main_navigation{
     width:950px;
     margin-left:25px;
 }
 .main_body{
-    padding: 0px 25px 25px 25px;
+    padding: 0px 25px 50px 25px;
 }
 
 .footer_box{
@@ -247,6 +249,7 @@ li {
     font-weight:normal;
     padding:8px 8px;
     font-size:14px;
+     
 }
 
 input:focus {
@@ -283,6 +286,18 @@ input#user_email{
 }
 
 input#user_password{
+    width:250px;
+}
+
+input#user_fname{
+    width:250px;
+}
+
+input#user_lname{
+    width:250px;
+}
+
+input#user_password_confirmation{
     width:250px;
 }
 /* End login form */
@@ -405,7 +420,6 @@ input#user_password{
 }
 
 /* End products comments container */
-
 #product_description{
     width:210px;
     height:100px;

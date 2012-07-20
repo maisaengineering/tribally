@@ -18,6 +18,7 @@ class TribesController < ApplicationController
   end
 
   def create
+    #raise params.inspect
     @tribe = Tribe.new(params[:tribe])
     # TODO CREATE MEMBER
     if @tribe.save
