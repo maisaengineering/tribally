@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag('jquery.facebook.multifriend.select.css','challenges.css')%>
+<%= stylesheet_link_tag('jquery.facebook.multifriend.select.css')%>
 <%= javascript_include_tag('jquery.facebook.multifriend.select') %>
 <%= form_for(@tribe) do |f| %>
 <p>            
@@ -15,7 +15,7 @@
 (function($j) { 
 	var selectorObz = {    
 		filter_default: "Search By Name",
-		//friend_fields: "id,name,last_name&access_token="+'<%#= current_user.facebook.access_token%>'
+		friend_fields: "id,name,last_name&access_token="+'<%= current_user.facebook.access_token%>'
 	}
 
 	$j('.links_invite_p').live('click', function(){
@@ -23,7 +23,7 @@
 			modal: true,
 			resizable: false,
 			closeText: "",
-			position: 'center',
+			position: "",
 			title: 'Invite Participants',
 			width: '725px',
 			open: function(event, ui) { $j("#jfmfs-container").jfmfs(selectorObz); },

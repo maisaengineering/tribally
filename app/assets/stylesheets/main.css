@@ -27,15 +27,18 @@ li {
 
 #main_background{
     background:#98D4F9;
+    height:50%;
+    
 }
 .main_navigation{
     width:950px;
     margin-left:25px;
 }
 .main_body{
-    padding: 0px 25px 25px 25px;
+    padding: 0px 25px 50px 25px;
 }
 
+/* Start menubar */
 .menu_first{
     float:left;
     width:140px;
@@ -97,7 +100,9 @@ li {
     border-left: 1px solid #ECECEC;
     border-radius: 0px 3px 3px 0px;
 }
+/* End menubar */
 
+/* Start sub menubar */
 .sub_menu_first{
     float:left;
     width:120px;
@@ -144,7 +149,9 @@ li {
     border-left: 1px solid #ECECEC;
     border-radius: 0px 3px 3px 0px;
 }
+/* Start sub menubar */
 
+/* Start login form */
 #loginContainer {
     position:relative;
     float:right;
@@ -260,6 +267,7 @@ input#user_email{
 input#user_password{
     width:250px;
 }
+/* End login form */
 
 .current_user_iamge{
     width:75px;
@@ -268,6 +276,7 @@ input#user_password{
     border-radius: 7px;
 }
 
+/* Start product request box */
 .request_product_box{
     background: url("/assets/request_product_bg.png") repeat-x;
     width:948px;
@@ -275,3 +284,61 @@ input#user_password{
     border:1px solid #98D4F9;
     border-radius: 5px;
 }
+
+.request_input_box{
+    width:200px;
+    height:20px;
+    margin-left:30px;
+    margin-top:10px;
+}
+.request_input_box_border{
+    background:#fff;
+    width:270px;
+    height:50px;
+    border:1px solid #D6DBE5;
+    border-radius:3px;
+    margin-left:25px;
+    margin-top:10px;
+}
+.request_product_icon{
+    margin-left:60px;
+    margin-top:8px;
+}
+.plus_icon{
+    margin-left:25px;
+}
+
+/* End product request box */
+
+/* Start products container */
+.products_main_container{
+    background:#F4F4F4;
+    width:948px;
+    height:auto;
+    border:1px solid #D1D1D1;
+    border-radius: 5px;
+}
+
+.products_sub_container{
+    background:#fff;
+    width:946px;
+    height:100px;
+    margin-top: 80px;
+    border:1px solid #D1D1D1;
+    border-radius: 5px;
+}
+
+
+
+
+/* End products container */
+
+/* Start products comments container */
+.products_comments_box{
+    background:#fff;
+    width:948px;
+    height:100px;
+    border-radius:0px 0px 5px 5px;
+}
+
+/* End products comments container */
