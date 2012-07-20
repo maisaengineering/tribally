@@ -1,4 +1,4 @@
-<%= form_for(@tribe, :validate => true ) do |f| %>
+<%= form_for(@tribe) do |f| %>
   
   <%#= current_user.facebook %>
 
@@ -50,7 +50,6 @@
       <%= render :partial => 'invitations', :locals => {:form => f} %>
     </div>
   </div>
-
 
   <div class="actions">
     <%= f.submit %>
