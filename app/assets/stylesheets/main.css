@@ -16,13 +16,15 @@ li {
 
 #main_background{
     background:#98D4F9;
+    height:50%;
+    
 }
 .main_navigation{
     width:950px;
     margin-left:25px;
 }
 .main_body{
-    padding: 0px 25px 25px 25px;
+    padding: 0px 25px 50px 25px;
 }
 
 .footer_box{

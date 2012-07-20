@@ -1,17 +1,5 @@
-
-<%= form_for(@tribe) do |f| %>
-  <% if @tribe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tribe.errors.count, "error") %> prohibited this tribe from being saved:</h2>
-
-      <ul>
-      <% @tribe.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %> 
-
+<%= form_for(@tribe, :validate => true ) do |f| %>
+  
   <%#= current_user.facebook %>
 
   <div class="field">
@@ -62,7 +50,11 @@
       <%= render :partial => 'invitations', :locals => {:form => f} %>
     </div>
   </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+

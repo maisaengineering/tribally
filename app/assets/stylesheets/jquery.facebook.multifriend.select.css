@@ -65,12 +65,14 @@ limitations under the License.
     font-family: arial;
     color: #333;
     font-size: 12px;
+    
 }
 
 #jfmfs-friend-selector {
     width:725px;   
     height:376px;
-    overflow-y:hidden;                            
+    overflow-y:hidden;  
+    margin-top:50px;         
 }
 
 #jfmfs-inner-header {
