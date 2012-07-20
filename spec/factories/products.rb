@@ -2,9 +2,11 @@
 
 FactoryGirl.define do
   factory :product do
+    business_name "MyString"
     members ""
     product_name "MyString"
-    description "MyString"
+    description "MyText"
+    product_url "MyString"
     price "MyString"
   end
 end
