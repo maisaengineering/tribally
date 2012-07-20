@@ -25,6 +25,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         sign_in_and_redirect(:user, auth)
       else         
         user = User.new(:provider => provider, :uid => uid, :email => email, :fname => first_name, :lname => last_name, :image_url => image_path , :token => access_token.credentials.token, :password => Devise.friendly_token[0,20])        
+        user.confirm!
         if user.save!
           flash[:notice] = "New user signed in successfully." 
           sign_in_and_redirect(:user, user)          
