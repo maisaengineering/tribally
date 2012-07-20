@@ -1,4 +1,6 @@
 Tribally::Application.routes.draw do
+  resources :businesses
+
   resources :products
 
   resources :tribes

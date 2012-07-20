@@ -23,10 +23,10 @@
     <%= f.label :product_name %>
     <%= f.text_field :product_name %>
   </div>
-  <div class="field">
+  <div class="field" id="product_description">
     <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
+  </div><br/><br />
   <div class="field">
     <%= f.label :product_url %>
     <%= f.text_field :product_url %>
@@ -37,7 +37,7 @@
   </div>
   
   <% @product.offers.each_with_index do |offer, index| %>      
-  <%= f.fields_for "offer_attributes[]", offer do |offer_fields| %>   
+  <%= f.fields_for "offers[]", offer do |offer_fields| %>   
     <div class="field">
       <%= offer_fields.label :price_discount %>
       <%= offer_fields.text_field :price_discount %>

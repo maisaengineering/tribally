@@ -21,5 +21,6 @@ class Tribe
   #field :products, :type => Array
   
   #attr_accessible :tribe_name, :location, :product_name
+
   
 end
