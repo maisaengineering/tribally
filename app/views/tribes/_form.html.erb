@@ -1,8 +1,7 @@
-%= form_for @tribe, :validate => true do |f| %>
 
-<%= form_for(@tribe) do |f| %>
+<%= form_for @tribe, :validate => true do |f| %>
 
-  <%#= current_user.facebook %>
+<%#= current_user.facebook %>
 
   <div class="field">
     <% @tribe.products.each_with_index do |product, index| %>      
@@ -57,7 +56,4 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-
-
 
