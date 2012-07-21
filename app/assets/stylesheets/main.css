@@ -3,12 +3,20 @@
 .sign_up_navigation{
     float:right;
     margin-right: 10px;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 .login_navigation{
     float:right;
     margin-right:0px;
-    margin-top:30px;
+    margin-top:31px;
+}
+.facebook_navigation_top{
+    margin-right: 10px;
+}
+.fb_like_button_footer{
+    width:55px;
+    height:25px;
+    overflow: hidden;
 }
 li {
     list-style: none;
@@ -21,6 +29,7 @@ li {
 }
 .main_navigation{
     width:950px;
+    height:94px;
     margin-left:25px;
 }
 .main_body{
@@ -36,28 +45,49 @@ li {
     width:998px;
     height:250px;
 }
+.footer_about_contact_box{
+    height:120px;
+}
+.about_footer_page{
+    color:#000;
+    font-weight:normal;
+}
+.getintouch_footer_page{
+    color:#000;
+    font-weight:normal;
+}
 .footer_aboutus_box{
-    width:300px;
+    width:250px;
     text-align:center;
 }
 .footer_contactus_box{
-    width:300px;
+    width:250px;
     text-align:center;
 }
-.fb_likebox{
-    width:245px;
-    height:156px;
-    overflow:hidden;
-    margin-top:-15px;
-    margin-left:-10px;
-}
 .fb_like_borderbox{
-    overflow:hidden;
-    width:245px;
-    height:156px;
-    border:0px solid red;
+    width:250px;
+    padding-left:200px;
 }
-
+.About_link_footer{
+    font-size:18px;
+    font-weight:bold;
+}
+.footer_privacy_terms_table{
+    width:1000px;
+    margin-top:30px;
+}
+.privacy_footer_link{
+    font-size:16px;
+    color:#000;
+}
+.terms_condition_link{
+    font-size:16px;
+    color:#000;
+}
+.copy_right_link{
+    font-size:16px;
+    color:#000;
+}
 /* Start menubar */
 .menu_first{
     float:left;
@@ -198,7 +228,7 @@ li {
 }
 
 #loginButton:hover {
-    background:#CAD4DD;
+    background:#F5F5F5;
     text-shadow:none;
 }
 
@@ -212,8 +242,8 @@ li {
     
 #loginButton.active {
     border-radius:3px 3px 0 0;
-    background:#CAD4DD; 
-    border:1px solid #899caa;
+    background:#F5F5F5; 
+    border:1px solid #E9E9E9;
 }
 
 #loginButton.active .span {
@@ -231,20 +261,20 @@ li {
 
 #loginForm {
     width:300px; 
-    border:1px solid #899caa;
+    border:1px solid #E9E9E9;
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
     margin-top:-1px;
-    background:#CAD4DD;
+    background:#F5F5F5;
     padding:15px 6px 6px 6px;
     margin-top: -10px;
 }
 
 #loginForm input {
     width:auto;
-    border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
+    border:1px solid #E9E9E9;
+    border-radius:5px;
+    -moz-border-radius:5px;
     color:#3a454d;
     font-weight:normal;
     padding:8px 8px;
@@ -260,11 +290,12 @@ input:focus {
     width:250px;
 }
 .signin_button{
-    margin-left: 222px;
+    margin-left: 15px;
     width: 65px;
+    border-radius:5px;
 }
 .signin_button input{
-    background:#019BE1;
+    background:#006D9F;
 }
 
 .checkbox_input{
@@ -279,7 +310,8 @@ input:focus {
 }
 
 .forget_password_text{
-    text-align:center;
+    text-align: left;
+    margin-left: 15px;
 }
 input#user_email{
     width:250px;
@@ -308,6 +340,40 @@ input#user_password_confirmation{
     border: 1px solid #ECECEC;
     border-radius: 7px;
 }
+/* Start sign up form */
+    .signup_main_box{
+    background:#F5F5F5;
+    width:315px;
+    height:auto;
+    padding-left:50px;
+    padding-top:20px;
+    border:1px solid #E9E9E9;
+    border-radius:5px;
+    }
+    .sign_up_fields{
+    font-weight:normal;
+    font-size:15px;
+    }
+    .facebook_connect_button{
+    width: 290px;
+    height: 60px;
+    margin-left:100px;
+    margin-top:-30px;
+    overflow:hidden;
+    }
+    .sign_up_header{
+        font-size:20px;
+        font-weight:normal;
+        height:40px;
+        color:#000;
+    }
+    .sign_up_button_page{
+        width:250px;
+        text-align:center;
+        
+    }
+/* End signup form*/
+
 
 /* Start product request box */
 .request_product_box{
