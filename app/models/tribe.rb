@@ -22,6 +22,5 @@ class Tribe
   
 
   #attr_accessible :tribe_name, :location, :product_name
-
-  
+   
 end

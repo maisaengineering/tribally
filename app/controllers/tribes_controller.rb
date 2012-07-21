@@ -6,6 +6,12 @@ class TribesController < ApplicationController
   
   def show
     @tribe = Tribe.find(params[:id])
+    @invitee_uid = []
+    if !@tribe.members.blank?
+      @tribe.members.each do |each_member|
+        @invitee_uid.push(each_member.uid)
+      end
+    end    
   end
   
   def new
@@ -17,14 +23,14 @@ class TribesController < ApplicationController
     @tribe = Tribe.find(params[:id])
   end
 
-  def create 
-    #raise params.inspect
-    @tribe = Tribe.new(params[:tribe])
-    # TODO CREATE MEMBER
+  def create     
+    @tribe = Tribe.new(params[:tribe])            
     if @tribe.save      
-      #params[:invitees].each do |ad|
-      #  raise ad.inspect
-      #end      
+      @tribe.members.push(Member.new(:uid => current_user.uid))      
+      invitee_list = params[:invitees].split(",")      
+      invitee_list.each do |each_invitee_uid|        
+        @tribe.members.push(Member.new(:uid => each_invitee_uid))
+      end      
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else
       @tribe.products.build
