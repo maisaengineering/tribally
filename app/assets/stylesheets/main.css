@@ -8,7 +8,7 @@
 .login_navigation{
     float:right;
     margin-right:0px;
-    margin-top:31px;
+    margin-top:30px;
 }
 .facebook_navigation_top{
     margin-right: 10px;
@@ -259,12 +259,11 @@ li {
     bottom:-1px;
 }
 
-#loginForm {
+.main_loginForm {
     width:300px; 
     border:1px solid #E9E9E9;
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
-    margin-top:-1px;
     background:#F5F5F5;
     padding:15px 6px 6px 6px;
     margin-top: -10px;
@@ -289,24 +288,16 @@ input:focus {
     margin-left:15px;
     width:250px;
 }
-.signin_button{
-    margin-left: 15px;
-    width: 65px;
-    border-radius:5px;
+.login_checkbox{
+    margin-left:15px
 }
-.signin_button input{
-    background:#006D9F;
-}
-
-.checkbox_input{
-    float:left;
-    width:250px;
+.sign_in_btn_window{
     margin-left:15px;
 }
-.checkbox_remember{
-    margin-left:0px;
-    width:200px;
-    color:#019BE1;
+#loginForm .sign_in_btn_window input{
+    background: #005ECC;
+    color:#fff;
+    border-radius:5px;
 }
 
 .forget_password_text{
@@ -337,11 +328,19 @@ input#user_password_confirmation{
 .current_user_iamge{
     width:75px;
     height:75px;
+    margin-left:50px;
     border: 1px solid #ECECEC;
     border-radius: 7px;
 }
+.current_user_name{
+    font-size:15px;
+}
 /* Start sign up form */
-    .signup_main_box{
+.sign_up_page_box{
+    margin-left:100px;
+    margin-top:10px;
+}
+.signup_main_box{
     background:#F5F5F5;
     width:315px;
     height:auto;
@@ -349,29 +348,29 @@ input#user_password_confirmation{
     padding-top:20px;
     border:1px solid #E9E9E9;
     border-radius:5px;
-    }
-    .sign_up_fields{
+}
+.sign_up_fields{
     font-weight:normal;
     font-size:15px;
-    }
-    .facebook_connect_button{
+}
+.facebook_connect_button{
     width: 290px;
     height: 60px;
     margin-left:100px;
     margin-top:-30px;
     overflow:hidden;
-    }
-    .sign_up_header{
-        font-size:20px;
-        font-weight:normal;
-        height:40px;
-        color:#000;
-    }
-    .sign_up_button_page{
-        width:250px;
-        text-align:center;
-        
-    }
+}
+.sign_up_header{
+    font-size:20px;
+    font-weight:normal;
+    height:40px;
+    color:#000;
+}
+.sign_up_button_page{
+    width:250px;
+    text-align:center;
+
+}
 /* End signup form*/
 
 

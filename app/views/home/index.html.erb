@@ -1,17 +1,6 @@
 <h3>Home</h3>
 
-<table>
-  <td>
-    <%  if current_user.image_url? %>
-      <%= image_tag current_user.image_url, :class => 'current_user_iamge' %>
-    <% else %>
-      <%=  image_tag "/assets/image_thumb.png", :class => 'current_user_iamge' %>
-    <% end %>
-  </td>
-  <td>
-    <%= current_user.fname %>
-  </td>
-</table>
+
 
 
   <br /> <br />
