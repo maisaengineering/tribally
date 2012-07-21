@@ -1,6 +1,6 @@
 <p>
 <b>Tribe first product:</b>  
-<% @tribe.product_attributes.each do |each_product| %>
+<% @tribe.products.each do |each_product| %>
   <%= each_product['product_name'] %>
 <% end %>
 </p>  
@@ -19,4 +19,11 @@
   <%= @tribe.category %>
 </p>
 
-<%= link_to 'Back', tribes_path %>
+<p>
+  <b>Tribe members:</b>
+    <% @tribe.members.each do |each_member| %>    
+      <%= FbGraph::User.new(each_member['uid']).fetch.name %>
+      <%= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
+    <% end %>
+</p>
+
