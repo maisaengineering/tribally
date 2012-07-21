@@ -1,23 +1,28 @@
 
-<table>
+<table class="footer_about_contact_box">
   <td class="footer_aboutus_box">
-    <b>About Us</b>
+    <div class="About_link_footer">About<br />
+      <%= link_to "About us", '#', :class => 'about_footer_page' %>
+    </div>
   </td>
   <td class="footer_contactus_box">
-    <b>Contact Us</b>
+    <div class="About_link_footer">Contact us<br />
+    <%= link_to "Get in touch", '#', :class => 'getintouch_footer_page' %>
+    </div>
   </td>
   <td class="fb_like_borderbox">
-    <div class="fb-like-box fb_likebox" data-href="http://www.facebook.com/Triballydev?ref=hl" data-width="250" data-height="180" data-show-faces="true" data-stream="false" data-header="false"></div> 
+    <div class="fb-like fb_like_button_footer" data-send="false" data-show-faces="false" data-font="verdana"></div>
+    <div class="fb-facepile" data-href="http://www.facebook.com/Triballydev?ref=hl" data-max-rows="1" data-width="250"></div>   
   </td>
-</table>
-<table>
+</table><br />
+<table class="footer_privacy_terms_table">
   <td>
-    Copyright 2012 Tribally Pvt Ltd
-  </td>
-  <td>
-    
+    <div class="copy_right_link">Copyright 2012 Tribally Pvt Ltd</div>
   </td>
   <td>
-
+    <%= link_to "Privacy policy", '#', :class => 'privacy_footer_link' %>
+  </td>
+  <td>
+    <%= link_to "Terms and conditions", '#', :class => 'terms_condition_link' %>
   </td>
 </table>
