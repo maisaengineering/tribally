@@ -14,7 +14,7 @@
           <div style="clear:both"></div>
           <div id="loginBox">                
               <div id="loginForm">
-                 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+                 <%= form_for(resource, :as => resource_name, :html =>{ :autocomplete => "off"}, :url => session_path(resource_name)) do |f| %>
                   <div class="signin_input"><%= f.email_field :email, :placeholder => 'Email' %></div>
 
                   <div  class="signin_input"><%= f.password_field :password, :placeholder => 'Password' %></div>
