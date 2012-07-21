@@ -1,11 +1,12 @@
-<h1>Listing tribes</h1>
+<h1>All tribes belogs to <%= current_user.fname %></h1>
 
 <table>
   <tr>
     <th>Product name</th>
     <th>Tribe name</th>
     <th>Category</th>
-    <th>Location</th>    
+    <th>Location</th>
+    <th>Members</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,19 +15,22 @@
 <% @tribes.each do |tribe| %>
   <tr>
     <td>
-      <% tribe.product_attributes.each do |each_product| %>
+      <% tribe.products.each do |each_product| %>
         <%= each_product['product_name'] %>
       <% end %>
     </td>
     <td><%= tribe.tribe_name %></td>
     <td><%= tribe.category %></td>
-    <td><%= tribe.location %></td>    
+    <td><%= tribe.location %></td>
+    <td>
+      <% tribe.members.each do |each_member| %>    
+        <%= FbGraph::User.new(each_member['uid']).fetch.name %>
+        <%= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
+      <% end %>
+    </td>
     <td><%= link_to 'Show', tribe %></td>    
     <td><%= link_to 'Destroy', tribe, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Tribe', new_tribe_path %>
