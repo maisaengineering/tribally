@@ -20,10 +20,8 @@ class Tribe
   #field :members, :type => Array
   #field :products, :type => Array
   
-<<<<<<< HEAD
 
-=======
   #attr_accessible :tribe_name, :location, :product_name
->>>>>>> 32ae31991c0485d7fbdc9173239521cde4e52f85
+
   
 end
