@@ -1,6 +1,6 @@
+%= form_for @tribe, :validate => true do |f| %>
 
-<%= form_for @tribe, :validate => true do |f| %>
-
+<%= form_for(@tribe) do |f| %>
 
   <%#= current_user.facebook %>
 
@@ -57,5 +57,7 @@
     <%= f.submit %>
   </div>
 <% end %>
-<% end %>
+
+
+
 
