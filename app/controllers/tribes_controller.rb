@@ -17,11 +17,14 @@ class TribesController < ApplicationController
     @tribe = Tribe.find(params[:id])
   end
 
-  def create
+  def create 
     #raise params.inspect
     @tribe = Tribe.new(params[:tribe])
     # TODO CREATE MEMBER
-    if @tribe.save
+    if @tribe.save      
+      #params[:invitees].each do |ad|
+      #  raise ad.inspect
+      #end      
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else
       @tribe.products.build

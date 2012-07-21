@@ -420,3 +420,8 @@ input#user_password_confirmation{
 }
 
 /* End products comments container */
+#product_description{
+    width:210px;
+    height:100px;
+    display:block;
+}

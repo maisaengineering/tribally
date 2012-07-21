@@ -4,7 +4,7 @@
     <div class="container">
       
       <ul class="nav">
-        <li class="menu_first"><%= link_to "Browse tribes" %></li>
+        <li class="menu_first"><%= link_to "Browse tribes", tribes_path %></li>
         <li class="menu_second"><%= link_to "Create a tribe", new_tribe_path %></li>
         <li class="dropdown pull-right menu_third">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> My tribes <b class="caret"></b> </a>
@@ -50,7 +50,10 @@
         <ul class="nav">
           <li class="sub_menu_first"><%= link_to "Tribe home" %></li>
           <li class="dropdown pull-right sub_menu_second">
+            <!--
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">All products<b class="caret"></b> </a>
+            -->
+            <%= link_to "All products", products_path, :class => 'dropdown-toggle' %>
             <ul class="dropdown-menu">
               <li><%= link_to "drop down 1" %></li>
               <li><%= link_to "drop down 2" %></li>
