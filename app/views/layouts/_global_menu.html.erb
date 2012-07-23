@@ -42,6 +42,8 @@
 </div>
 
 <br/>
+<table>
+  <td>
 <div class="sub_navbar">
   <div class="navbar">
     <div class="navbar-inner">
@@ -86,5 +88,21 @@
     </div>
   </div>
 </div>
-
+  </td>
+  <% if user_signed_in? %>
+  <td>
+    <%  if current_user.image_url? %>
+      <%= image_tag current_user.image_url, :class => 'current_user_iamge' %>
+    <% else %>
+      <%=  image_tag "/assets/image_thumb.png", :class => 'current_user_iamge' %>
+    <% end %>
+  </td>
+  <td class="current_user_name">
+    Logged in as <br />
+    <b><%= current_user.fname %></b>
+  </td>
+  <% else %>
+  <td> </td>
+  <% end %>
+</table>
 
