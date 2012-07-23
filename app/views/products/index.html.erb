@@ -1,5 +1,4 @@
-<h1>Listing products</h1>
-<br/>
+
 <table>
   <tr>
     <th>Business name</th>
@@ -8,6 +7,8 @@
     <th>Description</th>
     <th>Product url</th>
     <th>Price</th>
+    <th>Price discount</th>
+    <th>Min order quantity</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,6 +23,11 @@
     <td><%= product.product_url %></td>
     <td><%= product.price %></td>
     
+      <% product.offers.each do |each_offer| %>
+       <td> <%= each_offer['price_discount'] %></td>
+       <td> <%= each_offer['min_no_of_buyer'] %> </td>
+      <% end %>
+    
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
@@ -29,6 +35,126 @@
 <% end %>
 </table>
 
-<br />
-
 <%= link_to 'New Product', new_product_path %>
+<!--
+<br /><br />
+<div class="request_product_box">
+  <table>
+    <td>
+      <%= link_to image_tag("/assets/plus_icon.png", :class => 'plus_icon') %>
+    </td>
+    <td>
+    <div class="request_input_box_border">
+      <%= text_field_tag 'request', nil, :class => 'request_input_box' %>
+    </div>
+    </td>
+    <td>
+     <%= link_to image_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>
+    </td>
+  </table>
+</div><br />
+-->
+<% @products.each do |product| %>
+  <div class="products_main_container">
+      <div class="product_offers_time_box">
+        <table>
+          <td>
+            <div>
+              <span onclick="toggle_visibility('hiding');">Hide</span>
+              <script type="text/javascript">
+
+                function toggle_visibility(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'block')
+                      e.style.display = 'none';
+                   else
+                      e.style.display = 'block';
+                }
+
+              </script>
+            </div>
+          </td>
+          <td>
+            <div class="product_offers_small_box">
+              <table style="margin-top:7px;">
+                  <td style="width:200px;">
+                    <span class="product_offers_box_text">Product</span><br/>
+                    <span class="product_offers_box_text2"><%= product.product_name %></span>
+                  </td>
+                  <td style="width:80px; text-align:center;">
+                    <span class="product_offers_box_text">Offers</span><br />
+                    <span  class="product_offers_box_text3"><%= product.offers.count %></span>
+                  </td>
+              </table>
+            </div>
+          </td>
+          <td>
+            <div class="products_want_this_box">       
+              I want this
+            </div>
+          </td>
+          <td>
+            <div class="products_contdown_time_box">
+              <%= product.created_at %>
+            </div>
+          </td>
+        </table>
+      </div>
+      <div  id="hiding">
+      <div class="products_sub_container">
+        <div class="products_description_box">
+           <%= product.description %>
+        </div>
+        <div class="description_dotted_line"></div>
+        <div class="products_offers_received_text">
+          Offers Received
+        </div>
+        <div>
+          <table class="data_table" cellpadding="0" cellspacing="0" border="0" style="opacity:1;">
+            <thead>
+              <tr>
+                <th style="width:220px; border-right:1px solid #000;">company</th>
+                <th style="width:250px; border-right:1px solid #000;">product</th>
+                <th style="width:150px; border-right:1px solid #000;">price</th>
+                <th style="width:100px; border-right:1px solid #000;">time of bid</th>
+                <th style="width:200px;">min #</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="text-align:center;">
+                <td><%= product.business_name %></td>
+                <td><%= product.product_name %></td>
+                <td><%= product.price %></td>
+                <td>time</td>
+                <% product.offers.each do |each_offer| %>
+                 <td> <%= each_offer['min_no_of_buyer'] %> </td>
+                <% end %>
+              </tr>
+            </tbody>
+          </table>             
+        </div>
+       </div>
+      
+
+      <div class="products_comments_box" id="hiding2">
+      comments
+      </div>
+      </div>
+    </div><br />
+<% end %>
+<!--
+<a href="#" onclick="toggle_visibility('foo');">Click here to toggle visibility of element #foo</a>
+<div id="foo">This is foo</div>
+
+<script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+
+</script>
+-->
