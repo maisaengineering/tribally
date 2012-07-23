@@ -5,6 +5,7 @@ class Product
   
   embeds_many :offers
   #embedded_in :tribe
+  embeds_many :comments
   
   field :business_name, :type => String
   field :members, :type => String
