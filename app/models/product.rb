@@ -7,6 +7,8 @@ class Product
   #embedded_in :tribe
   #embeds_many :comments
   
+  validates_presence_of :product_name, :message => "Please enter tribe first product"
+  
   field :business_name, :type => String
   field :members, :type => String
   field :product_name, :type => String

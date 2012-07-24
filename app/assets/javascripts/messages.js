@@ -21,7 +21,7 @@
 						if(response === null){ 
 							return; 
 						}  
-						window.fbAsyncInit();
+						//window.fbAsyncInit();
 						FB.api({
 							method: 'fql.multiquery',
 							return_ssl_resources: 1,
@@ -38,7 +38,7 @@
 									},							
 
 									renderAppReqBox : function(name, to, link, message){
-										window.fbAsyncInit();
+										//window.fbAsyncInit();
 										FB.ui({
 											method: 'apprequest',  
 											to: to,
