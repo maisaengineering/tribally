@@ -1,0 +1,10 @@
+<%=form_tag '/comments', :remote => true do %>
+<div><%=current_user.id%></div>
+<div><%=text_area_tag 'comment[text_comment]'%></div>
+<div><button class="btn btn-primary" data-loading-text="loading stuff..." >Post</button></div>
+<%end%>
+  
+
+  
+
+
