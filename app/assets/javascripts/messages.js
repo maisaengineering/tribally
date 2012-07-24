@@ -1,7 +1,7 @@
 (function($) {
 	$.tribally ={
 		renderSendBox : function(subject, to, link, message, callback){
-			//window.fbAsyncInit();
+			window.fbAsyncInit();                        
 			FB.ui({
 				method: 'send',  
 				to: to,
@@ -21,7 +21,7 @@
 						if(response === null){ 
 							return; 
 						}  
-						//window.fbAsyncInit();
+						window.fbAsyncInit();
 						FB.api({
 							method: 'fql.multiquery',
 							return_ssl_resources: 1,
@@ -32,13 +32,13 @@
 								}, function(response){
 									if(response && response[0] && response[1]){
 										var messageLog = $.extend({}, response[0].fql_result_set[0], response[1].fql_result_set[0]);  										     
-										$.post('/messages/storemessage', messageLog);
+										//$.post('/messages/storemessage', messageLog);
 									}
 									}) 
 									},							
 
 									renderAppReqBox : function(name, to, link, message){
-										//window.fbAsyncInit();
+										window.fbAsyncInit();
 										FB.ui({
 											method: 'apprequest',  
 											to: to,

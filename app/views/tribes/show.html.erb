@@ -3,13 +3,15 @@
 <% if !@invitee_uid.blank? %>
   <script type="text/javascript" charset="utf-8">
     
-    $.tribally.renderSendBox(<%= "'"+@tribe.tribe_name + "'" %>, <%= "'"+@invitee_uid.join(",") +"'"%>, <%= "'http://localhost:3000" + "'"%>, <%=  "'"+ tribe_url(@tribe) +"'"%>, fbCallback).replace("'", "");    
+    $.tribally.renderSendBox(<%= "'"+@tribe.tribe_name + "'" %>, <%= "'"+@invitee_uid.join(",") +"'"%>, <%= "'http://kl-new.herokuapp.com/" + "'"%>, <%=  "'"+ tribe_url(@tribe) +"'"%>, fbCallback).replace("'", "");    
     
     function fbCallback(response){
       if(response == null){
+        //alert("fail");
       } else
-      {
+      {          
         //var srt = '<%#= params[:id] %>';
+        //alert("success"+srt);
         //jQuery.support.cors = true;
         //$.get('/challenges/update_status_af_meg', 
         //{thinking_abt:srt},
@@ -47,8 +49,8 @@
 <p>
   <b>Tribe members:</b>
     <% @tribe.members.each do |each_member| %>    
-      <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
-      <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
+      <%= FbGraph::User.new(each_member['uid']).fetch.name %>
+      <%= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
     <% end %>
 </p>
 
