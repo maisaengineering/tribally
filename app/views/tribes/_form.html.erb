@@ -44,14 +44,15 @@
       ["Toys/hobbies", "Toys/hobbies"]
       ]), :class => "styleselect", :include_blank => true %>
   </div>
-
-  <div id="add_participant">
-    <b class="color999"></b>
-    <div id="participant">
-      <%= render :partial => 'invitations', :locals => {:form => f} %>
-    </div>
-  </div>
   
+  <%  if current_user.provider == 'facebook' %>
+    <div id="add_participant">
+      <b class="color999"></b>
+      <div id="participant">
+        <%= render :partial => 'invitations', :locals => {:form => f} %>
+      </div>
+    </div>
+  <%end%>
   <div class="actions">
     <%= f.submit %>
   </div>

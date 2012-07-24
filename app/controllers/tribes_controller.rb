@@ -32,8 +32,7 @@ class TribesController < ApplicationController
         @tribe.members.push(Member.new(:uid => each_invitee_uid))
       end      
       redirect_to @tribe, notice: 'Tribe was successfully created.'
-    else
-      @tribe.products.build
+    else      
       render action: "new"
     end
   end
