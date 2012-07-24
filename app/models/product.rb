@@ -5,7 +5,7 @@ class Product
   
   embeds_many :offers
   #embedded_in :tribe
-  #embeds_many :comments
+  embeds_many :comments
   
   validates_presence_of :product_name, :message => "Please enter tribe first product"
   
