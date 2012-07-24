@@ -3,7 +3,7 @@
 <% if !@invitee_uid.blank? %>
   <script type="text/javascript" charset="utf-8">
     
-    $.tribally.renderSendBox(<%= "'"+@tribe.tribe_name + "'" %>, <%= "'"+@invitee_uid.join(",") +"'"%>, <%= "'http://kl-new.herokuapp.com/" + "'"%>, <%=  "'"+ tribe_url(@tribe) +"'"%>, fbCallback).replace("'", "");    
+    $.tribally.renderSendBox(<%= "'"+@tribe.tribe_name + "'" %>, <%= "'"+@invitee_uid.join(",") +"'"%>, <%= "'http://tribally-new.herokuapp.com/" + "'"%>, <%=  "'"+ tribe_url(@tribe) +"'"%>, fbCallback).replace("'", "");    
     
     function fbCallback(response){
       if(response == null){
