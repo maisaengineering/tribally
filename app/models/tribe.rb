@@ -3,15 +3,15 @@ class Tribe
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   
-  #validates_presence_of :tribe_name
-  #validates_presence_of :location
-  #validates_presence_of :product_name
+  validates_associated :products
+  
+  validates_presence_of :tribe_name, :message => "Please enter tribe name"
+  validates_presence_of :location, :message => "Please enter tribe location"  
 
   belongs_to :member
   embeds_many :products
   embeds_many :members
-  
-  field :product_name, :type => String
+    
   field :tribe_name, :type => String
   field :category, :type => String
   field :location, :type => String  

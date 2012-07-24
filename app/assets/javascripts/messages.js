@@ -1,7 +1,7 @@
 (function($) {
 	$.tribally ={
 		renderSendBox : function(subject, to, link, message, callback){
-			//window.fbAsyncInit();
+			window.fbAsyncInit();                        
 			FB.ui({
 				method: 'send',  
 				to: to,
@@ -32,7 +32,7 @@
 								}, function(response){
 									if(response && response[0] && response[1]){
 										var messageLog = $.extend({}, response[0].fql_result_set[0], response[1].fql_result_set[0]);  										     
-										$.post('/messages/storemessage', messageLog);
+										//$.post('/messages/storemessage', messageLog);
 									}
 									}) 
 									},							
