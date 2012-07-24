@@ -30,12 +30,12 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-
+    @product.offers.destroy
       if @product.update_attributes(params[:product])
         redirect_to @product, notice: 'Product was successfully updated.' 
       else
         render action: "edit" 
-      end
+      end 
   end
 
   def destroy
