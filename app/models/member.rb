@@ -7,6 +7,7 @@ class Member
   embedded_in :tribe
   
   field :uid, :type => String
+  field :status, :type => String, default: 'thinking'
   field :transaction_history, :type => String
   field :delivery_address, :type => String
 end

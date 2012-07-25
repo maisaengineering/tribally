@@ -3,7 +3,11 @@ Tribally::Application.routes.draw do
 
   resources :products
 
-  resources :tribes
+  resources :tribes do
+    collection do
+      get "change_invitation_status"
+    end
+  end
 
   resources :comments
   authenticated :user do
