@@ -26,11 +26,13 @@ class TribesController < ApplicationController
   def create     
     @tribe = Tribe.new(params[:tribe])            
     if @tribe.save      
-      @tribe.members.push(Member.new(:uid => current_user.uid))      
-      invitee_list = params[:invitees].split(",")      
-      invitee_list.each do |each_invitee_uid|        
-        @tribe.members.push(Member.new(:uid => each_invitee_uid))
-      end      
+      @tribe.members.push(Member.new(:uid => current_user.uid))
+      if !params[:invitees].blank? 
+        invitee_list = params[:invitees].split(",")      
+        invitee_list.each do |each_invitee_uid|        
+          @tribe.members.push(Member.new(:uid => each_invitee_uid))
+        end
+      end
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else      
       render action: "new"
@@ -40,7 +42,6 @@ class TribesController < ApplicationController
   def update
     @tribe = Tribe.find(params[:id])
 
-    
     if @tribe.update_attributes(params[:tribe])
       redirect_to @tribe, notice: 'Tribe was successfully updated.'
     else
@@ -64,4 +65,9 @@ class TribesController < ApplicationController
     end
     redirect_to tribes_path
   end
+  
+  def my_tribe    
+    @tribes = Tribe.where('members.uid' => current_user.uid)
+  end
+    
 end

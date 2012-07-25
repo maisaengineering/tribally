@@ -21,13 +21,11 @@
     <td><%= product.product_name %></td>
     <td><%= product.description %></td>
     <td><%= product.product_url %></td>
-    <td><%= product.price %></td>
-    
-      <% product.offers.each do |each_offer| %>
-       <td> <%= each_offer['price_discount'] %></td>
-       <td> <%= each_offer['min_no_of_buyer'] %> </td>
-      <% end %>
-    
+    <td><%= product.price %></td>    
+    <% product.offers.each do |each_offer| %>
+     <td> <%= each_offer['price_discount'] %></td>
+     <td> <%= each_offer['min_no_of_buyer'] %> </td>
+    <% end %>            
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
@@ -156,3 +154,4 @@
 
 </script>
 -->
+
