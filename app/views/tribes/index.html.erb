@@ -24,13 +24,20 @@
     <td><%= tribe.location %></td>
     <td>
       <% tribe.members.each do |each_member| %>    
-        <%= FbGraph::User.new(each_member['uid']).fetch.name %>
-        <%= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
+        <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
+        <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
       <% end %>
-    </td>
-    <td><%= link_to 'Show', tribe %></td>    
+    </td>    
+    <td>
+      <% tribe.members.each do |each_member| %>    
+        <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
+          <%= link_to "Accept the invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']) %>
+        <% end %>
+      <% end %>
+    </td>    
+    
+    <td><%= link_to 'Show', tribe %></td>
     <td><%= link_to 'Destroy', tribe, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-

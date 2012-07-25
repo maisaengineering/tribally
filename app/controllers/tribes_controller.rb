@@ -54,4 +54,14 @@ class TribesController < ApplicationController
     @tribe.destroy
     redirect_to tribes_path
   end
+  
+  def change_invitation_status
+    @tribe = Tribe.where(:_id => params[:id]).first
+    @tribe.members.each do |each_member|      
+        if each_member.uid == params[:uid]
+          each_member.update_attributes(:status => 'accepted')
+        end
+    end
+    redirect_to tribes_path
+  end
 end

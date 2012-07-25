@@ -1,10 +1,10 @@
 (function($) {
 	$.tribally ={
-		renderSendBox : function(subject, to, link, message, callback){
-			//window.fbAsyncInit();
+		renderSendBox : function(subject, to_send, link, message, callback){                        
+			window.fbAsyncInit();
 			FB.ui({
 				method: 'send',  
-				to: to,
+				to: to_send,
 				name: subject,				
 				link: link,
 				text: message,
@@ -21,7 +21,7 @@
 						if(response === null){ 
 							return; 
 						}  
-						//window.fbAsyncInit();
+						window.fbAsyncInit();
 						FB.api({
 							method: 'fql.multiquery',
 							return_ssl_resources: 1,
@@ -38,7 +38,7 @@
 									},							
 
 									renderAppReqBox : function(name, to, link, message){
-										//window.fbAsyncInit();
+										window.fbAsyncInit();
 										FB.ui({
 											method: 'apprequest',  
 											to: to,
