@@ -1,7 +1,4 @@
-<section id="tribe_menu">
-  <%= render 'layouts/browse_tribe_menu' %>
-</section>  
-<h1>All tribes</h1>
+<h1>All tribes belogs to <%= current_user.fname %></h1>
 
 <table>
   <tr>
@@ -30,15 +27,18 @@
         <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
         <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
       <% end %>
-    </td>        
+    </td>    
+    <td>
     <% tribe.members.each do |each_member| %>    
       <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
         <td>
           <%= link_to "Accept the invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']) %>
         </td>
+      <% end %>  
+      <% if each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>  
         <td><%= link_to 'Tribe activities', tribe %></td>
       <% end %>
-    <% end %>        
+    <% end %>    
         
     <td><%= link_to 'Destroy', tribe, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

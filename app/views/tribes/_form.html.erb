@@ -3,13 +3,9 @@
 
 <%#= current_user.facebook %>
 
-  <div class="field">
-    <% @tribe.products.each_with_index do |product, index| %>      
-      <%= f.fields_for "products[]", product do |product_fields| %>
-        <%= product_fields.label :product_name, "Tribe's first product<span class ='req'>*</span>".html_safe %>
-        <%= product_fields.text_field :product_name %>
-      <% end %>
-    <% end %>
+  <div class="field">    
+    <%= label_tag :product_name, "Tribe's first product<span class ='req'>*</span>".html_safe %>
+    <%= text_field_tag :product_name %>      
   </div>
   <div class="field">
     <%= f.label :location, "Tribe location<span class ='req'>*</span>".html_safe %>

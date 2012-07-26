@@ -24,7 +24,7 @@ class TribesController < ApplicationController
   end
 
   def create     
-    @tribe = Tribe.new(params[:tribe])            
+    @tribe = Tribe.new(params[:tribe])     
     if @tribe.save      
       @tribe.members.push(Member.new(:uid => current_user.uid))
       if !params[:invitees].blank? 
@@ -32,7 +32,8 @@ class TribesController < ApplicationController
         invitee_list.each do |each_invitee_uid|        
           @tribe.members.push(Member.new(:uid => each_invitee_uid))
         end
-      end
+      end      
+      @tribe.products.create(:product_name => params[:product_name])
       redirect_to @tribe, notice: 'Tribe was successfully created.'
     else      
       render action: "new"
