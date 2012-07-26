@@ -13,6 +13,7 @@ resources :businesses
     collection do
       get "change_invitation_status"
       get "my_tribe"
+      get "tribe_products"
     end
   end
 

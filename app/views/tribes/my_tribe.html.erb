@@ -36,7 +36,7 @@
         </td>
       <% end %>  
       <% if each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>  
-        <td><%= link_to 'Tribe activities', tribe %></td>
+        <td><%= link_to 'Tribe activities', tribe_products_tribes_path(:id => tribe) %></td>        
       <% end %>
     <% end %>    
         

@@ -26,7 +26,7 @@ class TribesController < ApplicationController
   def create     
     @tribe = Tribe.new(params[:tribe])     
     if @tribe.save      
-      @tribe.members.push(Member.new(:uid => current_user.uid))
+      @tribe.members.push(Member.new(:status => 'accepted', :uid => current_user.uid))
       if !params[:invitees].blank? 
         invitee_list = params[:invitees].split(",")      
         invitee_list.each do |each_invitee_uid|        
@@ -69,6 +69,10 @@ class TribesController < ApplicationController
   
   def my_tribe    
     @tribes = Tribe.where('members.uid' => current_user.uid)
+  end
+  
+  def tribe_products
+    @tribe = Tribe.where(:_id => params[:id]).first    
   end
     
 end
