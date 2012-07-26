@@ -4,7 +4,7 @@ class Product
   include Mongoid::Timestamps::Updated
   
   embeds_many :offers
-  #embedded_in :tribe
+  belongs_to :tribe
   embeds_many :comments
   
   validates_presence_of :product_name, :message => "Please enter tribe first product"

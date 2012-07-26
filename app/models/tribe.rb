@@ -9,7 +9,7 @@ class Tribe
   validates_presence_of :location, :message => "Please enter tribe location"  
 
   belongs_to :member
-  embeds_many :products
+  has_many :products
   embeds_many :members
     
   field :tribe_name, :type => String

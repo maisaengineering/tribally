@@ -6,6 +6,7 @@ Tribally::Application.routes.draw do
   resources :tribes do
     collection do
       get "change_invitation_status"
+      get "my_tribe"
     end
   end
 
