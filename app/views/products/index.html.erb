@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <table>
   <tr>
     <th>Business name</th>
@@ -21,11 +21,13 @@
     <td><%= product.product_name %></td>
     <td><%= product.description %></td>
     <td><%= product.product_url %></td>
-    <td><%= product.price %></td>    
-    <% product.offers.each do |each_offer| %>
-     <td> <%= each_offer['price_discount'] %></td>
-     <td> <%= each_offer['min_no_of_buyer'] %> </td>
-    <% end %>            
+    <td><%= product.price %></td>
+    
+      <% product.offers.each do |each_offer| %>
+       <td> <%= each_offer['price_discount'] %></td>
+       <td> <%= each_offer['min_no_of_buyer'] %> </td>
+      <% end %>
+    
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
@@ -90,9 +92,54 @@
             </div>
           </td>
           <td>
+            
             <div class="products_contdown_time_box">
-              <%= product.created_at %>
+              
+                   <div id="counter-container">
+                    <div class="counter-box">
+                      <div class="counter"><span id="d" class="counter-p">#</span></div>
+                      <span class="counter-box-p">days</span>
+                    </div>
+                    <div class="counter-box">
+                      <div class="counter"><span id="h" class="counter-p">#</span></div>
+                      <span class="counter-box-p">hours</span>
+                    </div>
+                    <!-- <div class="counter-box">
+                      <div class="counter"><span id="m" class="counter-p">#</span></div>
+                      <span class="counter-box-p">minutes</span>
+                    </div>
+                    <div class="counter-box">
+                      <div class="counter"><span id="s" class="counter-p">#</span></div>
+                      <span class="counter-box-p">seconds</span>
+                    </div> -->
+                  </div>
+               
+                 <script>
+                   function counter(futureDate) {
+                        var today = new Date(2012,7,24); // today
+                        count = Math.floor((futureDate-today)/1000);
+                        countdown = setInterval(function(){
+                          var temp;
+                          $("span#d").html(Math.floor(count/(60*60*24)));
+                          temp = count%(60*60*24);
+                          $("span#h").html(Math.floor(temp/(60*60)));
+                          temp = count%(60*60);
+                          $("span#m").html(Math.floor(temp/(60)));
+                          temp = count%(60);
+                          $("span#s").html(temp);
+                          if (count === 0) {
+                               alert("time's up");
+                               clearInterval(countdown);       
+                          }
+                          count--;
+                        }, 1000);
+                      }
+
+                      counter(new Date(2012,8,26)); // May 8, 2012 00:00:00
+                      /* counter(new Date(2012,4,8,15,49,10)); // May 8, 2012 15:49:00 */
+              </script>
             </div>
+            
           </td>
         </table>
       </div>
@@ -138,20 +185,3 @@
       </div>
     </div><br />
 <% end %>
-<!--
-<a href="#" onclick="toggle_visibility('foo');">Click here to toggle visibility of element #foo</a>
-<div id="foo">This is foo</div>
-
-<script type="text/javascript">
-
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-
-</script>
--->
-
