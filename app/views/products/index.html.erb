@@ -88,7 +88,15 @@
           </td>
           <td>
             <div class="products_want_this_box"> 
-             I Want This
+                <div id="variableVal">0</div>
+                    <input type="button" onclick="add()" value="I want this">
+                    <script>
+                      var myNumber = 0; // better don't use number as your variable's name.
+                    function add() {
+                    myNumber++;
+                    document.getElementById("variableVal").innerHTML = myNumber;
+                    }
+                      </script>
             </div>
           </td>
           <td>
