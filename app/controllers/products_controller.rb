@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
   end
 
   def show
@@ -12,6 +11,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.offers.build 
+
   end
 
   def edit
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
-
+	
       if @product.save
         redirect_to @product, notice: 'Product was successfully created.' 
       else
@@ -44,20 +44,11 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to products_url 
     end
+
+  def add_comment
+	product = Product.where(:_id => params[:product_id]).first	
+	product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])
+	
+   end
 end
 
-def show
-@comment = Comment.new
-@comment.product_id = @product.id
-end
-
-def create
-    product_id = params[:comment].delete(:product_id)
-
-    @comment = Comment.new(params[:comment])
-    @comment.product_id = product_id
-
-    @comment.save
-
-    redirect_to product_path(@comment.product)
-  end
