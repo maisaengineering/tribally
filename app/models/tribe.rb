@@ -17,6 +17,7 @@ class Tribe
   field :location, :type => String  
   field :offers, :type => String
   field :amount_saved, :type => Integer
+  field :created_by, :type => String
   #field :members, :type => Array
   #field :products, :type => Array
   

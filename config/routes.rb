@@ -7,6 +7,7 @@ Tribally::Application.routes.draw do
     collection do
       get "change_invitation_status"
       get "my_tribe"
+      get "tribe_products"
     end
   end
 

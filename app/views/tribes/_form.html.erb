@@ -7,6 +7,9 @@
     <%= label_tag :product_name, "Tribe's first product<span class ='req'>*</span>".html_safe %>
     <%= text_field_tag :product_name %>      
   </div>
+  <div class="field">        
+    <%= f.hidden_field :created_by, :value => "#{current_user.uid}" %>      
+  </div>
   <div class="field">
     <%= f.label :location, "Tribe location<span class ='req'>*</span>".html_safe %>
     <%= f.text_field :location %>
