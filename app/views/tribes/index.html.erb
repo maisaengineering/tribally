@@ -35,12 +35,10 @@
       <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
         <td>
           <%= link_to "Accept the invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']) %>
-        </td>
-        <td><%= link_to 'Tribe activities', tribe %></td>
+        </td>        
       <% end %>
-    <% end %>        
-        
-    <td><%= link_to 'Destroy', tribe, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+    <td><%= link_to 'Tribe activities', tribe %></td>    
   </tr>
 <% end %>
 </table>

@@ -544,7 +544,7 @@ border-top-right-radius: 10px;
 .products_comments_box{
     background:#fff;
     width:948px;
-    height:100px;
+    height:auto;
     border-radius:0px 0px 5px 5px;
 }
 
