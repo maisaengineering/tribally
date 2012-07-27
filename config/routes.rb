@@ -1,8 +1,14 @@
 Tribally::Application.routes.draw do
-  resources :businesses
+  
+resources :products do
+	collection do 
+		post "add_comment"	
+	end
+  end
 
-  resources :products
+resources :businesses
 
+  
   resources :tribes do
     collection do
       get "change_invitation_status"
@@ -11,9 +17,7 @@ Tribally::Application.routes.draw do
     end
   end
 
-  authenticated :user do
-    root :to => 'home#index'
-  end
+
   
   root :to => "home#index"
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

@@ -175,13 +175,56 @@
               </tr>
             </tbody>
           </table>             
-        </div>
        </div>
-      
+</div>
+</div>
 
-      <div class="products_comments_box" id="hiding2">
-      comments
-      </div>
-      </div>
-    </div><br />
+<div class="myclassname">
+<a href="#" class="mylink">Comment</a>
+<div class="products_comments_box" id="hiding2">
+  <%= form_tag add_comment_products_path do  %>
+            <div class="field">	      
+	      <%= hidden_field_tag :product_id, product._id %>
+	    </div>        
+	    <div class="field">
+	      User Id
+	      <%= text_field_tag :user_id %>
+	    </div>
+	    <div class="field">
+	      Body
+	      <%= text_field_tag :body %>
+	    </div>
+	<div class="actions">
+    	<%= submit_tag("Submit") %>
+  	</div>
+	<% end %>
+	</div>
+	 </div>
+<br />
 <% end %>
+
+
+
+
+<script>
+ $(function(){
+   $('.myclassname .mylink').click(function(){
+      $(this).show();
+      $('.myclassname .field').toggle();
+      $('.myclassname .actions').toggle();
+      return false;
+   });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
