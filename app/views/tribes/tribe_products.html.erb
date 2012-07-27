@@ -30,21 +30,26 @@
     </td>
 </table>
 
-
-<div class="request_product_box">
-  <table>
-    <td>
-      <%= link_to image_tag("/assets/plus_icon.png", :class => 'plus_icon') %>
-    </td>
-    <td>
-    <div class="request_input_box_border">
-      <%= text_field_tag 'request', nil, :class => 'request_input_box' %>
-    </div>
-    </td>
-    <td>
-     <%= link_to image_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>
-    </td>
-  </table>
+<div class="request_product_box">  
+    <table>
+      <td>
+        <%= link_to image_tag("/assets/plus_icon.png", :class => 'plus_icon') %>
+      </td>      
+      <td>
+      <div class="request_input_box_border">        
+        <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>
+      </div>
+      </td>                  
+      <%= form_tag("/products", :method => "post") do %>
+      <td>
+       <%= image_submit_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>        
+      </td>
+      <td>      
+        <%= hidden_field_tag :tribe, @tribe._id %>
+        <%= text_field_tag 'product_name', nil, :class => 'request_input_box', :placeholder => 'Request new product' %>      
+      </td>
+      <% end %>
+    </table>       
 </div><br />
 
 <% @tribe.products.each do |product| %>
