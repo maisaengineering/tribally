@@ -19,14 +19,10 @@ class ProductsController < ApplicationController
     as = @product.offers
   end
 
-  def create
-    @product = Product.new(params[:product])
-	
-      if @product.save
-        redirect_to @product, notice: 'Product was successfully created.' 
-      else
-        render action: "new" 
-      end
+  def create    
+    @tribe = Tribe.where(:_id => params[:tribe]).first    
+    @tribe.products.create(:product_name => params[:product_name], :members => [Member.new(:uid => current_user.uid)])
+    redirect_to tribe_products_tribes_path(:id => @tribe._id)
   end
 
   def update
