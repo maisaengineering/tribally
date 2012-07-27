@@ -1,15 +1,36 @@
-<section class="tribe_header">
-  <section id="tribe_name">
-    <h2><%= @tribe.tribe_name %></h2>
-  </section>
-  <section id="tribe_create">
-    tribe created by:
-    <%= FbGraph::User.new(@tribe.created_by).fetch.name %>
-    <%= image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture) %>
-  </section>
-</section>
+<table class="tribe_header_box">
+    <td id="tribe_name_menu">
+        <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
+    </td>
+    <td class="amount_saved_by_members">
+      <div id="saved_amount">$4550.50</div><br />
+      saved by members
+    </td>
+    <td class="add_friends_to_tribe">
+      <div class="add_friends_box_field">
+        64 members<br />
+        <form class="add_friends_search">  	
+            <input type="text" class="add_friends_box" placeholder="+ Add Friends to Group"/>
+          </form>
+      </div>
+    </td>
+    <td class="tribe_created_by_users">
+        <section id="tribe_create">
+          <table>
+            <td>
+              <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+            </td>
+            <td>          
+              <div class="tribe_created_text">Tribe created by:</div>
+              <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
+              <div class="created_user_ratings">*****</div>
+           </td>
+         </table>
+        </section>
+    </td>
+</table>
 
-<br /><br />
+
 <div class="request_product_box">
   <table>
     <td>
@@ -130,7 +151,7 @@
               <tr>
                 <th style="width:220px; border-right:1px solid #000;">company</th>
                 <th style="width:250px; border-right:1px solid #000;">product</th>
-                <th style="width:150px; border-right:1px solid #000;">price</th>
+                <th style="width:100px; border-right:1px solid #000;">price</th>
                 <th style="width:100px; border-right:1px solid #000;">time of bid</th>
                 <th style="width:200px;">min #</th>
               </tr>
