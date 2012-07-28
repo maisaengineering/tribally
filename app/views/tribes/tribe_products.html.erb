@@ -1,3 +1,4 @@
+
 <section class="tribe_header">
   <section id="tribe_name">
     <h2><%= @tribe.tribe_name %></h2>
@@ -17,7 +18,7 @@
       </td>      
       <td>
       <div class="request_input_box_border">        
-        <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>
+        <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>        
       </div>
       </td>                  
       <%= form_tag("/products", :method => "post") do %>

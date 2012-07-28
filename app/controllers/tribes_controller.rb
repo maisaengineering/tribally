@@ -73,6 +73,7 @@ class TribesController < ApplicationController
   
   def tribe_products
     @tribe = Tribe.where(:_id => params[:id]).first    
+      
   end
     
 end
