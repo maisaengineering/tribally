@@ -1,16 +1,35 @@
+<table class="tribe_header_box">
+    <td id="tribe_name_menu">
+        <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
+    </td>
+    <td class="amount_saved_by_members">
+      <div id="saved_amount">$4550.50</div><br />
+      saved by members
+    </td>
+    <td class="add_friends_to_tribe">
+      <div class="add_friends_box_field">
+        64 members<br />
+        <form class="add_friends_search">  	
+            <input type="text" class="add_friends_box" placeholder="+ Add Friends to Group"/>
+          </form>
+      </div>
+    </td>
+    <td class="tribe_created_by_users">
+        <section id="tribe_create">
+          <table>
+            <td>
+              <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+            </td>
+            <td>          
+              <div class="tribe_created_text">Tribe created by:</div>
+              <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
+              <div class="created_user_ratings">*****</div>
+           </td>
+         </table>
+        </section>
+    </td>
+</table>
 
-<section class="tribe_header">
-  <section id="tribe_name">
-    <h2><%= @tribe.tribe_name %></h2>
-  </section>
-  <section id="tribe_create">
-    tribe created by:
-    <%= FbGraph::User.new(@tribe.created_by).fetch.name %>
-    <%= image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture) %>
-  </section>
-</section>
-
-<br /><br />
 <div class="request_product_box">  
     <table>
       <td>
@@ -18,7 +37,7 @@
       </td>      
       <td>
       <div class="request_input_box_border">        
-        <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>        
+        <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>
       </div>
       </td>                  
       <%= form_tag("/products", :method => "post") do %>
@@ -66,14 +85,14 @@
             </div>
           </td>
           <td>
-            <div class="products_want_this_box"> 
-             I Want This
+            <div class="products_want_this_box">
+              <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
+              <%= @ad.size %> Wants this</br>    
+              <%= link_to "I want this!", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
             </div>
           </td>
-          <td>
-            
-            <div class="products_contdown_time_box">
-              
+          <td>        
+            <div class="products_contdown_time_box">              
                    <div id="counter-container">
                     <div class="counter-box">
                       <div class="counter"><span id="d" class="counter-p">#</span></div>
@@ -91,8 +110,7 @@
                       <div class="counter"><span id="s" class="counter-p">#</span></div>
                       <span class="counter-box-p">seconds</span>
                     </div> -->
-                  </div>
-               
+                  </div>               
                  <script>
                    function counter(futureDate) {
                         var today = new Date(2012,7,24); // today
@@ -113,7 +131,6 @@
                           count--;
                         }, 1000);
                       }
-
                       counter(new Date(2012,8,26)); // May 8, 2012 00:00:00
                       /* counter(new Date(2012,4,8,15,49,10)); // May 8, 2012 15:49:00 */
               </script>
@@ -137,7 +154,7 @@
               <tr>
                 <th style="width:220px; border-right:1px solid #000;">company</th>
                 <th style="width:250px; border-right:1px solid #000;">product</th>
-                <th style="width:150px; border-right:1px solid #000;">price</th>
+                <th style="width:100px; border-right:1px solid #000;">price</th>
                 <th style="width:100px; border-right:1px solid #000;">time of bid</th>
                 <th style="width:200px;">min #</th>
               </tr>
@@ -156,11 +173,25 @@
           </table>             
         </div>
        </div>
-      
-
       <div class="products_comments_box" id="hiding2">
       comments
       </div>
       </div>
     </div><br />
 <% end %>
+
+<!--    
+<script type="text/javascript">
+  $('#i_want_this').click(function() {    
+    // force cross-site scripting (as of jQuery 1.5)
+    jQuery.support.cors = true;
+    console.log($(this).val());
+    $.get('/tribes/i_want_this',
+    {tribe_id:'<%#= params[:id] %>', product: 'aaa'},
+      function(data) {
+
+      }, 'script'
+    );
+  });
+</script>    
+-->
