@@ -72,7 +72,18 @@ class TribesController < ApplicationController
   end
   
   def tribe_products
-    @tribe = Tribe.where(:_id => params[:id]).first    
+    if params[:product_name]      
+      @tribe = Tribe.where(:_id => params[:id]).first
+      Tribe.i_want_this(params[:id], params[:product_name], current_user.uid)      
+    else
+      @tribe = Tribe.where(:_id => params[:id]).first
+    end
   end
+  
+  #def i_want_this    
+  #  product = Product.where(:tribe_id => params[:tribe_id]).first
+  #  product.members.push([Members.new(:uid => current_user.uid, :status => 'accepted')])
+  #  raise "maisa"
+  #end
     
 end

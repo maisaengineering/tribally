@@ -85,14 +85,14 @@
             </div>
           </td>
           <td>
-            <div class="products_want_this_box"> 
-             I Want This
+            <div class="products_want_this_box">
+              <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
+              <%= @ad.size %> Wants this</br>    
+              <%= link_to "I want this!", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
             </div>
           </td>
-          <td>
-            
-            <div class="products_contdown_time_box">
-              
+          <td>        
+            <div class="products_contdown_time_box">              
                    <div id="counter-container">
                     <div class="counter-box">
                       <div class="counter"><span id="d" class="counter-p">#</span></div>
@@ -110,8 +110,7 @@
                       <div class="counter"><span id="s" class="counter-p">#</span></div>
                       <span class="counter-box-p">seconds</span>
                     </div> -->
-                  </div>
-               
+                  </div>               
                  <script>
                    function counter(futureDate) {
                         var today = new Date(2012,7,24); // today
@@ -132,7 +131,6 @@
                           count--;
                         }, 1000);
                       }
-
                       counter(new Date(2012,8,26)); // May 8, 2012 00:00:00
                       /* counter(new Date(2012,4,8,15,49,10)); // May 8, 2012 15:49:00 */
               </script>
@@ -175,11 +173,25 @@
           </table>             
         </div>
        </div>
-      
-
       <div class="products_comments_box" id="hiding2">
       comments
       </div>
       </div>
     </div><br />
 <% end %>
+
+<!--    
+<script type="text/javascript">
+  $('#i_want_this').click(function() {    
+    // force cross-site scripting (as of jQuery 1.5)
+    jQuery.support.cors = true;
+    console.log($(this).val());
+    $.get('/tribes/i_want_this',
+    {tribe_id:'<%#= params[:id] %>', product: 'aaa'},
+      function(data) {
+
+      }, 'script'
+    );
+  });
+</script>    
+-->

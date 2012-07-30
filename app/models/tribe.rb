@@ -23,5 +23,23 @@ class Tribe
   
 
   #attr_accessible :tribe_name, :location, :product_name
+  
+  def self.i_want_this(tribe_id, product_name, uid)    
+    product = Product.where(:tribe_id => tribe_id, :product_name => product_name).first    
+    members_uid = all_member product
+    if !members_uid.include?(uid)
+      product.members.push([Member.new(:uid => uid, :status => 'accepted')])      
+    end
+  end
+  
+  private
+  
+  def self.all_member product
+    members_uid = []
+    product.members.each do |each_member|
+      members_uid.push(each_member.uid)
+    end
+    return members_uid
+  end
    
 end

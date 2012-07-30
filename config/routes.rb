@@ -14,6 +14,7 @@ resources :businesses
       get "change_invitation_status"
       get "my_tribe"
       get "tribe_products"
+      get "i_want_this"
     end
   end
 
