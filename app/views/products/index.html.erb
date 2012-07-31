@@ -54,6 +54,7 @@
 </table>
 </div><br />
 -->
+
 <% @products.each do |product| %>
 
   <div class="products_main_container">
@@ -191,34 +192,45 @@
        </div>
 </div>
 </div>
-
+</div>
     </br>
-      <div class="myclassname">
+     
+<%= product_id=1 %>
+<div class="myclassname">
+       
         <b>Comments</b></br></br>
-        <a href="#" id="mylink"><b>Leave a Comment</b></a>
+        
+        <a href="#" id="product<%= product_id %>"<b>Leave a Comment</b></a>
+        
+        <div id="toggle">
+         
         <div class="products_comments_box" id="hiding2">
-          <%= form_tag add_comment_products_path do %>
-          <div class="field"><%= hidden_field_tag :product_id, product._id %></div>
-            <div class="field">User Id</br><%= text_field_tag :user_id %></div>
-            <div class="field">Body</br><%= text_area_tag :body %></div>
-            <div class="actions"><%= submit_tag("Submit") %> </div>
-          <% end %>
-        </div>
-      </div>
+          
+ 
+          
+         <%= form_tag add_comment_products_path do %>
+         
+
+            <div type="field"><%= hidden_field_tag :product_id, product._id %></div>
+            <div type="field">User Id</br><%= text_field_tag :user_id %></div>
+            <div type="field">Body</br><%= text_area_tag :body %></div>
+            <div type="actions"><%= submit_tag("Submit")%></div>
+          
+            <script type ="text/javascript" >
+                         $(function(){
+                           $('#product<%= product_id %>').click(function(){
+                                  $(this).show();
+                                  $('#product<%= product_id %>').toggle();
+                                  return false;
+                           });
+                        });
+                        </script>
+                        <%= product_id+=1 %>
+                <% end %>
 
 </div>
-
+        </div>
+</div>
 <% end %>
-
-<script type ="text/javascript" >
- $(function(){
-   $('.myclassname #mylink').click(function(){
-      $(this).show();
-      $('.field').toggle();
-      $('.actions').toggle();
-      return false;
-   });
-});
-</script>
 
 
