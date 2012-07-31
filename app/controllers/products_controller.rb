@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    #@products = Product.all
+    @products = Product.all
     if params[:query]
       @products = Product.all(:conditions => ["product_name LIKE ?", "%#{params[:query]}%"], :order => 'name', :limit => 5)
     else
@@ -44,6 +44,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.offers.destroy
+    #@product.destroy
       if @product.update_attributes(params[:product])
         redirect_to @product, notice: 'Product was successfully updated.' 
       else

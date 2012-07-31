@@ -3,16 +3,76 @@
         <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
     </td>
     <td class="amount_saved_by_members">
-      <div id="saved_amount">$4550.50</div><br />
+      <div id="saved_amount">$xxxx.xx</div><br />
       saved by members
     </td>
     <td class="add_friends_to_tribe">
       <div class="add_friends_box_field">
-        64 members<br />
-        <form class="add_friends_search">  	
-            <input type="text" class="add_friends_box" placeholder="+ Add Friends to Group"/>
-          </form>
+        xx members<br />
+        
+        <script>
+              $(function() {
+                $( "#autocomplete-input" ).autocomplete({
+                  source: function( request, response ) {
+                  $.ajax({
+                    url: "https://graph.facebook.com/me/friends?access_token=<%= current_user.token %>&callback=?",
+                    dataType: "jsonp",
+                    data: {
+                    width: 250,
+                    height: 400,
+                    max: 8,
+                    cacheLength: 10,
+                    minChars: 1,
+                      featureClass: "P",
+                      style: "full",
+                      maxRows: "5",
+                      name_startsWith: request.term
+                    },
+                    success: function( data ) {
+                      res = $.map( data.data, function( item ) {
+                        if (item.name.toLowerCase().indexOf(request.term.toLowerCase()) >= 0){
+                          return {
+                            label: item.name,
+                            value: item.id
+                          }
+                        }
+                      });
+                      response(res);
+                    }
+                  });
+                },
+                minLength: 0,
+                select: function( event, ui ) {
+                  // log( ui.item ?
+                  // "Selected: " + ui.item.label :
+                  // "Nothing selected, input was " + this.value);
+                },
+                open: function() {
+                  $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+                },
+                close: function() {
+                  $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+                }
+                });
+             $("#autocomplete-input").data("autocomplete")._renderItem =  function( ul, item ) {
+              var image_url = "http://graph.facebook.com/" + item.value +"/picture";
+              return $( "<li style='height:40px;'>" ).append($("<img style='float:left;height:35px;'>").attr('src',image_url))
+              .append( $( "<a>" ).text( item.label ) )
+              .appendTo( '#friendslist' );
+           }
+
+              });
+        </script>
+        
+
+          <ul>
+            <li>
+             <input id="autocomplete-input" />
+            </li>
+          </ul>
+          <div id="friendslist"></div>
       </div>
+      
     </td>
     <td class="tribe_created_by_users">
         <section id="tribe_create">

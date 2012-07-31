@@ -617,3 +617,14 @@ border-top-right-radius: 10px;
     font-size:14px;
     margin-left:10px;
 }
+
+#friendslist{
+    background:#fff;
+    margin-left:25px;
+   height:200px;
+   width:240px;
+   border: 1px solid #000;
+   overflow-y:scroll;
+   position:absolute;
+   z-index:1000;
+}
