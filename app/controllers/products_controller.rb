@@ -61,7 +61,7 @@ class ProductsController < ApplicationController
   def add_comment    
     product = Product.where(:_id => params[:product_id]).first	
     product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])
-    redirect_to products_url
+    redirect_to products_path
    end
 end
 
