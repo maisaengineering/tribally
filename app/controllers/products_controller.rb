@@ -56,12 +56,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to products_url 
-    end
+  end
 
-  def add_comment
-	product = Product.where(:_id => params[:product_id]).first	
-	product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])
-	redirect_to products_url
+  def add_comment    
+    product = Product.where(:_id => params[:product_id]).first	
+    product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])
+    redirect_to products_url
    end
 end
 

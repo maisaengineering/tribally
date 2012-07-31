@@ -146,21 +146,23 @@
           </td>
           <td>
             <div class="products_want_this_box">
-              <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
-              <%= @ad.size %> Wants this</br>    
-              <%= link_to "I want this!", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
-            </div>            
+              <div id="wants_box"> <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
+              <%= @ad.size %><br/> Wants this
+              <%= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
+            </div> 
+            </div>
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
-               <div id="time_left_to_open"></div>                                  
+              
+               <div id="time_left_to_open"></div>
+               <div id="time">OPEN</div>
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
                  $('#time_left_to_open').countdown({until: newYear, format: 'dHMS'}); 
                </script>
             </div>
-            
           </td>
         </table>
       </div>
@@ -198,8 +200,23 @@
           </table>             
         </div>
        </div>
-      <div class="products_comments_box" id="hiding2">
-      comments
+         <div class="mylink" id="#<%= product._id %>">Comment</div>
+         <div id="<%= product._id %>" style ="display:none">
+          <%= form_tag add_comment_products_path do  %>
+            <div class="field">	      
+              <%= hidden_field_tag :product_id, product._id %>
+              <%= hidden_field_tag :user_id, current_user.uid %>
+            </div>                    
+            <div class="field">
+              Body
+              <%= text_field_tag :body %>
+            </div>
+            <div class="actions">
+            <%= submit_tag("Submit") %>
+            </div>
+          <% end %>
+        </div>         
+        <br />        
       </div>
       </div>
     </div><br />
@@ -220,3 +237,11 @@
   });
 </script>    
 -->
+
+<script>
+ $(function(){
+   $('.mylink').click(function(event){      
+      $(event.target.id).toggle();      
+   });
+});
+</script>

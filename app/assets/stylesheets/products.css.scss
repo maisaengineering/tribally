@@ -7,5 +7,25 @@ align:bottom;
 margin-top:1000px;
 }
 
-.myclassname .field{display:none;}
-.myclassname .actions{display:none;}
+#toggle-view .field{display:none;}
+#toggle-view .actions{display:none;}
+
+.myclassname {
+ margin-left:20px;
+}
+
+#body{
+    width:200px;
+    height:100px;
+    display:block;
+}
+#user_id{
+    width:200px;
+}
+
+.actions
+{
+margin-left:0px;
+
+
+}
