@@ -89,51 +89,16 @@
               <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
               <%= @ad.size %> Wants this</br>    
               <%= link_to "I want this!", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
-            </div>
+            </div>            
           </td>
-          <td>        
-            <div class="products_contdown_time_box">              
-                   <div id="counter-container">
-                    <div class="counter-box">
-                      <div class="counter"><span id="d" class="counter-p">#</span></div>
-                      <span class="counter-box-p">days</span>
-                    </div>
-                    <div class="counter-box">
-                      <div class="counter"><span id="h" class="counter-p">#</span></div>
-                      <span class="counter-box-p">hours</span>
-                    </div>
-                    <!-- <div class="counter-box">
-                      <div class="counter"><span id="m" class="counter-p">#</span></div>
-                      <span class="counter-box-p">minutes</span>
-                    </div>
-                    <div class="counter-box">
-                      <div class="counter"><span id="s" class="counter-p">#</span></div>
-                      <span class="counter-box-p">seconds</span>
-                    </div> -->
-                  </div>               
-                 <script>
-                   function counter(futureDate) {
-                        var today = new Date(2012,7,24); // today
-                        count = Math.floor((futureDate-today)/1000);
-                        countdown = setInterval(function(){
-                          var temp;
-                          $("span#d").html(Math.floor(count/(60*60*24)));
-                          temp = count%(60*60*24);
-                          $("span#h").html(Math.floor(temp/(60*60)));
-                          temp = count%(60*60);
-                          $("span#m").html(Math.floor(temp/(60)));
-                          temp = count%(60);
-                          $("span#s").html(temp);
-                          if (count === 0) {
-                               alert("time's up");
-                               clearInterval(countdown);       
-                          }
-                          count--;
-                        }, 1000);
-                      }
-                      counter(new Date(2012,8,26)); // May 8, 2012 00:00:00
-                      /* counter(new Date(2012,4,8,15,49,10)); // May 8, 2012 15:49:00 */
-              </script>
+          <td>            
+            <div class="products_contdown_time_box"> 
+               <div id="time_left_to_open"></div>                                  
+               <script>
+                 var newYear = new Date(); 
+                 newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
+                 $('#time_left_to_open').countdown({until: newYear, format: 'dHMS'}); 
+               </script>
             </div>
             
           </td>
