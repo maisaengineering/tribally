@@ -80,6 +80,8 @@ class TribesController < ApplicationController
     end
   end
   
+  
+  
   #def i_want_this    
   #  product = Product.where(:tribe_id => params[:tribe_id]).first
   #  product.members.push([Members.new(:uid => current_user.uid, :status => 'accepted')])
