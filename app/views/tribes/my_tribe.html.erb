@@ -1,33 +1,22 @@
-<h1>All tribes belogs to <%= current_user.fname %></h1>
+<h1>My Tribes</h1>
 
+
+ <% @tribes.each do |tribe| %>
+<br />
+<div class="my_tribe_page">
 <table>
   <tr>
-    <th>Product name</th>
-    <th>Tribe name</th>
-    <th>Category</th>
-    <th>Location</th>
-    <th>Members</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tribes.each do |tribe| %>
-  <tr>
-    <td>
-      <% tribe.products.each do |each_product| %>
-        <%= each_product['product_name'] %>
-      <% end %>
-    </td>
-    <td><%= tribe.tribe_name %></td>
-    <td><%= tribe.category %></td>
-    <td><%= tribe.location %></td>
-    <td>
-      <% tribe.members.each do |each_member| %>    
-        <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
-        <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
-      <% end %>
-    </td>    
+  <td>
+   <div class="my_tribe_name"><%= tribe.tribe_name %></div>
+       <div class="my_tribe_f">
+         <div class="addthis_toolbox addthis_default_style" >
+             <a class="addthis_button_facebook_like" fb:like:layout="button_count" ></a>
+              <a class="addthis_button_tweet" ></a>
+             </div>
+             </div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50180dbc26e20234"></script>
+   </div>
+     </td> 
     <td>
     <% tribe.members.each do |each_member| %>    
       <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
@@ -36,11 +25,21 @@
         </td>
       <% end %>  
       <% if each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>  
-        <td><%= link_to 'Tribe activities', tribe_products_tribes_path(:id => tribe) %></td>        
-      <% end %>
+        <div class="go_to_this_icon">
+          <td><%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png")), tribe_products_tribes_path(:id => tribe) %></td>        
+         </div>
+         <% end %>
     <% end %>    
-        
-    <td><%= link_to 'Destroy', tribe, confirm: 'Are you sure?', method: :delete %></td>
+	</td>
+<td>
+
+<%= image_submit_tag("/assets/invite_friends_icon.png", :class =>'invite_friend_icon' ) %>  
+
+</td>
   </tr>
-<% end %>
 </table>
+</div>
+<% end %>
+<div class="my_tribe_bottom"> 
+<p>Can't see what you want? Click to <%= link_to "Create a tribe" %></p>
+</div>
