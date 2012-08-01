@@ -36,6 +36,19 @@
 <%= image_submit_tag("/assets/invite_friends_icon.png", :class =>'invite_friend_icon' ) %>  
 
 </td>
+<td>
+  <section id="tribe_create">
+          <table>
+            <td>
+              <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+            </td>
+            <td>          
+              <div class="tribe_created_text">Tribe created by:</div>
+              <div class="tribe_created_user_name"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></div>       
+           </td>
+         </table>
+        </section>
+</td>
   </tr>
 </table>
 </div>
