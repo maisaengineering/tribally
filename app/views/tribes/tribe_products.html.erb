@@ -1,3 +1,5 @@
+
+
 <table class="tribe_header_box">
     <td id="tribe_name_menu">
         <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
@@ -129,6 +131,24 @@
                   }
               </script>
             </div>
+            <input type="button" value = 'Hide' id = "hide_id" %>
+            <p id="message">Hide this sentence</p>
+
+            <script>
+              $('document').ready(function(){
+                $("#hide_id").click(function(){
+                  var attr_value = $('#hide_id').attr('value');      
+                  $("#message").toggle('fast');
+                  if(attr_value == 'Hide')
+                    {          
+                      $('#hide_id').attr('value','Show');
+                    }
+                    else if(attr_value == 'Show'){          
+                      $('#hide_id').attr('value','Hide');
+                    }
+                });    
+              });
+            </script>
           </td>
           <td>
             <div class="product_offers_small_box">
@@ -167,7 +187,7 @@
         </table>
       </div>
       <div  id="hiding">
-      <div class="products_sub_container">
+       <div class="products_sub_container">
         <div class="products_description_box">
            <%= product.description %>
         </div>
