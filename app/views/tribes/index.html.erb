@@ -16,12 +16,15 @@
     <th></th>
   </tr>
 </thead>
+<tbody>
 
 <% @tribes.each do |tribe| %><tr>
     <td>
+      <div class="tribe_page">
       <% tribe.products.each do |each_product| %>
         <%= each_product['product_name'] %>
       <% end %>
+      </div><br/>
     </td>
     <td><%= tribe.tribe_name %></td>
     <td><%= tribe.category %></td>
@@ -41,7 +44,9 @@
     <% end %>
     <td><%= link_to 'Tribe activities', tribe_products_tribes_path(:id => tribe) %></td>    
   </tr>
+  </div>
 <% end %>
+</tbody>
 </table>
 
 
