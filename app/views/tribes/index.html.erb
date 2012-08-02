@@ -17,8 +17,7 @@
   </tr>
 </thead>
 
-<% @tribes.each do |tribe| %>
-<tr>
+<% @tribes.each do |tribe| %><tr>
     <td>
       <% tribe.products.each do |each_product| %>
         <%= each_product['product_name'] %>
