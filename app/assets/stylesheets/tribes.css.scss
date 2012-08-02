@@ -78,15 +78,18 @@ color:#32B232;
 
 
 .want_this_box{
-margin-top:-20px;
-margin-left:90px;
-width:80px;
+margin-top:-50px;
+margin-left:130px;
+width:140px;
 height:40px;
 }
 
-#wants_box{
+.wants_box{
 margin-left:20px;
 margin-top:10px;
+font-size: 16px;
+    font-weight: normal;
+    margin-left: 5px;
 }
 
 #time{
@@ -95,4 +98,13 @@ margin-left:130px;
 
 #time_left_to_open{
 margin-left:60px;
+}
+
+.want_number{
+margin-left:45px;
+}
+
+.size{
+margin-left:10px;
+font-weight:normal;
 }

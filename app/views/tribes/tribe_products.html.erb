@@ -166,17 +166,19 @@
           </td>
           <td>
             <div class="products_want_this_box">
-              <div id="wants_box"> <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
-              <%= @ad.size %><br/> Wants this
+              <div class="wants_box"> 
+              <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
+              <%= @ad.size %><br/><span class="size">Wants this</span>
               <%= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
-            </div> 
+                
+              </div> 
             </div>
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
               
                <div id="time_left_to_open"></div>
-               <div id="time">OPEN</div>
+               <div id="time"><b>OPEN</b></div>
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
