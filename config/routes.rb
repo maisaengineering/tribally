@@ -21,7 +21,7 @@ resources :businesses
 
 
   
-  root :to => "home#index"
+  root :to => "tribes#index"
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #devise_scope :user do
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'

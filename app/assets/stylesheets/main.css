@@ -596,23 +596,7 @@ border-top-right-radius: 10px;
   
 
 }
-.created_user_image{
-    width:70px;
-    height:70px;
-    margin-left:20px;
-    border: 3px solid #F4F4F4;
-    border-radius: 7px;
-}
-.tribe_created_text{
-    font-size:16px;
-    margin-left:10px;
-}
-.tribe_created_user_name{
-    width:160px;
-    font-size:16px;
-    color: #019BE1;
-    margin-left:10px;
-}
+
 .created_user_ratings{
     font-size:14px;
     margin-left:10px;
@@ -710,4 +694,24 @@ margin-top:20px;
 .my_tribe_last_line{
 font-size:25px;
 magin-top:20px;
+}
+
+ .created_user_image{
+    width:70px;
+    height:70px;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 3px solid #F4F4F4;
+    border-radius: 7px;
+}
+.tribe_created_text{
+    font-size:16px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.tribe_created_user_name{
+    width:130px;
+    font-size:16px;
+    color: #019BE1;
+    margin-left:10px;
 }
