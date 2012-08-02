@@ -118,16 +118,14 @@
         <table>
           <td>
             <div>
-              <span onclick="toggle_visibility('hiding');">Hide</span>
-              <script type="text/javascript">
-                  function toggle_visibility(id) {
-                     var e = document.getElementById(id);
-                     if(e.style.display == 'block')
-                        e.style.display = 'none';
-                     else
-                        e.style.display = 'block';
-                  }
-              </script>
+              <div class="hide_show" id="hiding">Hide</div>
+                <script>
+                 $(function(){
+                   $('.hide_show').click(function(event){      
+                      $(event.target.id).toggle();      
+                   });
+                });
+                </script>
             </div>
           </td>
           <td>
@@ -173,7 +171,7 @@
         </div>
         <div class="description_dotted_line"></div>
         <div class="products_offers_received_text">
-          Offers Received
+          Offers for <%= product.product_name %>
         </div>
         <div>
           <table class="data_table" cellpadding="0" cellspacing="0" border="0" style="opacity:1;">
@@ -186,7 +184,7 @@
                 <th style="width:200px;">min #</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="products_offers_list_box" class="products_body_list">
               <tr style="text-align:center;">
                 <td><%= product.business_name %></td>
                 <td><%= product.product_name %></td>
@@ -196,8 +194,59 @@
                  <td> <%= each_offer['min_no_of_buyer'] %> </td>
                 <% end %>
               </tr>
-            </tbody>
-          </table>             
+            </tbody> 
+          </table> 
+         <div id="offers_portal_box" class="products_body_list">
+           
+            <%= form_tag add_offer_products_path do  %>
+                <div class="field">	      
+                  <%= hidden_field_tag :product_id, product._id %>
+                  <%= hidden_field_tag :user_id, current_user.uid %>
+                </div>                    
+                <div class="field">
+                  <%= text_field_tag :price_discount %>
+                </div>
+                <div class="actions">
+                <%= submit_tag("Submit") %>
+                </div>
+            <% end %>
+           
+           <!--
+           <% form_for  %>
+            <% product.offers.each do |offer| %>      
+              <%= f.fields_for "offers[]", offer do |offer_fields| %>   
+                <div class="field">
+                  <%= offer_fields.text_field :price_discount %>
+                </div>
+                <div class="field">
+                  <%= offer_fields.text_field :min_no_of_buyer %>
+                </div>
+              <% end %> 
+            <% end %>
+           
+           
+              <%= form_tag("/products", :method => "post") do %>      
+                  <%= hidden_field_tag :tribe, @tribe._id %>
+                  <%= text_field_tag 'offer_name' %>
+                  <%= text_field_tag 'price_discount' %>
+                  <%= text_field_tag 'offer_description' %>
+                  <%= text_field_tag 'min_no_of_buyer' %>
+                  <%= text_field_tag 'price' %>
+                  <%= text_field_tag 'offer_image' %>
+                  <%= text_field_tag 'bussiness_logo' %>
+                  <div class="actions">
+                    <%= submit_tag("Submit") %>
+                  </div>
+                <% end %>
+           -->
+         </div>
+        
+          <script>
+              $(document).ready(function() {
+                  $(".products_body_list:even").css("background-color","#CDCDCD");
+                  $(".products_body_list:odd").css("background-color","#ECECEC");
+              });
+           </script>
         </div>
        </div>
         <div class="comments_header">Comments</div>
@@ -213,7 +262,7 @@
                     <%= hidden_field_tag :user_id, current_user.uid %>
                   </div>                    
                   <div class="field">
-                    <%= text_field_tag :body %>
+                    <%= text_area_tag :body %>
                   </div>
                   <div class="actions">
                   <%= submit_tag("Submit") %>
@@ -236,7 +285,7 @@
                     <%= hidden_field_tag :user_id, current_user.uid %>
                   </div>                    
                   <div class="field">
-                    <%= text_field_tag :body %>
+                    <%= text_area_tag :body %>
                   </div>
                   <div class="actions">
                   <%= submit_tag("Submit") %>

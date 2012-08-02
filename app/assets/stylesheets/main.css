@@ -534,11 +534,21 @@ border-top-right-radius: 10px;
 }
 
 .products_offers_received_text{
-    width:300px;
+    width:700px;
     height:30px;
     font-size:24px;
     margin-left:10px;
     margin-top:15px;
+}
+
+#products_offers_list_box{
+    width:926px;
+    height:150px;
+}
+#offers_portal_box{
+    width:926px;
+    height:150px;
+    margin-left:10px;
 }
 /* End products container */
 
