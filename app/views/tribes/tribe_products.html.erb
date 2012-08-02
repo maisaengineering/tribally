@@ -1,132 +1,138 @@
 <table class="tribe_header_box">
-    <td id="tribe_name_menu">
-        <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
-    </td>
-    <td class="amount_saved_by_members">
-      <div id="saved_amount">$xxxx.xx</div><br />
-      saved by members
-    </td>
-    <td class="add_friends_to_tribe">
-      <div class="add_friends_box_field">
-        xx members<br />
-        
-        <script>
-              $(function() {
-                $( "#autocomplete-input" ).autocomplete({
-                  source: function( request, response ) {
-                  $.ajax({
-                    url: "https://graph.facebook.com/me/friends?access_token=<%= current_user.token %>&callback=?",
-                    dataType: "jsonp",
-                    data: {
-                    width: 250,
-                    height: 400,
-                    max: 8,
-                    cacheLength: 10,
-                    minChars: 1,
-                      featureClass: "P",
-                      style: "full",
-                      maxRows: "5",
-                      name_startsWith: request.term
-                    },
-                    success: function( data ) {
-                      res = $.map( data.data, function( item ) {
-                        if (item.name.toLowerCase().indexOf(request.term.toLowerCase()) >= 0){
-                          return {
-                            label: item.name,
-                            value: item.id
-                          }
-                        }
-                      });
-                      response(res);
+  <td id="tribe_name_menu">
+    <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
+  </td>
+  <td class="amount_saved_by_members">
+    <div id="saved_amount">$xxxx.xx</div><br />
+    saved by members
+  </td>
+  <td class="add_friends_to_tribe">
+    <div class="add_friends_box_field">
+      xx members<br />
+      <script>
+        $(function() {
+          $( "#autocomplete-input" ).autocomplete({
+            source: function( request, response ) {
+            $.ajax({
+              url: "https://graph.facebook.com/me/friends?access_token=<%= current_user.token %>&callback=?",
+              dataType: "jsonp",
+              data: {
+              width: 250,
+              height: 400,
+              max: 8,
+              cacheLength: 10,
+              minChars: 1,
+                featureClass: "P",
+                style: "full",
+                maxRows: "5",
+                name_startsWith: request.term
+              },
+              success: function( data ) {
+                res = $.map( data.data, function( item ) {
+                  if (item.name.toLowerCase().indexOf(request.term.toLowerCase()) >= 0){
+                    return {
+                      label: item.name,
+                      value: item.id
                     }
-                  });
-                },
-                minLength: 0,
-                select: function( event, ui ) {
-                  // log( ui.item ?
-                  // "Selected: " + ui.item.label :
-                  // "Nothing selected, input was " + this.value);
-                },
-                open: function() {
-                  $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-                },
-                close: function() {
-                  $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-                }
+                  }
                 });
-             $("#autocomplete-input").data("autocomplete")._renderItem =  function( ul, item ) {
-              var image_url = "http://graph.facebook.com/" + item.value +"/picture";
-              return $( "<li style='height:40px;'>" ).append($("<img style='float:left;height:35px;'>").attr('src',image_url))
-              .append( $( "<a>" ).text( item.label ) )
-              .appendTo( '#friendslist' );
-           }
-
-              });
-        </script>
-        
-
-          <ul>
-            <li>
-             <input id="autocomplete-input" />
-            </li>
-          </ul>
-          <!--<div id="friendslist"></div> -->
-      </div>
-      
-    </td>
-    <td class="tribe_created_by_users">
-        <section id="tribe_create">
-          <table>
-            <td>
-              <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
-            </td>
-            <td>          
-              <div class="tribe_created_text">Tribe created by:</div>
-              <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
-              <div class="created_user_ratings">*****</div>
-           </td>
-         </table>
-        </section>
-    </td>
+                response(res);
+              }
+            });
+          },
+          minLength: 0,
+          select: function( event, ui ) {
+            // log( ui.item ?
+            // "Selected: " + ui.item.label :
+            // "Nothing selected, input was " + this.value);
+          },
+          open: function() {
+            $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+          },
+          close: function() {
+            $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+          }
+          });
+         
+         $("#autocomplete-input").data("autocomplete")._renderItem =  function( ul, item ) {
+           var image_url = "http://graph.facebook.com/" + item.value +"/picture";
+           return $( "<li style='height:40px;'>" ).append($("<img style='float:left;height:35px;'>").attr('src',image_url))
+           .append( $( "<a>" ).text( item.label ) )
+           .appendTo( '#friendslist' );
+         }
+        });
+      </script>
+      <ul>
+        <li>
+         <input id="autocomplete-input" />
+        </li>
+      </ul>
+      <!--<div id="friendslist"></div> -->
+    </div>
+  </td>
+  <td class="tribe_created_by_users">
+    <section id="tribe_create">
+      <table>
+        <td>
+          <%#= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+        </td>
+        <td>          
+          <div class="tribe_created_text">Tribe created by:</div>
+          <div class="tribe_created_user_name"> <%#= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
+          <div class="created_user_ratings">*****</div>
+        </td>
+      </table>
+    </section>
+  </td>
 </table>
 
 <div class="request_product_box">  
-    <table>
-      <td>
-        <%= link_to image_tag("/assets/plus_icon.png", :class => 'plus_icon') %>
-      </td>      
-      <td>
+  <table>
+    <td>
+      <%= link_to image_tag("/assets/plus_icon.png", :class => 'plus_icon') %>
+    </td>      
+    <td>
       <div class="request_input_box_border">        
         <%= text_field_tag 'search', nil, :class => 'request_input_box', :placeholder => 'Serach product' %>
       </div>
-      </td>                  
-      <%= form_tag("/products", :method => "post") do %>
+    </td>                  
+    <%= form_tag("/products", :method => "post") do %>
       <td>
-       <%= image_submit_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>        
+        <%= image_submit_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>        
       </td>
       <td>      
         <%= hidden_field_tag :tribe, @tribe._id %>
         <%= text_field_tag 'product_name', nil, :class => 'request_input_box', :placeholder => 'Request new product' %>      
       </td>
-      <% end %>
-    </table>       
+    <% end %>
+  </table>       
 </div><br />
-
-<% @tribe.products.each do |product| %>
+<% product_count = 0 %>
+<% @tribe.products.each do |product| %>  
   <div class="products_main_container">
-      <div class="product_offers_time_box">
-        <table>
-          <td>
-            <div>
-              <div class="hide_show" id="hiding">Hide</div>
-                <script>
-                 $(function(){
-                   $('.hide_show').click(function(event){      
-                      $(event.target.id).toggle();      
-                   });
-                });
-                </script>
-            </div>
+    <div class="product_offers_time_box">
+      <table>
+          <td>  
+            <% if product_count == 0 %>
+              <input type="button" value = 'Hide' id = "<%= product.product_name %>" />
+            <% else %>
+              <input type="button" value = 'Show' id = "<%= product.product_name %>" />
+            <% end %>            
+            <script>
+              $('document').ready(function(){
+                $("#<%= product.product_name %>").click(function(){
+                  var attr_value = $('#<%= product.product_name %>').attr('value');      
+                  $("#<%= product.product_name %>a").toggle('fast');
+                  if(attr_value == 'Hide')
+                    {          
+                      $('#<%= product.product_name %>').attr('value','Show');
+                    }
+                    else if(attr_value == 'Show'){          
+                      $('#<%= product.product_name %>').attr('value','Hide');
+                    }
+                });    
+              });
+            </script>
           </td>
           <td>
             <div class="product_offers_small_box">
@@ -152,168 +158,74 @@
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
-              
-               <div id="time_left_to_open"></div>
+              <div id="<%= product.id %>a"></div>
                <div id="time">OPEN</div>
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
-                 $('#time_left_to_open').countdown({until: newYear, format: 'dHMS'}); 
+                 $('#<%= product.id %>a').countdown({until: newYear, format: 'dHMS'}); 
                </script>
             </div>
           </td>
         </table>
+    </div>
+    <% if product_count == 0 %>
+      <div  id="<%= product.product_name %>a">
+        <%= render 'product_details', :product => product %>
       </div>
-      <div  id="hiding">
-      <div class="products_sub_container">
-        <div class="products_description_box">
-           <%= product.description %>
-        </div>
-        <div class="description_dotted_line"></div>
-        <div class="products_offers_received_text">
-          Offers for <%= product.product_name %>
-        </div>
-        <div>
-          <table class="data_table" cellpadding="0" cellspacing="0" border="0" style="opacity:1;">
-            <thead>
-              <tr>
-                <th style="width:220px; border-right:1px solid #000;">company</th>
-                <th style="width:250px; border-right:1px solid #000;">product</th>
-                <th style="width:100px; border-right:1px solid #000;">price</th>
-                <th style="width:100px; border-right:1px solid #000;">time of bid</th>
-                <th style="width:200px;">min #</th>
-              </tr>
-            </thead>
-            <tbody id="products_offers_list_box" class="products_body_list">
-              <tr style="text-align:center;">
-                <td><%= product.business_name %></td>
-                <td><%= product.product_name %></td>
-                <td><%= product.price %></td>
-                <td>time</td>
-                <% product.offers.each do |each_offer| %>
-                 <td> <%= each_offer['min_no_of_buyer'] %> </td>
-                <% end %>
-              </tr>
-            </tbody> 
-          </table> 
-         <div id="offers_portal_box" class="products_body_list">
-           
-            <%= form_tag add_offer_products_path do  %>
-                <div class="field">	      
-                  <%= hidden_field_tag :product_id, product._id %>
-                  <%= hidden_field_tag :user_id, current_user.uid %>
-                </div>                    
-                <div class="field">
-                  <%= text_field_tag :price_discount %>
-                </div>
-                <div class="actions">
-                <%= submit_tag("Submit") %>
-                </div>
-            <% end %>
-           
-           <!--
-           <% form_for  %>
-            <% product.offers.each do |offer| %>      
-              <%= f.fields_for "offers[]", offer do |offer_fields| %>   
-                <div class="field">
-                  <%= offer_fields.text_field :price_discount %>
-                </div>
-                <div class="field">
-                  <%= offer_fields.text_field :min_no_of_buyer %>
-                </div>
-              <% end %> 
-            <% end %>
-           
-           
-              <%= form_tag("/products", :method => "post") do %>      
-                  <%= hidden_field_tag :tribe, @tribe._id %>
-                  <%= text_field_tag 'offer_name' %>
-                  <%= text_field_tag 'price_discount' %>
-                  <%= text_field_tag 'offer_description' %>
-                  <%= text_field_tag 'min_no_of_buyer' %>
-                  <%= text_field_tag 'price' %>
-                  <%= text_field_tag 'offer_image' %>
-                  <%= text_field_tag 'bussiness_logo' %>
-                  <div class="actions">
-                    <%= submit_tag("Submit") %>
-                  </div>
-                <% end %>
-           -->
-         </div>
-        
-          <script>
-              $(document).ready(function() {
-                  $(".products_body_list:even").css("background-color","#CDCDCD");
-                  $(".products_body_list:odd").css("background-color","#ECECEC");
-              });
-           </script>
-        </div>
-       </div>
-        <div class="comments_header">Comments</div>
-        <% if product.comments.empty? %>
-              <div class="No_comments_header">
-                <span class="No_comments_text">No comments yet.</span>
-                <span class="mylink" id="#<%= product._id %>">Leave a comment</span>
-              </div>
-              <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-                <%= form_tag add_comment_products_path do  %>
-                  <div class="field">	      
-                    <%= hidden_field_tag :product_id, product._id %>
-                    <%= hidden_field_tag :user_id, current_user.uid %>
-                  </div>                    
-                  <div class="field">
-                    <%= text_area_tag :body %>
-                  </div>
-                  <div class="actions">
-                  <%= submit_tag("Submit") %>
-                  </div>
-                <% end %>
-              </div>        
-        <% else %>
-              
-              <% product.comments.each do |product_comments| %>
-                <div class="comments_text_box">
-                  <span class="comments_user_name"><%= product_comments.user_id %></span>:
-                  <%= product_comments.body %>
-                </div>
-              <% end %>
-               <div class="mylink" id="#<%= product._id %>">Leave a comment</div>
-               <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-                <%= form_tag add_comment_products_path do  %>
-                  <div class="field">	      
-                    <%= hidden_field_tag :product_id, product._id %>
-                    <%= hidden_field_tag :user_id, current_user.uid %>
-                  </div>                    
-                  <div class="field">
-                    <%= text_area_tag :body %>
-                  </div>
-                  <div class="actions">
-                  <%= submit_tag("Submit") %>
-                  </div>
-                <% end %>
-              </div>     
-        <% end %>     
-        <br />        
+    <% else %>
+      <div  id="<%= product.product_name %>a" style="display: none">
+        <%= render 'product_details', :product => product %>
       </div>
-      </div>
-    <br />
+    <% end %>
+    
+    <div class="comments_header">Comments</div>
+      <% if product.comments.empty? %>
+        <div class="No_comments_header">
+          <span class="No_comments_text">No comments yet.</span>
+          <span class="mylink" id="#<%= product._id %>">Leave a comment</span>
+        </div>
+        <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
+          <%= form_tag add_comment_products_path do  %>
+            <div class="field">	      
+              <%= hidden_field_tag :product_id, product._id %>
+              <%= hidden_field_tag :user_id, current_user.uid %>
+            </div>                    
+            <div class="field">
+              <%= text_field_tag :body %>
+            </div>
+            <div class="actions">
+            <%= submit_tag("Submit") %>
+            </div>
+          <% end %>
+        </div>        
+      <% else %>
+        <% product.comments.each do |product_comments| %>
+          <div class="comments_text_box">
+            <span class="comments_user_name"><%= product_comments.user_id %></span>:
+            <%= product_comments.body %>
+          </div>
+        <% end %>
+         <div class="mylink" id="#<%= product._id %>">Leave a comment</div>
+         <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
+          <%= form_tag add_comment_products_path do  %>
+            <div class="field">	      
+              <%= hidden_field_tag :product_id, product._id %>
+              <%= hidden_field_tag :user_id, current_user.uid %>
+            </div>                    
+            <div class="field">
+              <%= text_field_tag :body %>
+            </div>
+            <div class="actions">
+            <%= submit_tag("Submit") %>
+            </div>
+          <% end %>
+        </div>     
+      <% end %>     
+      <br />
+    <% product_count += 1 %>
+  </div>
 <% end %>
-
-<!--    
-<script type="text/javascript">
-  $('#i_want_this').click(function() {    
-    // force cross-site scripting (as of jQuery 1.5)
-    jQuery.support.cors = true;
-    console.log($(this).val());
-    $.get('/tribes/i_want_this',
-    {tribe_id:'<%#= params[:id] %>', product: 'aaa'},
-      function(data) {
-
-      }, 'script'
-    );
-  });
-</script>    
--->
 
 <script>
  $(function(){

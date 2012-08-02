@@ -6,5 +6,5 @@ module TribesHelper
       members_uid.push(each_member.uid)
     end
     return members_uid 
-  end
+  end  
 end
