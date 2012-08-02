@@ -8,7 +8,7 @@
   </td>
   <td class="add_friends_to_tribe">
     <div class="add_friends_box_field">
-      xx members<br />
+      <%= total_tribe_member(@tribe) %> members<br />
       <script>
         $(function() {
           $( "#autocomplete-input" ).autocomplete({
@@ -74,11 +74,11 @@
     <section id="tribe_create">
       <table>
         <td>
-          <%#= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+          <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
         </td>
         <td>          
           <div class="tribe_created_text">Tribe created by:</div>
-          <div class="tribe_created_user_name"> <%#= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
+          <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
           <div class="created_user_ratings">*****</div>
         </td>
       </table>
@@ -150,16 +150,23 @@
           </td>
           <td>
             <div class="products_want_this_box">
-              <div id="wants_box"> <% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %>
-              <%= @ad.size %><br/> Wants this
+              <div class="wants_box"> 
+              <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
+              <%= @ad.size %><br/><span class="size">Wants this</span>
               <%= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
-            </div> 
+                
+              </div> 
             </div>
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
-              <div id="<%= product.id %>a"></div>
+
+              
+               <div id="time_left_to_open"></div>
+               <div id="time"><b>OPEN</b></div>
+               <div id="<%= product.id %>a"></div>
                <div id="time">OPEN</div>
+
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 

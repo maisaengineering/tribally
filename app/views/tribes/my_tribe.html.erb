@@ -1,6 +1,4 @@
 <h1>My Tribes</h1>
-
-
 <% @tribes.each do |tribe| %>
   <br />
   <div class="my_tribe_page">
@@ -27,7 +25,8 @@
             <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>              
                 <%= link_to "Accept the invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']) %>              
             <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>              
-                <%= image_submit_tag("/assets/invite_friends_icon.png", :class =>'invite_friend_icon' ) %>                   
+                <%= image_submit_tag("/assets/invite_friends_icon.png", :class =>'invite_friend_icon' ) %>
+                <%#= render :partial => 'invitations_my_tribe', :locals => {:tribe => tribe} %>
             <% end %>
           <% end %>
         </td>
@@ -35,11 +34,11 @@
           <section id="tribe_create">
             <table>
               <td>
-                <%#= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+                <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
               </td>
               <td>          
                 <div class="tribe_created_text">Tribe created by:</div>
-                <div class="tribe_created_user_name"> <%#= FbGraph::User.new(tribe.created_by).fetch.name %></div>       
+                <div class="tribe_created_user_name"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></div>       
               </td>
             </table>
           </section>

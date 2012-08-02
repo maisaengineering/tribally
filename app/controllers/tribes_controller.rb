@@ -64,7 +64,7 @@ class TribesController < ApplicationController
           each_member.update_attributes(:status => 'accepted')
         end
     end
-    redirect_to tribes_path
+    redirect_to my_tribe_tribes_path
   end
   
   def my_tribe    
@@ -80,7 +80,9 @@ class TribesController < ApplicationController
     end
   end
   
-  
+  def invite_friend
+    raise "Maisa"
+  end
   
   #def i_want_this    
   #  product = Product.where(:tribe_id => params[:tribe_id]).first
