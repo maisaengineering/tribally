@@ -1,60 +1,46 @@
-<section id="tribe_menu">
-  <%= render 'layouts/browse_tribe_menu' %>
-</section>  
-<h1>All tribes</h1>
-
-<table class="data_table" border="0" cellspacing="0" cellpadding="0" style="opacity:1;">
-<thead>
-<tr>
-    <th style="width:170px; border-right:1px solid #000;">Product name</th>
-    <th style="width:170px; border-right:1px solid #000;">Tribe name</th>
-    <th style="width:150px; border-right:1px solid #000;">Category</th>
-    <th style="width:120px; border-right:1px solid #000;">Location</th>
-    <th style="width:120px; border-right:1px solid #000;">Members</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</thead>
-
+<h1>All Tribes</h1>
 <% @tribes.each do |tribe| %>
-<tr>
-    <td>
-      <% tribe.products.each do |each_product| %>
-        <%= each_product['product_name'] %>
-      <% end %>
-    </td>
-    <td><%= tribe.tribe_name %></td>
-    <td><%= tribe.category %></td>
-    <td><%= tribe.location %></td>
-    <td>
-      <% tribe.members.each do |each_member| %>    
-        <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
-        <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
-      <% end %>
-    </td>        
-    <% tribe.members.each do |each_member| %>    
-      <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
+  <br />
+  <div class="my_tribe_page">
+    <table>
+      <tr>
         <td>
-          <%= link_to "Accept the invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']) %>
+         <div class="my_tribe_name"><%= tribe.tribe_name %></div>
+           <div class="my_tribe_f">
+             <div class="addthis_toolbox addthis_default_style" >
+               <a class="addthis_button_facebook_like" fb:like:layout="button_count" ></a>
+               <a class="addthis_button_tweet" ></a>
+             </div>
+           </div>
+           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50180dbc26e20234"></script>
+         </div>
+        </td>
+        <td>
+          <div class="go_to_this_icon">
+            <%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png")), tribe_products_tribes_path(:id => tribe) %>
+          </div>
+        </td>
+        <td>          
+           <%= image_submit_tag("/assets/invite_friends_icon.png", :class =>'invite_friend_icon' ) %>            
+        </td>
+        <td>
+          <section id="tribe_create">
+            <table>
+              <td>
+                <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
+              </td>
+              <td>          
+                <div class="tribe_created_text">Tribe created by:</div>
+                <div class="tribe_created_user_name"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></div>       
+              </td>
+            </table>
+          </section>
         </td>        
-      <% end %>
-    <% end %>
-    <td><%= link_to 'Tribe activities', tribe_products_tribes_path(:id => tribe) %></td>    
-  </tr>
+      </tr>
+    </table>
+  </div>
 <% end %>
-</table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="my_tribe_bottom"> 
+  <p>Can't see what you want? Click to <%= link_to "Create a tribe", new_tribe_path %></p>
+</div>
