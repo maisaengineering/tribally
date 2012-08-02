@@ -80,7 +80,9 @@ class TribesController < ApplicationController
     end
   end
   
-  
+  def invite_friend
+    raise "Maisa"
+  end
   
   #def i_want_this    
   #  product = Product.where(:tribe_id => params[:tribe_id]).first
