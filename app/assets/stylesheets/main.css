@@ -420,7 +420,8 @@ input#user_password_confirmation{
 .products_sub_container{
     background:#fff;
     width:946px;
-    height:400px;
+    min-height:400px;
+    height:auto;
     margin-top: 0px;
     border:1px solid #D1D1D1;
     border-radius: 5px;
@@ -541,7 +542,7 @@ border-top-right-radius: 10px;
     margin-top:15px;
 }
 
-#products_offers_list_box{
+.products_offers_list_box{
     width:926px;
     height:150px;
 }

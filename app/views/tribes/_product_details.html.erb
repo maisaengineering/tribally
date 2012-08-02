@@ -18,16 +18,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr style="text-align:center;">
-          <td><%= product.business_name %></td>
-          <td><%= product.product_name %></td>
-          <td><%= product.price %></td>
-          <td>time</td>
-          <% product.offers.each do |each_offer| %>
-           <td> <%= each_offer['min_no_of_buyer'] %> </td>
-          <% end %>
+        <tr style="text-align:center;" class="products_offers_list_box">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+           <td> </td>
         </tr>
       </tbody>
-    </table>             
-  </div>
+    </table>
+    <div id="offers_portal_box" class="products_offers_list_box">
+      hi
+      
+    </div>
+    <script>
+        $(".products_offers_list_box:even").css("background-color","#D0D0D0"); 
+        $(".products_offers_list_box:odd").css("background-color","#E8E8E8"); 
+     </script>
+  </div><br />
 </div>        
