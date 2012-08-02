@@ -3,20 +3,22 @@
 </section>  
 <h1>All tribes</h1>
 
-<table>
-  <tr>
-    <th>Product name</th>
-    <th>Tribe name</th>
-    <th>Category</th>
-    <th>Location</th>
-    <th>Members</th>
+<table class="data_table" border="0" cellspacing="0" cellpadding="0" style="opacity:1;">
+<thead>
+<tr>
+    <th style="width:170px; border-right:1px solid #000;">Product name</th>
+    <th style="width:170px; border-right:1px solid #000;">Tribe name</th>
+    <th style="width:150px; border-right:1px solid #000;">Category</th>
+    <th style="width:120px; border-right:1px solid #000;">Location</th>
+    <th style="width:120px; border-right:1px solid #000;">Members</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+</thead>
 
 <% @tribes.each do |tribe| %>
-  <tr>
+<tr>
     <td>
       <% tribe.products.each do |each_product| %>
         <%= each_product['product_name'] %>
@@ -42,3 +44,17 @@
   </tr>
 <% end %>
 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
