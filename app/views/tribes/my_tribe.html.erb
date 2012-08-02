@@ -1,10 +1,10 @@
-<h1>My Tribes</h1>
+<p class="my_tribe">My Tribes</p>
 <% @tribes.each do |tribe| %>
   <br />
   <div class="my_tribe_page">
     <table>
       <tr>
-        <td>
+        <td class="my_tribe_name_dimension">
          <div class="my_tribe_name"><%= tribe.tribe_name %></div>
            <div class="my_tribe_f">
              <div class="addthis_toolbox addthis_default_style" >
@@ -48,6 +48,6 @@
   </div>
 <% end %>
 
-<div class="my_tribe_bottom"> 
-  <p>Can't see what you want? Click to <%= link_to "Create a tribe", new_tribe_path %></p>
+<div class="my_tribe_last"> 
+  <p class="my_tribe_last_line">Can't see what you want? Click to <%= link_to "Create a tribe", new_tribe_path %></p>
 </div>
