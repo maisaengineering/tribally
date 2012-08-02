@@ -6,5 +6,9 @@ module TribesHelper
       members_uid.push(each_member.uid)
     end
     return members_uid 
-  end  
+  end 
+  
+  def total_tribe_member(tribe)
+    return tribe.members.count.size
+  end
 end
