@@ -2,9 +2,10 @@ Tribally::Application.routes.draw do
   
 resources :products do
 	collection do 
-		post "add_comment"	
+		post "add_comment"
+    post "create_offer"
 	end
-  end
+end
 
 resources :businesses
 

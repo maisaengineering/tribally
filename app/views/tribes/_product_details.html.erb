@@ -23,13 +23,25 @@
       </thead>
       <tbody>
         <tr style="text-align:center;">
-          <td><%= product.business_name %></td>
-          <td><%= product.product_name %></td>
-          <td><%= product.price %></td>
-          <td>time</td>
-          <% product.offers.each do |each_offer| %>
-           <td> <%= each_offer['min_no_of_buyer'] %> </td>
-          <% end %>
+          <td>
+            <%= form_tag create_offer_products_path, :methods => 'post' do %>
+              <%= hidden_field_tag :product_id, product.id %>
+              <%= hidden_field_tag :tribe_id, params[:id] %>
+              Price discount
+              <%= text_field_tag :price_discount %>
+              Min no of buyer
+              <%= text_field_tag :min_no_of_buyer %>              
+              Offer name
+              <%= text_field_tag :offer_name %>
+              Offer description
+              <%= text_field_tag :offer_description %>
+              Offer price
+              <%= text_field_tag :offer_price %>
+              Retails price
+              <%= text_field_tag :retails_price %>
+              <%= submit_tag("submit") %>
+            <% end %>
+          </td>
         </tr>
       </tbody>
     </table>             
