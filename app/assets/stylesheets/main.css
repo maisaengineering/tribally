@@ -812,7 +812,7 @@ textarea#offer_description{
 }
 .add_friends_search textarea, input[type="text"]{
     background-color: white;
-    margin-top: 0px;
+    margin-top: 12px;
     border: 1px solid #CCC;
     border-radius: px;
 }

@@ -114,8 +114,8 @@
       </div>
     </td>                  
     <%= form_tag("/products", :method => "post") do %>
-      <td>
-        <%= image_submit_tag("/assets/request_product_icon.png", :class => 'request_product_icon') %>        
+      <td>        
+        <%= submit_tag 'Request new product', :class =>'global_button' %>
       </td>
       <td>      
         <%= hidden_field_tag :tribe, @tribe._id %>
@@ -176,7 +176,8 @@
               <div class="wants_box"> 
               <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
               <%= @ad.size %><br/><span class="size">Wants this</span>
-              <%= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
+              <%#= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
+              <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>
                 
               </div> 
             </div>
