@@ -81,9 +81,9 @@
     </div>
     
     
-    <%= image_submit_tag("/assets/invite_friends.png", :class =>'invite_friends' ) %>
-    
-    <%= image_submit_tag("/assets/leave_this_tribe_icon.png", :class =>'leave_this_tribe_icon' ) %>
+    <%= link_to 'Invite friends', "#", :class =>'orange_color_button_a' %>
+        
+    <%= link_to 'Leave this tribe', "#", :class =>'orange_color_button_a' %>
      
     
   </td>
@@ -175,10 +175,8 @@
             <div class="products_want_this_box">
               <div class="wants_box"> 
               <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
-              <%= @ad.size %><br/><span class="size">Wants this</span>
-              <%#= link_to image_submit_tag("/assets/iwantthis.png", :class => 'want_this_box'), tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name) %>
-              <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>
-                
+              <%= @ad.size %><br/><span class="size">Wants this</span>              
+              <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>                
               </div> 
             </div>
           </td>
