@@ -79,7 +79,7 @@
                         <%= text_field_tag :offer_name %>
                         <span class="offers_name_size">Product name</span>
                     </div>
-                    <div class="offer_description_text">
+                    <div class="offer_description_text_align">
                         <%= text_area_tag :offer_description %>
                       <span class="offer_description_name_size">Product description</span>
                     </div>
@@ -130,7 +130,7 @@
 <% else %>
   <% product.comments.each do |product_comments| %>
     <div class="comments_text_box">
-      <span class="comments_user_name"><%= FbGraph::User.new(product_comments.user_id).fetch.name %></span>:
+      <span class="comments_user_name"><%#= FbGraph::User.new(product_comments.user_id).fetch.name %></span>:
       <%= product_comments.body %>
     </div>
   <% end %>

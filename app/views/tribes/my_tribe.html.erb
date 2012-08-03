@@ -7,18 +7,16 @@
         <td class="my_tribe_name_dimension">
          <div class="my_tribe_name"><%= tribe.tribe_name %></div>
            <div class="my_tribe_f">
-             <div class="addthis_toolbox addthis_default_style" >
-               <a class="addthis_button_facebook_like" fb:like:layout="button_count" ></a>
-               <a class="addthis_button_tweet" ></a>
-             </div>
-           </div>
-           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50180dbc26e20234"></script>
-         </div>
+            
+            <div class="addthis_toolbox addthis_default_style ">
+            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            </div>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-501b5fca68dbce58"></script>
         </td>
+           
         <td>
-          <div class="go_to_this_icon">
-            <%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png")), tribe_products_tribes_path(:id => tribe) %>
-          </div>
+            <%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png", :class =>'go_to_this_tribe_icon' )), tribe_products_tribes_path(:id => tribe) %>
         </td>
         <td>
           <% tribe.members.each do |each_member| %>
@@ -37,7 +35,7 @@
                 <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
               </td>
               <td>          
-                <div class="tribe_created_text">Tribe created by:</div>
+                <div class="tribe_created_text">Tribe created by</div>
                 <div class="tribe_created_user_name"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></div>       
               </td>
             </table>
@@ -48,6 +46,8 @@
   </div>
 <% end %>
 
+
 <div class="my_tribe_last"> 
   <p class="my_tribe_last_line">Can't see what you want? Click to <%= link_to "Create a tribe", new_tribe_path %></p>
 </div>
+
