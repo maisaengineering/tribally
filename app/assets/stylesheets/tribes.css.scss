@@ -153,17 +153,16 @@ margin-top:10px;
     border:1px solid #737373;
     border-radius:5px;
 }
-.go_to_this_tribe_icon{
+#go_to_this_tribe{
     margin-left:0px;
     margin-top:60px;
-    width:140px;
-    height:32px;
+    width:155px;
+    height: 22px;
 }
-.invite_friend_icon{
+#invite_friend{
     margin-left:5px;
     margin-top:60px;
-    width:140px;
-    height:30px;
+    
 }
 
 .my_tribe_name{
@@ -190,9 +189,7 @@ margin-top:10px;
 .my_tribe_name_dimension{
     width:450px;
 }
-.my_tribe_name_dimension1{
-    width:500px;
-}
+
 
 /* start of go to tribe page dimensions */
 #fb_dimension{
@@ -229,7 +226,10 @@ background: #F4F4F4;
 }
 
 .show_hide_box{
-width:20px;
+  width:20px;
+}
+.tribe_dimension{
+    height: 100px;
 }
 
 /* end of the code added */

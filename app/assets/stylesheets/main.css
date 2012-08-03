@@ -812,7 +812,7 @@ textarea#offer_description{
 }
 .add_friends_search textarea, input[type="text"]{
     background-color: white;
-    margin-top: 0px;
+    margin-top: 12px;
     border: 1px solid #CCC;
     border-radius: px;
 }
@@ -832,13 +832,14 @@ textarea#offer_description{
 .tribe_created_text{
     font-size:16px;
     margin-left:10px;
-    margin-top: 8px;
+    margin-bottom:6px; 
 }
 .tribe_created_user_name{
     width:130px;
     font-size:16px;
     color: #019BE1;
     margin-left:10px;
+     margin-bottom:20px;
 }
 .created_user_ratings{
     
@@ -919,3 +920,4 @@ textarea#offer_description{
     color: #019BE1;
     margin-left:10px;
 }
+
