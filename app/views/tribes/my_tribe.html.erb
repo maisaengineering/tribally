@@ -16,7 +16,7 @@
         </td>
            
         <td>
-            <%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png", :class =>'go_to_this_tribe_icon' )), tribe_products_tribes_path(:id => tribe) %>
+            <%=  link_to 'Go to this tribe', :class =>'global_button' %>
         </td>
         <td>
           <% tribe.members.each do |each_member| %>
