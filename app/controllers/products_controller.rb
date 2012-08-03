@@ -66,7 +66,7 @@ class ProductsController < ApplicationController
   
   def create_offer
     product = Product.where(:_id => params[:product_id]).first	
-    product.offers.push([Offer.new(:price_discount => params[:price_discount], :min_no_of_buyer => params[:min_no_of_buyer], \
+    product.offers.push([Offer.new(:retails_price => params[:retails_price],:min_no_of_buyer => params[:min_no_of_buyer], \
     :offer_name => params[:offer_name], :offer_description => params[:offer_description], :offer_price => params[:offer_price])])    
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end

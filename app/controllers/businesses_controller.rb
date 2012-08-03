@@ -46,9 +46,6 @@ class BusinessesController < ApplicationController
   def destroy
     @business = Business.find(params[:id])
     @business.destroy
-
-    
-       redirect_to businesses_url 
-     
+     redirect_to businesses_url 
   end
 end
