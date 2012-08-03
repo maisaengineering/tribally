@@ -1,8 +1,8 @@
 <table>
-  <td class="my_tribe_name_dimension">
+  <td class="my_tribe_name_dimension1">
     <div class="tribe_name_box"><%= @tribe.tribe_name %>
     
-     <div class="addthis_toolbox addthis_default_style ">
+     <div class="addthis_toolbox addthis_default_style"  id="fb_dimension">
         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
         <a class="addthis_button_tweet" id ="t_dimension"></a>
         
@@ -14,7 +14,7 @@
       
   
   <td class="add_friends_to_tribe">
-    <div class="add_friends_box_field">
+     <div>
       <%= total_tribe_member(@tribe) %> members<br />
       <!--
       <script>
@@ -77,9 +77,9 @@
       </ul>
       <div id="friendslist"></div> 
       -->
-      <input type="text" />
+      <input type="text" class="input_fb_user_name" placeholder="+Add Friends to group"/>
     </div>
-    <br />
+    
     
     <%= image_submit_tag("/assets/invite_friends.png", :class =>'invite_friends' ) %>
     
@@ -94,7 +94,7 @@
           <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
         </td>
         <td>          
-          <div class="tribe_created_text">Tribe created by:</div>
+          <div class="tribe_created_text">Tribe created by</div>
           <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
           <div class="created_user_ratings">*****</div>
         </td>
@@ -133,8 +133,7 @@
             
             <% if product_count == 0 %>
               <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
-              <%= image_submit_tag("/assets/images.jpg", :class =>'arrow_icon' ) %>
-            <% else %>
+              <% else %>
               <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />
             <% end %>            
             <script>
