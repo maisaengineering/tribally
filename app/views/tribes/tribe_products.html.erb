@@ -132,11 +132,15 @@
           <td>  
             
             <% if product_count == 0 %>
-            <div class="show_hide_box">
-              <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
-              <% else %>
-              <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />
-            <% end %>            
+              <div class="show_hide_box">
+                <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
+              </div>
+            <% else %>
+              <div class="show_hide_box">
+                <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />              
+              </div>
+            <% end %> 
+              
             <script>
               $('document').ready(function(){
                 $("#<%= product.product_name %>").click(function(){
@@ -151,8 +155,7 @@
                     }
                 });    
               });
-            </script>
-            </div>
+            </script>            
           </td>
           <td>
             <div class="product_offers_small_box">
