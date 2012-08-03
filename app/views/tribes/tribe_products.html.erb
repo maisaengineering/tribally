@@ -113,10 +113,11 @@
     <div class="product_offers_time_box">
       <table>
           <td>  
+            
             <% if product_count == 0 %>
-              <input type="button" value = 'Hide' id = "<%= product.product_name %>" />
+              <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
             <% else %>
-              <input type="button" value = 'Show' id = "<%= product.product_name %>" />
+              <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />
             <% end %>            
             <script>
               $('document').ready(function(){
@@ -133,6 +134,7 @@
                 });    
               });
             </script>
+           
           </td>
           <td>
             <div class="product_offers_small_box">
@@ -160,12 +162,10 @@
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
-
-              
-               <div id="time_left_to_open"></div>
-               <div id="time"><b>OPEN</b></div>
+              <div id="time_left_to_open">
                <div id="<%= product.id %>a"></div>
-               <div id="time">OPEN</div>
+               </div>
+               <div id="time"><b>OPEN</b></div>
 
                <script>
                  var newYear = new Date(); 

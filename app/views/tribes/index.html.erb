@@ -1,44 +1,3 @@
-
-<section id="tribe_menu">
-  <%= render 'layouts/browse_tribe_menu' %>
-</section>  
-<h1>All tribes</h1>
-
-<table class="data_table" border="0" cellspacing="0" cellpadding="0" style="opacity:1;">
-<thead>
-<tr>
-    <th style="width:170px; border-right:1px solid #000;">Product name</th>
-    <th style="width:170px; border-right:1px solid #000;">Tribe name</th>
-    <th style="width:150px; border-right:1px solid #000;">Category</th>
-    <th style="width:120px; border-right:1px solid #000;">Location</th>
-    <th style="width:120px; border-right:1px solid #000;">Members</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
-
-<% @tribes.each do |tribe| %><tr>
-    <td>
-      <div class="tribe_page">
-      <% tribe.products.each do |each_product| %>
-        <%= each_product['product_name'] %>
-      <% end %>
-      </div><br/>
-    </td>
-    <td><%= tribe.tribe_name %></td>
-    <td><%= tribe.category %></td>
-    <td><%= tribe.location %></td>
-    <td>
-      <% tribe.members.each do |each_member| %>    
-        <%#= FbGraph::User.new(each_member['uid']).fetch.name %>
-        <%#= image_tag(FbGraph::User.new(each_member['uid']).fetch.picture) %>
-      <% end %>
-    </td>        
-    <% tribe.members.each do |each_member| %>    
-      <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>
-
 <h1>All Tribes</h1>
 <% @tribes.each do |tribe| %>
   <br />
@@ -56,7 +15,6 @@
            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-50180dbc26e20234"></script>
          </div>
         </td>
-
         <td>
           <div class="go_to_this_icon">
             <%=  link_to (image_tag("/assets/go_to_this_tribe_icon.png")), tribe_products_tribes_path(:id => tribe) %>
@@ -78,34 +36,10 @@
             </table>
           </section>
         </td>        
-<<<<<<< HEAD
-      <% end %>
-    <% end %>
-    <td><%= link_to 'Tribe activities', tribe_products_tribes_path(:id => tribe) %></td>    
-  </tr>
-  </div>
-<% end %>
-</tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
       </tr>
     </table>
   </div>
 <% end %>
->>>>>>> f3056a1a9f45443ea626e3c3accf18ca3700eea1
 
 <div class="my_tribe_bottom"> 
   <p>Can't see what you want? Click to <%= link_to "Create a tribe", new_tribe_path %></p>
