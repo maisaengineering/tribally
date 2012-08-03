@@ -62,7 +62,7 @@ label{
 
 .i_want_this {
     height: 40px;
-    margin-left: 130px;
+    margin-left: 160px;
     margin-top: -30px;
     width: 140px;
 }
@@ -156,13 +156,13 @@ margin-top:10px;
 #go_to_this_tribe{
     margin-left:0px;
     margin-top:60px;
-    width:145px;
-    height: 20px;
+}
+.accept_invitation_button{
+    margin-top:60px;
 }
 #invite_friend{
     margin-left:5px;
     margin-top:60px;
-    
 }
 
 .my_tribe_name{
@@ -187,9 +187,11 @@ margin-top:10px;
     margin-top:20px;
 }
 .my_tribe_name_dimension{
+    width:400px;
+}
+.my_tribe_name_dimension2{
     width:450px;
 }
-
 
 /* start of go to tribe page dimensions */
 #fb_dimension{

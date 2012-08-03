@@ -25,7 +25,7 @@
           <% tribe.members.each do |each_member| %>         
             <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>                              
                 <% not_a_member = 1 %>
-                <%= link_to "Accept invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']), :class => 'global_button' %>
+                <%= link_to "Accept invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']), :class => 'global_button accept_invitation_button' %>
             <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>                              
                 <% not_a_member = 1 %>
                 <%= submit_tag 'Invite friends', :class => 'global_button', :id =>'invite_friend' %>                                 
