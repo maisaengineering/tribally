@@ -133,25 +133,25 @@
             
             <% if product_count == 0 %>
               <div class="show_hide_box">
-                <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
+                <input type="button" value = 'Hide' class= "button" id = "<%= product.id %>aaa" />
               </div>
             <% else %>
               <div class="show_hide_box">
-                <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />              
+                <input type="button" value = 'Show' class= "button" id = "<%= product.id %>aaa" />              
               </div>
             <% end %> 
               
             <script>
               $('document').ready(function(){
-                $("#<%= product.product_name %>").click(function(){
-                  var attr_value = $('#<%= product.product_name %>').attr('value');      
-                  $("#<%= product.product_name %>a").toggle('fast');
+                $("#<%= product.id %>aaa").click(function(){
+                  var attr_value = $('#<%= product.id %>aaa').attr('value');      
+                  $("#<%= product.id %>aaaa").toggle('fast');
                   if(attr_value == 'Hide')
                     {          
-                      $('#<%= product.product_name %>').attr('value','Show');
+                      $('#<%= product.id %>aaa').attr('value','Show');
                     }
                     else if(attr_value == 'Show'){          
-                      $('#<%= product.product_name %>').attr('value','Hide');
+                      $('#<%= product.id %>aaa').attr('value','Hide');
                     }
                 });    
               });
@@ -200,11 +200,11 @@
         </table>
     </div>
     <% if product_count == 0 %>
-      <div  id="<%= product.product_name %>a">
+      <div  id="<%= product.id %>aaaa">
         <%= render 'product_details', :product => product %>
       </div>
     <% else %>
-      <div  id="<%= product.product_name %>a" style="display: none">
+      <div  id="<%= product.id %>aaaa" style="display: none">
         <%= render 'product_details', :product => product %>
       </div>
     <% end %>

@@ -21,13 +21,19 @@
 
         </td>
         <td>
-          <% tribe.members.each do |each_member| %>
+          <% not_a_member = 0 %>
+          <% tribe.members.each do |each_member| %>         
             <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>                              
+                <% not_a_member = 1 %>
                 <%= link_to "Accept invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']), :class => 'global_button accept_invitation_button' %>
             <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>                              
-                <%= submit_tag 'Invite friends', :class => 'global_button', :id =>'invite_friend' %>                
+                <% not_a_member = 1 %>
+                <%= submit_tag 'Invite friends', :class => 'global_button', :id =>'invite_friend' %>                                 
             <% end %>
           <% end %>
+          <% if not_a_member == 0 %>
+            <div class="accept_invitation_button">Sorry,Not a member</div>
+          <% end %>      
         </td>
         <td>
           <section id="tribe_create">
