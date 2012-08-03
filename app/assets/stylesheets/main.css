@@ -815,10 +815,11 @@ textarea#offer_description{
 }
 .tribe_name_box{
     font-size: 25px;
-    font-weight: normal;
+    font-weight: bold;
     margin-top: 10px;
     width: 300px;
     height: 80px;
+    font-family: Georgia;
 }
 
 .amount_saved_by_members{
@@ -831,9 +832,9 @@ textarea#offer_description{
 }
 
 .add_friends_to_tribe{
-    width:230px;
+    width:260px;
     height:100px;
-    padding-left: 5px;
+    padding-left: 0px;
     
 }
 .add_friends_box{
@@ -937,7 +938,7 @@ textarea#offer_description{
     width:70px;
     height:70px;
     margin-left:5px;
-    margin-top: 15px;
+    margin-top: 10px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
