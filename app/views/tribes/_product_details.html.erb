@@ -54,7 +54,7 @@
                     needed to by<br />
                     12/<%=  product_offers.min_no_of_buyer %> bought
                 </div>
-                <div><%= link_to "Accept this offer", '#', :class => 'accept_this_offer'  %></div>
+                <div><%= link_to "Accept this offer", '#', :class => 'orange_color_button'  %></div>
               </td>  
           </tr>
         <% end %>
@@ -67,35 +67,44 @@
               <%= hidden_field_tag :tribe_id, params[:id] %>
                 <table>
                   <td class="bussiness_logo_box">
-                      <%= text_field_tag :bussiness_logo %><br />
-                      <%=  link_to "Change logo", '#', :class =>'change_bussiness_logo'%>
+                      <div><%= text_field_tag :bussiness_logo %></div>
+                      <%=  link_to "Change logo", '#', :class =>'global_button'%>
                   </td>
                   <td class="offers_logo_box">
-                      <%= text_field_tag :offer_logo %><br />
-                      <%=  link_to "Upload", '#', :class =>'offer_logo_upload'%>
+                      <div><%= text_field_tag :offer_logo %></div>
+                      <%=  link_to "Upload", '#', :class =>'global_button'%>
                   </td>
                   <td>
                     <div class="offer_name_box">
                         <%= text_field_tag :offer_name %>
                         <span class="offers_name_size">Product name</span>
-                    </div>
+                    </div><br />
                     <div class="offer_description_text_align">
                         <%= text_area_tag :offer_description %>
                       <span class="offer_description_name_size">Product description</span>
                     </div>
                   </td>
                   <td>
-                      Offer price
-                      <%= text_field_tag :offer_price %>
-
-                    Retails price
-                    <%= text_field_tag :retails_price %>
+                    <div class="offer_price_text_box">
+                        <%= text_field_tag :offer_price %><br />
+                        <span class="offer_price_text_size">Offer price</span>
+                    </div>
+                    <div class="offer_retail_price_text_box">
+                        <%= text_field_tag :retails_price %><br />
+                        <span class="offer_retails_price_text_size">
+                          Retail price<br />
+                          (Original price)
+                        </span>
+                    </div>
                   </td>
                   <td>
-                     Min no of buyer
-                     <%= text_field_tag :min_no_of_buyer %>                    
-
-                      <%= submit_tag("submit") %>
+                    <div class="minimum_order_text_box">
+                       <%= text_field_tag :min_no_of_buyer %><br /> 
+                       <span class="min_order_text_size">Minimum order quantity</span>
+                    </div>
+                    <div class="offers_submit_button">
+                        <%= submit_tag "Submit offer", :class =>'global_button' %>
+                     </div>
                   </td>
                 </table>
           <% end %>
