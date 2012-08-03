@@ -132,6 +132,7 @@
           <td>  
             
             <% if product_count == 0 %>
+            <div class="show_hide_box">
               <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
               <% else %>
               <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />
@@ -151,7 +152,7 @@
                 });    
               });
             </script>
-           
+            </div>
           </td>
           <td>
             <div class="product_offers_small_box">
