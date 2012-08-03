@@ -1,14 +1,22 @@
-<table class="tribe_header_box">
-  <td id="tribe_name_menu">
-    <div class="tribe_name_box"><%= @tribe.tribe_name %></div>
+<table>
+  <td class="my_tribe_name_dimension">
+    <div class="tribe_name_box"><%= @tribe.tribe_name %>
+    
+     <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet" id ="t_dimension"></a>
+        
+     </div>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-501a736c01ef1239"></script>
+      </div>
   </td>
-  <td class="amount_saved_by_members">
-    <div id="saved_amount">$xxxx.xx</div><br />
-    saved by members
-  </td>
+  
+      
+  
   <td class="add_friends_to_tribe">
     <div class="add_friends_box_field">
       <%= total_tribe_member(@tribe) %> members<br />
+      <!--
       <script>
         $(function() {
           $( "#autocomplete-input" ).autocomplete({
@@ -67,8 +75,17 @@
          <input id="autocomplete-input" />
         </li>
       </ul>
-      <!--<div id="friendslist"></div> -->
+      <div id="friendslist"></div> 
+      -->
+      <input type="text" />
     </div>
+    <br />
+    
+    <%= image_submit_tag("/assets/invite_friends.png", :class =>'invite_friends' ) %>
+    
+    <%= image_submit_tag("/assets/leave_this_tribe_icon.png", :class =>'leave_this_tribe_icon' ) %>
+     
+    
   </td>
   <td class="tribe_created_by_users">
     <section id="tribe_create">
@@ -163,10 +180,12 @@
           <td>            
             <div class="products_contdown_time_box"> 
               <div id="time_left_to_open">
-               <div id="<%= product.id %>a"></div>
-               </div>
+              <div id="<%= product.id %>a"></div>
+            </div>
                <div id="time"><b>OPEN</b></div>
-
+               <div id="time_left_to_open"></div>               
+               <div id="<%= product.id %>a"></div>  
+               <div id="time"><b>OPEN</b></div>
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
@@ -186,50 +205,6 @@
       </div>
     <% end %>
     
-    <div class="comments_header">Comments</div>
-      <% if product.comments.empty? %>
-        <div class="No_comments_header">
-          <span class="No_comments_text">No comments yet.</span>
-          <span class="mylink" id="#<%= product._id %>">Leave a comment</span>
-        </div>
-        <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-          <%= form_tag add_comment_products_path do  %>
-            <div class="field">	      
-              <%= hidden_field_tag :product_id, product._id %>
-              <%= hidden_field_tag :user_id, current_user.uid %>
-            </div>                    
-            <div class="field">
-              <%= text_field_tag :body %>
-            </div>
-            <div class="actions">
-            <%= submit_tag("Submit") %>
-            </div>
-          <% end %>
-        </div>        
-      <% else %>
-        <% product.comments.each do |product_comments| %>
-          <div class="comments_text_box">
-            <span class="comments_user_name"><%= product_comments.user_id %></span>:
-            <%= product_comments.body %>
-          </div>
-        <% end %>
-         <div class="mylink" id="#<%= product._id %>">Leave a comment</div>
-         <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-          <%= form_tag add_comment_products_path do  %>
-            <div class="field">	      
-              <%= hidden_field_tag :product_id, product._id %>
-              <%= hidden_field_tag :user_id, current_user.uid %>
-            </div>                    
-            <div class="field">
-              <%= text_field_tag :body %>
-            </div>
-            <div class="actions">
-            <%= submit_tag("Submit") %>
-            </div>
-          <% end %>
-        </div>     
-      <% end %>     
-      <br />
     <% product_count += 1 %>
   </div>
 <% end %>

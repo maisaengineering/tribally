@@ -557,6 +557,7 @@ border-top-right-radius: 10px;
     display:block;
 }
 /* Start tribe page */
+/* removed from code */
 .tribe_header_box{
     height:100px;
 }
@@ -565,11 +566,16 @@ border-top-right-radius: 10px;
     font-size: 24px;
     font-weight: normal;
 }
+/* up to here */
+/* edited by naveen */
 .tribe_name_box{
-    margin-top:-20px;
-    width:300px;
-    height:80px;
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 20px;
+    width: 300px;
+    height: 80px;
 }
+
 .amount_saved_by_members{
     width:136px;
     font-size: 14px;
@@ -578,10 +584,12 @@ border-top-right-radius: 10px;
     float:right;
     font-size:22px;
 }
+/* edit code here by naveen */
 .add_friends_to_tribe{
     width:200px;
-    height:50px;
-    padding-left:25px;
+    height:100px;
+    padding-left: 5px;
+    
 }
 .add_friends_box{
     width:200px;
@@ -596,10 +604,11 @@ border-top-right-radius: 10px;
   
 
 }
+<<<<<<< HEAD
 .created_user_image{
     width:70px;
     height:70px;
-    margin-left:20px;
+    margin-left:10px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
@@ -608,11 +617,14 @@ border-top-right-radius: 10px;
     margin-left:10px;
 }
 .tribe_created_user_name{
-    width:160px;
+    width:130px;
     font-size:16px;
     color: #019BE1;
     margin-left:10px;
 }
+=======
+
+>>>>>>> 4d5d05f8967e2349f0a72440d9dd30f5a69d498f
 .created_user_ratings{
     font-size:14px;
     margin-left:10px;
@@ -673,6 +685,8 @@ border-top-right-radius: 10px;
     margin-top:10px;
 }
 
+<<<<<<< HEAD
+=======
 
 .my_tribe_page{
 
@@ -712,3 +726,24 @@ margin-top:20px;
 font-size:25px;
 magin-top:20px;
 }
+
+ .created_user_image{
+    width:70px;
+    height:70px;
+    margin-left:5px;
+    margin-top: 15px;
+    border: 3px solid #F4F4F4;
+    border-radius: 7px;
+}
+.tribe_created_text{
+    font-size:16px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.tribe_created_user_name{
+    width:130px;
+    font-size:16px;
+    color: #019BE1;
+    margin-left:10px;
+}
+>>>>>>> 4d5d05f8967e2349f0a72440d9dd30f5a69d498f
