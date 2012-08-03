@@ -15,37 +15,96 @@
       <thead>
         <tr>
           <th style="width:220px; border-right:1px solid #000;">company</th>
-          <th style="width:250px; border-right:1px solid #000;">product</th>
-          <th style="width:100px; border-right:1px solid #000;">price</th>
-          <th style="width:100px; border-right:1px solid #000;">time of bid</th>
+          <th style="width:220px; border-right:1px solid #000;">product</th>
+          <th style="width:130px; border-right:1px solid #000;">price</th>
+          <th style="width:100px; border-right:1px solid #000;">saving</th>
           <th style="width:200px;">min #</th>
         </tr>
       </thead>
       <tbody>
-        <tr style="text-align:center;">
-          <td>
-            <%= form_tag create_offer_products_path, :methods => 'post' do %>
-              <%= hidden_field_tag :product_id, product.id %>
-              <%= hidden_field_tag :tribe_id, params[:id] %>
-              Price discount
-              <%= text_field_tag :price_discount %>
-              Min no of buyer
-              <%= text_field_tag :min_no_of_buyer %>              
-              Offer name
-              <%= text_field_tag :offer_name %>
-              Offer description
-              <%= text_field_tag :offer_description %>
-              Offer price
-              <%= text_field_tag :offer_price %>
-              Retails price
-              <%= text_field_tag :retails_price %>
-              <%= submit_tag("submit") %>
-            <% end %>
-          </td>
-        </tr>
+        <% product.offers.each do |product_offers| %>
+          <tr style="text-align:center;"  class="products_offers_list_box">
+              <td>
+                <div class="bussiness_logo_text">
+                  Bussiness #X<br /><br />
+                  (logo)
+                </div>
+              </td>
+              <td>
+                  <div>
+                      <span class="offer_logo_box">
+                        logo<br />
+                        X
+                      </span>
+                      <div>
+                          <div class="offer_name_text"><%=  product_offers.offer_name %><div>
+                          <div class="offer_description_text"><%=  product_offers.offer_description %></div>
+                      </div>
+                  </div>
+              </td>
+              <td>
+                <div class="retails_price_text">$<%=  product_offers.retails_price %></div> 
+              </td>
+              <td>
+                <div class="offer_price_text">$<%=  product_offers.offer_price %></div>
+              </td>
+              <td>
+                <div  class="number_of_buyers_text"><%=  product_offers.min_no_of_buyer %></div>
+                <div class="members_needed_to_buy">
+                    needed to by<br />
+                    12/<%=  product_offers.min_no_of_buyer %> bought
+                </div>
+                <div><%= link_to "Accept this offer", '#', :class => 'accept_this_offer'  %></div>
+              </td>  
+          </tr>
+        <% end %>
       </tbody>
     </table>             
-  </div>
+    <div id="offers_portal_box" class="products_offers_list_box">
+      <div class="make_an_offer_text">Make an offer for this product</div>
+         <%= form_tag create_offer_products_path, :methods => 'post' do %>
+              <%= hidden_field_tag :product_id, product.id %>
+              <%= hidden_field_tag :tribe_id, params[:id] %>
+                <table>
+                  <td class="bussiness_logo_box">
+                      <%= text_field_tag :bussiness_logo %><br />
+                      <%=  link_to "Change logo", '#', :class =>'change_bussiness_logo'%>
+                  </td>
+                  <td class="offers_logo_box">
+                      <%= text_field_tag :offer_logo %><br />
+                      <%=  link_to "Upload", '#', :class =>'offer_logo_upload'%>
+                  </td>
+                  <td>
+                    <div class="offer_name_box">
+                        <%= text_field_tag :offer_name %>
+                        <span class="offers_name_size">Product name</span>
+                    </div>
+                    <div class="offer_description_text">
+                        <%= text_area_tag :offer_description %>
+                      <span class="offer_description_name_size">Product description</span>
+                    </div>
+                  </td>
+                  <td>
+                      Offer price
+                      <%= text_field_tag :offer_price %>
+
+                    Retails price
+                    <%= text_field_tag :retails_price %>
+                  </td>
+                  <td>
+                     Min no of buyer
+                     <%= text_field_tag :min_no_of_buyer %>                    
+
+                      <%= submit_tag("submit") %>
+                  </td>
+                </table>
+          <% end %>
+     </div>
+     <script>
+          $(".products_offers_list_box:even").css("background-color","#D0D0D0"); 
+          $(".products_offers_list_box:odd").css("background-color","#E8E8E8"); 
+      </script>
+    </div><br />
 </div> 
 
 <div class="comments_header">Comments</div>
