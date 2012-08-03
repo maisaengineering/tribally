@@ -133,6 +133,7 @@
             
             <% if product_count == 0 %>
               <input type="button" value = 'Hide' class= "button" id = "<%= product.product_name %>" />
+              <%= image_submit_tag("/assets/images.jpg", :class =>'arrow_icon' ) %>
             <% else %>
               <input type="button" value = 'Show' class= "button" id = "<%= product.product_name %>" />
             <% end %>            
