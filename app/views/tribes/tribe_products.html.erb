@@ -162,7 +162,7 @@
               <table style="margin-top:7px;">
                   <td style="width:200px;">
                     <span class="product_offers_box_text">Product</span><br/>
-                    <span class="product_offers_box_text2"><%= product.product_name %></span>
+                    <span class="product_offers_box_text2"><%= truncate(product.product_name, length: 20) %></span>
                   </td>
                   <td style="width:80px; text-align:center;">
                     <span class="product_offers_box_text">Offers</span><br />

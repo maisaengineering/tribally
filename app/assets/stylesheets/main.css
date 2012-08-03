@@ -533,13 +533,14 @@ background-color: #019BE1;
 border-top-right-radius: 10px;
 }
 
-.products_offers_received_text{
-    width:700px;
-    height:30px;
-    font-size:24px;
-    margin-left:10px;
-    margin-top:15px;
+.products_offers_received_text {
+    font-size: 24px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 98%;
 }
+
 .products_offers_list_box{
     width:926px;
     height:200px;
