@@ -565,7 +565,7 @@ border-top-right-radius: 10px;
     width:100px;
     height:50px;
     margin-left:30px;
-    margin-top: -80px;
+    margin-top: -50px;
 }
 .offer_description_text{
     float:left;
@@ -596,15 +596,17 @@ border-top-right-radius: 10px;
 }
 .bussiness_logo_box{
     padding-left:10px;
-    padding-top:15px;
+    padding-top:0px;
+    text-align: center;
 }
 .bussiness_logo_box input{
-    width: 160px;
+    width: 150px;
     height: 75px;
 }
 .offers_logo_box{
     padding-left:10px;
-    padding-top:15px;
+    padding-top:0px;
+    text-align: center;
 }
 .offers_logo_box input{
     width: 110px;
@@ -612,7 +614,7 @@ border-top-right-radius: 10px;
 }
 .offer_name_box{
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:-20px;
 }
 .offer_name_box input{
     width:280px;
@@ -669,7 +671,7 @@ textarea#offer_description{
     margin-left:0px;
     width:140px;
     text-align:center;
-    margin-top:-35px;
+    margin-top:-45px;
 }
 .minimum_order_text_box input{
     width:100px;
@@ -684,6 +686,10 @@ textarea#offer_description{
     text-align:center;
     margin-top:50px;
 }
+.prices_offers{
+    width:300px;
+}
+
 
 .global_button {
 	-moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;

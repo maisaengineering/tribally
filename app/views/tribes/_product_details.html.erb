@@ -74,7 +74,7 @@
                       <div><%= text_field_tag :offer_logo %></div>
                       <%=  link_to "Upload", '#', :class =>'global_button'%>
                   </td>
-                  <td>
+                  <td class="prices_offers">
                     <div class="offer_name_box">
                         <%= text_field_tag :offer_name %>
                         <span class="offers_name_size">Product name</span>
@@ -129,7 +129,7 @@
         <%= hidden_field_tag :user_id, current_user.uid %>
       </div>                    
       <div class="field">
-        <%= text_field_tag :body %>
+        <%= text_area_tag :body %>
       </div>
       <div class="actions">
       <%= submit_tag("Submit") %>
@@ -151,10 +151,10 @@
         <%= hidden_field_tag :user_id, current_user.uid %>
       </div>                    
       <div class="field">
-        <%= text_field_tag :body %>
+        <%= text_area_tag :body %>
       </div>
       <div class="actions">
-      <%= submit_tag("Submit") %>
+      <%= submit_tag "Submit", :class => 'global_button' %>
       </div>
     <% end %>
   </div>     
