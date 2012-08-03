@@ -8,7 +8,7 @@
   </div>
   <div class="description_dotted_line"></div>
   <div class="products_offers_received_text">
-    Offers for Tribe's <%= product.product_name %> 
+    Offers for <%= product.product_name %> 
   </div>
   <div>
     <table class="data_table" cellpadding="0" cellspacing="0" border="0" style="opacity:1;">
@@ -36,10 +36,12 @@
                         logo<br />
                         X
                       </span>
-                      <div>
-                          <div class="offer_name_text"><%=  product_offers.offer_name %><div>
-                          <div class="offer_description_text"><%=  product_offers.offer_description %></div>
-                      </div>
+                          <div class="offer_name_text">
+                              <%=  truncate(product_offers.offer_name, length: 40) %>
+                          </div>
+                          <div class="offer_description_text">
+                              <%=  truncate(product_offers.offer_description, length: 90) %>
+                          </div>
                   </div>
               </td>
               <td>
