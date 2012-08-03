@@ -571,7 +571,7 @@ border-top-right-radius: 10px;
 .tribe_name_box{
     font-size: 25px;
     font-weight: normal;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 300px;
     height: 80px;
 }
@@ -586,7 +586,7 @@ border-top-right-radius: 10px;
 }
 /* edit code here by naveen */
 .add_friends_to_tribe{
-    width:200px;
+    width:230px;
     height:100px;
     padding-left: 5px;
     
@@ -595,16 +595,22 @@ border-top-right-radius: 10px;
     width:200px;
 }
 .add_friends_box_field{
-    margin-top:-20px;
+    margin-top:30px;
 }
 .add_friends_search textarea, input[type="text"]{
     background-color: white;
+    margin-top: 0px;
     border: 1px solid #CCC;
-    border-radius: 0px;
-  
-
+    border-radius: px;
 }
-<<<<<<< HEAD
+.input_fb_user_name{
+    margin-top: 5px;
+    width: 215px;
+    height: 20px;
+    border-radius:2px;
+    
+    
+}
 .created_user_image{
     width:70px;
     height:70px;
@@ -615,6 +621,7 @@ border-top-right-radius: 10px;
 .tribe_created_text{
     font-size:16px;
     margin-left:10px;
+    margin-top: 8px;
 }
 .tribe_created_user_name{
     width:130px;
@@ -622,10 +629,8 @@ border-top-right-radius: 10px;
     color: #019BE1;
     margin-left:10px;
 }
-=======
-
->>>>>>> 4d5d05f8967e2349f0a72440d9dd30f5a69d498f
 .created_user_ratings{
+    
     font-size:14px;
     margin-left:10px;
 }
