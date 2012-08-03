@@ -31,6 +31,7 @@ label{
 #add_participant{ 
     white-space:nowrap; 
 }
+
 #participant
 {
     display: block;
@@ -59,23 +60,9 @@ label{
    color: red !important;
 }
 
-
 .tribe_created_text{
 margin-top:-20px;
 }
-
-
-#time_left_to_open{
-margin-top:10px;
-font-size:14px;
-color:#32B232;
-}
-
-.products_contdown_time_box{
-font-size:20px;
-color:#32B232;
-}
-
 
 .want_this_box{
 margin-top:-50px;
@@ -88,16 +75,21 @@ height:40px;
 margin-left:20px;
 margin-top:10px;
 font-size: 16px;
-    font-weight: normal;
-    margin-left: 5px;
+font-weight: normal;
+margin-left: 5px;
 }
 
 #time{
 margin-left:130px;
+font-size:20px;
+color:#32B232;
 }
 
-#time_left_to_open{
-margin-left:60px;
+.hasCountdown{
+margin-top:10px;
+font-size:15px;
+color:#32B232;
+margin-left:40px;
 }
 
 .want_number{
@@ -108,6 +100,29 @@ margin-left:45px;
 margin-left:10px;
 font-weight:normal;
 }
+<<<<<<< HEAD
+
+.prettybutton {
+color:transparent;
+}
+
+.button{
+background: #F4F4F4;
+border: 0px; 
+}
+
+.links_invite_p{
+height:30px;
+background: #6ADEFF;
+border-radius:5px;
+border: solid #003366 0px;
+}
+
+.create_tribe_button{
+margin-left:0px;
+margin-top:10px;
+}
+=======
 /* edited from here by naveen*/
 .my_tribe_page{
 
@@ -186,3 +201,4 @@ font-weight:normal;
     
 }
 /* end of the code added */
+>>>>>>> 9df506c1bc9f7285add8cfcbed8973bd70a99157
