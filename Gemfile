@@ -21,7 +21,7 @@ gem "mongoid", ">= 2.4.11"
 gem "devise", ">= 2.1.0"
 gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
-gem "twitter-bootstrap-rails", ">= 2.0.3", :group => :assets
+gem "twitter-bootstrap-rails", ">= 2.0.3"
 gem "therubyracer", :group => :assets, :platform => :ruby
 gem "will_paginate_mongoid"
 gem "omniauth-facebook"
