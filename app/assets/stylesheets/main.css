@@ -8,7 +8,7 @@
 .login_navigation{
     float:right;
     margin-right:0px;
-    margin-top:30px;
+    margin-top:32px;
 }
 .facebook_navigation_top{
     margin-right: 10px;
@@ -869,9 +869,13 @@ textarea#offer_description{
     border-radius: 7px;
 }
 .tribe_created_text{
-    font-size:16px;
+    font-size:14px;
     margin-left:10px;
+<<<<<<< HEAD
+    margin-top:-10px;
+=======
     margin-bottom:6px; 
+>>>>>>> 20fc0d3689e88be11f9f02e184836b08afeab267
 }
 .tribe_created_user_name{
     width:130px;
@@ -881,7 +885,6 @@ textarea#offer_description{
      margin-bottom:20px;
 }
 .created_user_ratings{
-    
     font-size:14px;
     margin-left:10px;
 }
@@ -948,15 +951,10 @@ textarea#offer_description{
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
-.tribe_created_text{
-    font-size:16px;
+
+.tribe_created{
+   font-size:14px;
     margin-left:10px;
-    margin-right:10px;
-}
-.tribe_created_user_name{
-    width:130px;
-    font-size:16px;
-    color: #019BE1;
-    margin-left:10px;
+    margin-top:-15px;
 }
 
