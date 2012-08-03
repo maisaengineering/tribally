@@ -2,9 +2,10 @@ Tribally::Application.routes.draw do
   
 resources :products do
 	collection do 
-		post "add_comment"	
+		post "add_comment"
+    post "create_offer"
 	end
-  end
+end
 
 resources :businesses
 
@@ -21,7 +22,7 @@ resources :businesses
 
 
   
-  root :to => "home#index"
+  root :to => "tribes#index"
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #devise_scope :user do
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'

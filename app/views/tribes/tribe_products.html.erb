@@ -174,13 +174,9 @@
           </td>
           <td>            
             <div class="products_contdown_time_box"> 
-
-              
-               <div id="time_left_to_open"></div>
+               <div id="time_left_to_open"></div>               
+               <div id="<%= product.id %>a"></div>  
                <div id="time"><b>OPEN</b></div>
-               <div id="<%= product.id %>a"></div>
-               <div id="time">OPEN</div>
-
                <script>
                  var newYear = new Date(); 
                  newYear = new Date(newYear.getFullYear() + 1, 1 - 1, 1);                 
@@ -200,50 +196,6 @@
       </div>
     <% end %>
     
-    <div class="comments_header">Comments</div>
-      <% if product.comments.empty? %>
-        <div class="No_comments_header">
-          <span class="No_comments_text">No comments yet.</span>
-          <span class="mylink" id="#<%= product._id %>">Leave a comment</span>
-        </div>
-        <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-          <%= form_tag add_comment_products_path do  %>
-            <div class="field">	      
-              <%= hidden_field_tag :product_id, product._id %>
-              <%= hidden_field_tag :user_id, current_user.uid %>
-            </div>                    
-            <div class="field">
-              <%= text_field_tag :body %>
-            </div>
-            <div class="actions">
-            <%= submit_tag("Submit") %>
-            </div>
-          <% end %>
-        </div>        
-      <% else %>
-        <% product.comments.each do |product_comments| %>
-          <div class="comments_text_box">
-            <span class="comments_user_name"><%= product_comments.user_id %></span>:
-            <%= product_comments.body %>
-          </div>
-        <% end %>
-         <div class="mylink" id="#<%= product._id %>">Leave a comment</div>
-         <div id="<%= product._id %>" class="comments_body_box" style ="display:none">
-          <%= form_tag add_comment_products_path do  %>
-            <div class="field">	      
-              <%= hidden_field_tag :product_id, product._id %>
-              <%= hidden_field_tag :user_id, current_user.uid %>
-            </div>                    
-            <div class="field">
-              <%= text_field_tag :body %>
-            </div>
-            <div class="actions">
-            <%= submit_tag("Submit") %>
-            </div>
-          <% end %>
-        </div>     
-      <% end %>     
-      <br />
     <% product_count += 1 %>
   </div>
 <% end %>
