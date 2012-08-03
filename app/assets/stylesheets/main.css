@@ -689,10 +689,10 @@ textarea#offer_description{
 	-moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
-	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4FD5FF), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #4FD5FF 5%, #378de5 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
-	background-color:#79bbff;
+	background-color:#4FD5FF;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
@@ -702,7 +702,7 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:16px;
 	font-weight:bold;
-	padding:4px 14px;
+	padding:4px 4px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #528ecc;
 }.global_button:hover {
