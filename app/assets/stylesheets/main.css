@@ -695,10 +695,10 @@ textarea#offer_description{
 	-moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
-	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4FD5FF), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #4FD5FF 5%, #378de5 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
-	background-color:#79bbff;
+	background-color:#4FD5FF;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
@@ -708,7 +708,7 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:16px;
 	font-weight:bold;
-	padding:4px 14px;
+	padding:4px 4px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #528ecc;
 }.global_button:hover {
@@ -821,10 +821,11 @@ textarea#offer_description{
 }
 .tribe_name_box{
     font-size: 25px;
-    font-weight: normal;
+    font-weight: bold;
     margin-top: 10px;
     width: 300px;
     height: 80px;
+    font-family: Georgia;
 }
 
 .amount_saved_by_members{
@@ -837,9 +838,9 @@ textarea#offer_description{
 }
 
 .add_friends_to_tribe{
-    width:230px;
+    width:260px;
     height:100px;
-    padding-left: 5px;
+    padding-left: 0px;
     
 }
 .add_friends_box{
@@ -870,13 +871,14 @@ textarea#offer_description{
 .tribe_created_text{
     font-size:16px;
     margin-left:10px;
-    margin-top: 8px;
+    margin-bottom:6px; 
 }
 .tribe_created_user_name{
     width:130px;
     font-size:16px;
     color: #019BE1;
     margin-left:10px;
+     margin-bottom:20px;
 }
 .created_user_ratings{
     
@@ -942,7 +944,7 @@ textarea#offer_description{
     width:70px;
     height:70px;
     margin-left:5px;
-    margin-top: 15px;
+    margin-top: 10px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
@@ -957,3 +959,4 @@ textarea#offer_description{
     color: #019BE1;
     margin-left:10px;
 }
+

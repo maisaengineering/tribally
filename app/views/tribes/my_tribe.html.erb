@@ -16,20 +16,21 @@
         </td>
            
         <td>
-            <%=  link_to "Go to this tribe", tribe_products_tribes_path(:id => tribe), :class => 'global_button' %>
+            <%=  link_to "Go to this tribe", tribe_products_tribes_path(:id => tribe), :class => 'global_button', :id => 'go_to_this_tribe' %>
+
         </td>
         <td>
           <% tribe.members.each do |each_member| %>
             <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>                              
                 <%= link_to "Accept invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']), :class => 'global_button' %>
             <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>                              
-                <%= submit_tag 'Invite friends', :class => 'global_button' %>                
+                <%= submit_tag 'Invite friends', :class => 'global_button', :id =>'invite_friend' %>                
             <% end %>
           <% end %>
         </td>
         <td>
           <section id="tribe_create">
-            <table>
+            <table class="tribe_dimension">
               <td>
                 <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
               </td>

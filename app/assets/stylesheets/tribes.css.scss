@@ -60,11 +60,11 @@ label{
    color: red !important;
 }
 
-.want_this_box{
-margin-top:-50px;
-margin-left:130px;
-width:140px;
-height:40px;
+.i_want_this {
+    height: 40px;
+    margin-left: 130px;
+    margin-top: -30px;
+    width: 140px;
 }
 
 .wants_box{
@@ -153,17 +153,16 @@ margin-top:10px;
     border:1px solid #737373;
     border-radius:5px;
 }
-.go_to_this_tribe_icon{
+#go_to_this_tribe{
     margin-left:0px;
     margin-top:60px;
-    width:140px;
-    height:32px;
+    width:145px;
+    height: 20px;
 }
-.invite_friend_icon{
+#invite_friend{
     margin-left:5px;
     margin-top:60px;
-    width:140px;
-    height:30px;
+    
 }
 
 .my_tribe_name{
@@ -190,9 +189,7 @@ margin-top:10px;
 .my_tribe_name_dimension{
     width:450px;
 }
-.my_tribe_name_dimension1{
-    width:500px;
-}
+
 
 /* start of go to tribe page dimensions */
 #fb_dimension{
@@ -220,6 +217,7 @@ margin-top:10px;
     margin-bottom:0px;
     
 }
+.tribe
 
 .arrow_icon{
 height:20px;
@@ -230,6 +228,9 @@ background: #F4F4F4;
 
 .show_hide_box{
   width:20px;
+}
+.tribe_dimension{
+    height: 100px;
 }
 
 /* end of the code added */

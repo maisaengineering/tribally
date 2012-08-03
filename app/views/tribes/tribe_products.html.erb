@@ -1,5 +1,5 @@
 <table>
-  <td class="my_tribe_name_dimension1">
+  <td class="my_tribe_name_dimension">
     <div class="tribe_name_box"><%= @tribe.tribe_name %>
     
      <div class="addthis_toolbox addthis_default_style"  id="fb_dimension">
@@ -87,7 +87,7 @@
      
     
   </td>
-  <td class="tribe_created_by_users">
+  <td>
     <section id="tribe_create">
       <table>
         <td>
@@ -114,7 +114,7 @@
       </div>
     </td>                  
     <%= form_tag("/products", :method => "post") do %>
-      <td>        
+      <td width="300" align="center">        
         <%= submit_tag 'Request new product', :class =>'global_button' %>
       </td>
       <td>      
@@ -174,9 +174,11 @@
           <td>
             <div class="products_want_this_box">
               <div class="wants_box"> 
-              <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
-              <%= @ad.size %><br/><span class="size">Wants this</span>              
-              <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>                
+                <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
+                <%= @ad.size %><br/><span class="size">Wants this</span>              
+                <div class="i_want_this">
+                  <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>                
+                </div>
               </div> 
             </div>
           </td>
