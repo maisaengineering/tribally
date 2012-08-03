@@ -5,7 +5,6 @@ class Offer
   
   embedded_in :product
     
-  field :price_discount, :type => String
   field :min_no_of_buyer, :type => Integer
   field :offer_name, :type => String
   field :offer_price, :type => String
