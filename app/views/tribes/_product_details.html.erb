@@ -130,7 +130,7 @@
 <% else %>
   <% product.comments.each do |product_comments| %>
     <div class="comments_text_box">
-      <span class="comments_user_name"><%#= FbGraph::User.new(product_comments.user_id).fetch.name %></span>:
+      <span class="comments_user_name"><%= FbGraph::User.new(product_comments.user_id).fetch.name %></span>:
       <%= product_comments.body %>
     </div>
   <% end %>
