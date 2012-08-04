@@ -770,16 +770,15 @@ textarea#offer_description{
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #de9516;
+	border:1px solid #eeb44f;
 	display:inline-block;
 	color:#ffffff;
 	font-family:Trebuchet MS;
-	font-size:10px;
+	font-size:14px;
 	font-weight:bold;
-	padding:7px 16px;
+	padding:8px 6px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cc9f52;
-                margin-top:10px;
 }.orange_color_button_a:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
 	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
@@ -787,7 +786,7 @@ textarea#offer_description{
 	background-color:#fb9e25;
                 text-decoration:none;
                 color:#fff;
-}.orange_color_button_a:active{
+}.orange_color_button_a:active {
 	position:relative;
 	top:1px;
 }
@@ -821,12 +820,10 @@ textarea#offer_description{
     font-weight: normal;
 }
 .tribe_name_box{
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 24px;
     margin-top: 10px;
     width: 300px;
     height: 80px;
-    font-family: Georgia;
 }
 
 .amount_saved_by_members{
