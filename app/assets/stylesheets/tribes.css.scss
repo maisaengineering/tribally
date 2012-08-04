@@ -149,27 +149,35 @@ margin-top:10px;
 
     background:#F9F9F9;
     width:940px;
-    height:100px;
+    height:95px;
     border:1px solid #737373;
     border-radius:5px;
 }
 #go_to_this_tribe{
-    margin-left:0px;
-    margin-top:60px;
+    margin-left:25px;
+    margin-top:50px;
+    
+    
 }
 .accept_invitation_button{
-    margin-top:60px;
+    margin-top:50px;
+    margin-left:5px;
+    margin-right:0px;
 }
 #invite_friend{
     margin-left:5px;
-    margin-top:60px;
+    margin-top:50px;
+    margin-right:10px;
+    padding-left:15px;
+    padding-right:15px;
 }
 
 .my_tribe_name{
     margin-left:20px;
-    margin-top:30px;
-    font-size:25px;
+    margin-top:20px;
+    font-size:30px;
     color:#4298CB;
+   
 }
 .my_tribe_f{
     margin-left:20px;
@@ -178,19 +186,34 @@ margin-top:10px;
 
 .my_tribe_last{
     margin-top:20px;
+    margin-left:10px;
 }
 .my_tribe_last_line{
-    font-size:16px;
+    font-size:22px;
 }
 .my_tribe{
     font-size:25px;
-    margin-top:20px;
+    margin-top:30px;
 }
 .my_tribe_name_dimension{
     width:400px;
 }
 .my_tribe_name_dimension2{
-    width:450px;
+    width:470px;
+}
+.tribe_created_text2{
+    font-size:18px;
+    margin-left:10px;
+    margin-top: -20px;
+    margiin-right: 10px;
+    
+}
+.tribe_created_user_name2{
+    
+    font-size:14px;
+    color: #019BE1;
+    margin-left:10px;
+    margin-top:5px;
 }
 
 /* start of go to tribe page dimensions */
@@ -204,16 +227,13 @@ margin-top:10px;
 .box_dimension{
     margin-right:20px;
 }
-.invite_friends{
-    margin-top:5px;
-    width:110px;
-    height:35px;
-    margin-bottom:0px;
+#invite_friends{
+    
+    
 }
-.leave_this_tribe_icon
+#leave_this_tribe_icon
 {
-    width:110px;
-    height:35px;
+    
     margin-left:2px;
     margin-top:5px;
     margin-bottom:0px;
@@ -232,8 +252,16 @@ background: #F4F4F4;
   width:20px;
 }
 .tribe_dimension{
-    height: 100px;
+    height: 95px;
+    position: static;
+    margin-right:5px;
+    
 }
+.my_tribe_dimension{
+    float : right;
+
+}
+
 
 /* end of the code added */
 
