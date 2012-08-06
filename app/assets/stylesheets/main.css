@@ -779,7 +779,7 @@ textarea#offer_description{
 	padding:7px 16px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cc9f52;
-                margin-top:10px;
+                margin-top:2px;
 }.orange_color_button_a:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
 	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
@@ -824,9 +824,9 @@ textarea#offer_description{
     font-size: 25px;
     font-weight: bold;
     margin-top: 10px;
-    width: 300px;
+    width: 400px;
     height: 80px;
-    font-family: Georgia;
+    font-family: Arial;
 }
 
 .amount_saved_by_members{
@@ -839,13 +839,14 @@ textarea#offer_description{
 }
 
 .add_friends_to_tribe{
-    width:220px;
-    height:100px;
-    padding-left: 0px;
+    width:250px;
+    height:95px;
+    padding-left: 20px;
+    
     
 }
 .add_friends_box{
-    width:200px;
+    width:240px;
 }
 .add_friends_box_field{
     margin-top:30px;
@@ -858,7 +859,7 @@ textarea#offer_description{
 }
 .input_fb_user_name{
     margin-top: 5px;
-    width: 215px;
+    width: 220px;
     height: 20px;
     border-radius:2px;
     }
@@ -942,8 +943,8 @@ textarea#offer_description{
  .created_user_image{
     width:70px;
     height:70px;
-    margin-left:5px;
-    margin-top: 10px;
+    margin-left:0px;
+    margin-top: 5px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
@@ -952,5 +953,6 @@ textarea#offer_description{
    font-size:16px;
     margin-left:10px;
     margin-top:0px;
+    
 }
 
