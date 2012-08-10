@@ -1,5 +1,3 @@
-
-
 <p class="my_tribe">My Tribes</p>
 <% @tribes.each do |tribe| %>
   <br />
@@ -25,8 +23,58 @@
           <% tribe.members.each do |each_member| %>
             <% if  each_member['uid'] == current_user.uid && each_member['status'] == 'thinking' %>                              
                 <%= link_to "Accept invitation", change_invitation_status_tribes_path(:id => tribe.id, :uid => each_member['uid']), :class => 'global_button', :id => ' accept_invitation_button' %>
-            <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>                              
-                <%= submit_tag 'Invite Friend', :class => 'global_button', :id =>'invite_friend' %>                
+              <% elsif each_member['uid'] == current_user.uid && each_member['status'] == 'accepted' %>       
+               <% if current_user.provider == 'facebook' %>
+                  <%= stylesheet_link_tag('jquery.facebook.multifriend.select.css')%>
+                  <%= javascript_include_tag('jquery.facebook.multifriend.select') %>
+                  <%= form_tag invite_friend_tribes_path do -%>
+
+                    <span>            
+                      <input id = "<%= tribe.id %>za" type="button" value="INVITE PARTICIPANTS" class="<%= tribe.id %>zz"/>  
+                      <%= text_field_tag :invitees, nil , :id => "invitees_id", :class=> "hidden" %>
+                      <div id="jfmfs-container-wrapper" style="display: none">
+                        <div id="jfmfs-container">
+                        </div>
+                      </div>
+                    </span>
+                      <% end %>
+          
+                  <script type="text/javascript" charset="utf-8">        
+                  (function($j) { 
+                    var selectorObz = {    
+                      filter_default: "Search By Name",
+                      friend_fields: "id,name,last_name&access_token="+'<%= current_user.facebook.access_token%>'
+                    }
+
+                    $j('.<%= tribe.id %>zz').live('click', function(){
+                      $j( "#jfmfs-container-wrapper" ).dialog({
+                        modal: true,
+                        resizable: false,
+                        closeText: "",
+                        position: 'center',
+                        title: 'Invite Participants',
+                        width: '725px',
+                        open: function(event, ui) { $j("#jfmfs-container").jfmfs(selectorObz); },
+                        buttons: {                                             
+                    Invite: function() {
+                                  var friendSelector = $j("#jfmfs-container").data('jfmfs');
+                                  var selectedFriends = friendSelector.getSelectedIds();
+                                  $j('#invitees_id').val(selectedFriends);
+                                  $j('form').submit();                                
+                                  $j(this).dialog( "close" );
+                                },
+                          Cancel: function() {
+                                  $j("#jfmfs-container").data('jfmfs').clearSelected(); 
+                                  $j('#<%= tribe.id %>za').val("INVITE PARTICIPANTS");    
+                                  $j(this).dialog( "close" );
+                                }
+
+                        }
+                      });
+                    })          
+                  })(jQuery);                              
+                  </script>
+               <% end %>
             <% end %>
           <% end %>
         </td>

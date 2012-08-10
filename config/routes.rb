@@ -16,7 +16,7 @@ resources :businesses
       get "my_tribe"
       get "tribe_products"
       get "i_want_this"
-      get "invite_friend"
+      post "invite_friend"
     end
   end
 
