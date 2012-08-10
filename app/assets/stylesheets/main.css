@@ -699,7 +699,7 @@ textarea#offer_description{
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4FD5FF), color-stop(1, #378de5) );
 	background:-moz-linear-gradient( center top, #4FD5FF 5%, #378de5 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
-	background-color:#4FD5FF;
+	background-color:#14CCFF;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
@@ -709,7 +709,8 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:14px;
 	font-weight:bold;
-	padding:4px 4px;
+	padding-top: 7px;
+        padding-bottom: 7px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #528ecc;
 }.global_button:hover {
@@ -770,16 +771,15 @@ textarea#offer_description{
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #de9516;
+	border:1px solid #eeb44f;
 	display:inline-block;
 	color:#ffffff;
 	font-family:Trebuchet MS;
-	font-size:10px;
+	font-size:14px;
 	font-weight:bold;
-	padding:7px 16px;
+	padding:8px 6px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cc9f52;
-                margin-top:10px;
 }.orange_color_button_a:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
 	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
@@ -787,7 +787,7 @@ textarea#offer_description{
 	background-color:#fb9e25;
                 text-decoration:none;
                 color:#fff;
-}.orange_color_button_a:active{
+}.orange_color_button_a:active {
 	position:relative;
 	top:1px;
 }
@@ -824,9 +824,9 @@ textarea#offer_description{
     font-size: 25px;
     font-weight: bold;
     margin-top: 10px;
-    width: 300px;
+    width: 400px;
     height: 80px;
-    font-family: Georgia;
+    font-family: Arial;
 }
 
 .amount_saved_by_members{
@@ -839,13 +839,12 @@ textarea#offer_description{
 }
 
 .add_friends_to_tribe{
-    width:220px;
-    height:100px;
+    width: 230px;
+    height: 95px;
     padding-left: 0px;
-    
 }
 .add_friends_box{
-    width:200px;
+    width:240px;
 }
 .add_friends_box_field{
     margin-top:30px;
@@ -858,7 +857,7 @@ textarea#offer_description{
 }
 .input_fb_user_name{
     margin-top: 5px;
-    width: 215px;
+    width: 220px;
     height: 20px;
     border-radius:2px;
     }
@@ -942,8 +941,8 @@ textarea#offer_description{
  .created_user_image{
     width:70px;
     height:70px;
-    margin-left:5px;
-    margin-top: 10px;
+    margin-left:0px;
+    margin-top: 5px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
 }
@@ -952,5 +951,6 @@ textarea#offer_description{
    font-size:16px;
     margin-left:10px;
     margin-top:0px;
+    
 }
 

@@ -91,7 +91,11 @@ GEM
     fb_graph (2.1.12)
       httpclient (>= 2.2.0.2)
       rack-oauth2 (>= 0.9.4)
+
     ffi (1.1.5)
+
+    ffi (1.1.4)
+
     gherkin (2.11.1)
       json (>= 1.4.6)
     hashie (1.2.0)
@@ -163,7 +167,10 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+
     rack-oauth2 (0.14.8)
+    rack-oauth2 (0.14.6)
+
       activesupport (>= 2.3)
       attr_required (>= 0.0.5)
       httpclient (>= 2.2.0.2)

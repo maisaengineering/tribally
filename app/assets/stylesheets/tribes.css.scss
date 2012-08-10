@@ -104,16 +104,19 @@ color:transparent;
 .button{
 background: #F4F4F4;
 border: 0px;
-color:#017FD6;
 font-size: 14px;
-padding: 2px 17px 3px 2px;
-background: url("/assets/loginArrow.png") no-repeat 42px 2px;
+padding: 15px 30px 5px 2px;
+background: url("/assets/loginArrow.png") no-repeat scroll transparent;;
 float:left;
-margin-left:0px;
+margin-left:10px;
+margin-top:35px;
+cursor:pointer;
+display:inline-block;
 }
 
 .button:active {
-    background: url("/assets/loginArrow.png") no-repeat 42px -81px;
+    background: url("/assets/loginArrow.png") no-repeat ;
+    
     }
 
 .button:active em {
@@ -162,56 +165,110 @@ margin-top:10px;
 /* my tribe css*/
 
 .my_tribe_page{
-
     background:#F9F9F9;
-    width:940px;
-    height:100px;
+    width:900px;
+    height:95px;
     border:1px solid #737373;
     border-radius:5px;
+    margin-left:15px;
 }
 #go_to_this_tribe{
-    margin-left:0px;
-    margin-top:60px;
+    padding-left:3px;
+    padding-right:3px;
+    margin-top:58px;
 }
-.accept_invitation_button{
-    margin-top:60px;
+#invitation_button{
+    margin-left:5px;
+    margin-bottom:5px;
+    padding-left:2px;
+    padding-right:2px;
 }
 #invite_friend{
     margin-left:5px;
-    margin-top:60px;
+    margin-bottom:5px;
+    padding-left:18px;
+    padding-right:18px;
+   
+ }
+.my_tribe_name_dimension{
+    width:350px;
+    position:absolute;
+}
+.tribe_links{
+    margin-right:0px;
+    margin-left:380px;
+    float:inherit;
+    width:280px;
+    position:absolute;
+}
+.my_details{
+    margin-top:5px;
+    margin-left:665px;
+    margin-right:5px;
+    width:230px;
 }
 
 .my_tribe_name{
     margin-left:20px;
-    margin-top:30px;
-    font-size:25px;
+    margin-top:20px;
+    font-size:35px;
     color:#4298CB;
+    width:300px;
 }
 .my_tribe_f{
     margin-left:20px;
     margin-top:20px;
+    width:300px;
+    z-index:20;
 }
 
 .my_tribe_last{
     margin-top:20px;
+    margin-left:10px;
 }
 .my_tribe_last_line{
-    font-size:16px;
+    font-size:22px;
 }
 .my_tribe{
     font-size:25px;
-    margin-top:20px;
-}
-.my_tribe_name_dimension{
-    width:400px;
-}
-.my_tribe_name_dimension2{
-    width:450px;
-}
+    margin-top:30px;
+    margin-left:20px;
+   }
 
+.my_tribe_name_dimension2{
+    width: 445px;
+}
+.tribe_created_text2{
+    font-size:18px;
+    margin-left:7px;
+    margin-top: -75px;
+    margin-right:0px;
+    padding-left:80px;
+    
+}
+.tribe_created_user_name2{
+    
+    font-size:14px;
+    color: #019BE1;
+    margin-left: 7px;
+    margin-top:-5px;
+    padding-left:80px;
+    
+}
+.created_user_image2{
+    width:70px;
+    height:70px;
+    margin-left:0px;
+    margin-top: 5px;
+    border: 3px solid #F4F4F4;
+    border-radius: 7px;
+    margin-right:10px;
+}
 /* start of go to tribe page dimensions */
 #fb_dimension{
     margin-top:10px;
+    z-index:20;
+    position:absolute;
 }
 #t_dimension{
     margin-top: 4px;
@@ -220,20 +277,12 @@ margin-top:10px;
 .box_dimension{
     margin-right:20px;
 }
-.invite_friends{
-    margin-top:5px;
-    width:110px;
-    height:35px;
-    margin-bottom:0px;
-}
-.leave_this_tribe_icon
+
+#leave_this_tribe_icon
 {
-    width:110px;
-    height:35px;
     margin-left:2px;
     margin-top:5px;
     margin-bottom:0px;
-    
 }
 
 .arrow_icon{
@@ -244,12 +293,17 @@ background: #F4F4F4;
 }
 
 .show_hide_box{
-  width:20px;
-background:#F5F5F5;
+    width:20px;
+    background:#F5F5F5;
     text-shadow:none;
 }
 .tribe_dimension{
-    height: 100px;
+    height: 95px;
+    position: static;
+    margin-right:5px;
+}
+.my_tribe_dimension{
+    float : right;
 }
 
 /* end of the code added */

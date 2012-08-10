@@ -1,5 +1,5 @@
 Tribally::Application.routes.draw do
-  
+ 
 resources :products do
 	collection do 
 		post "add_comment"
@@ -17,11 +17,11 @@ resources :businesses
       get "tribe_products"
       get "i_want_this"
       get "invite_friend"
-    end
+     end
   end
-
-
+ 
   
+
   root :to => "tribes#index"
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #devise_scope :user do
