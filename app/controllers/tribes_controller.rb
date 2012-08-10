@@ -1,8 +1,10 @@
 class TribesController < ApplicationController
   
   def index
-    @tribes = Tribe.all
+   
+   @tribes = Tribe.search(params[:search]) 
   end
+  
   
   def show
     @tribe = Tribe.find(params[:id])
