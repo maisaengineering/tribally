@@ -699,7 +699,7 @@ textarea#offer_description{
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4FD5FF), color-stop(1, #378de5) );
 	background:-moz-linear-gradient( center top, #4FD5FF 5%, #378de5 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
-	background-color:#4FD5FF;
+	background-color:#14CCFF;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
@@ -709,7 +709,8 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:14px;
 	font-weight:bold;
-	padding:4px 4px;
+	padding-top: 7px;
+        padding-bottom: 7px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #528ecc;
 }.global_button:hover {

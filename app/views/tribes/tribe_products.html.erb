@@ -3,7 +3,7 @@
     <div class="tribe_name_box"><%= @tribe.tribe_name %>
     
      <div class="addthis_toolbox addthis_default_style"  id="fb_dimension">
-        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+         <a class="addthis_button_facebook_like at300b" fb:like:layout="button_count" style="width :75px;"></a>
         <a class="addthis_button_tweet" id ="t_dimension"></a>
         
      </div>
@@ -92,7 +92,16 @@
         <td>          
           <div class="tribe_created_text">Tribe created by:</div>
           <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
-          <div class="created_user_ratings">*****</div>
+          
+         
+          <table cellpadding="0" cellspacing="0" width="133" bgcolor=#FFFFFF>
+          <tr>
+            <td>
+              <iframe src="http://www.ratingcode.com/show.php?id=13442292269&st=2&bg=FFFFFF" border="0" width="115" height="37" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bgcolor=FFFFFF></iframe>
+            </td>
+            </tr>
+          </table>
+
         </td>
       </table>
     </section>
@@ -125,8 +134,7 @@
   <div class="products_main_container">
     <div class="product_offers_time_box">
       <table>
-          <td>  
-            
+          <td>
             <% if product_count == 0 %>
               <div class="show_hide_box">
                 <input type="button" value = 'Hide' class= "button" id = "<%= product.id %>aaa" />
