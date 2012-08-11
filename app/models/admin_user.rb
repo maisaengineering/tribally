@@ -7,6 +7,7 @@ class AdminUser
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
+  field :fname, :type => String
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
 
