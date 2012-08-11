@@ -102,29 +102,27 @@ color:transparent;
 }
 
 .button{
-background: #F4F4F4;
-border: 0px;
-font-size: 14px;
-padding: 15px 30px 5px 2px;
-background: url("/assets/loginArrow.png") no-repeat scroll transparent;;
-float:left;
-margin-left:10px;
-margin-top:35px;
-cursor:pointer;
-display:inline-block;
+    background: #F4F4F4;
+    border: 0px;
+    font-size: 14px;
+    padding: 15px 5px 5px 2px;
+    background:transperent;
+    float:left;
+    margin-left:10px;
+    margin-top:35px;
+    cursor:pointer;
+    display:inline-block;
+}
+.hide_button{
+background: url("/assets/down_arrow.png") no-repeat;
+}
+.show_button{
+background: url("/assets/up_arrow.png") no-repeat;
+}
+.button.active {
+    background-position: transperent;
 }
 
-.button:active {
-    background: url("/assets/loginArrow.png") no-repeat ;
-    
-    }
-
-.button:active em {
-    position:absolute;
-    width:100%;
-    height:1px;
-    bottom:-1px;
-}
 .links_invite_p {
 	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
@@ -213,7 +211,7 @@ margin-top:10px;
     margin-top:20px;
     font-size:35px;
     color:#4298CB;
-    width:300px;
+    width:600px;
 }
 .my_tribe_f{
     margin-left:20px;
@@ -292,11 +290,7 @@ margin-left:10px;
 background: #F4F4F4;
 }
 
-.show_hide_box{
-    width:20px;
-    background:#F5F5F5;
-    text-shadow:none;
-}
+
 .tribe_dimension{
     height: 95px;
     position: static;
@@ -305,6 +299,13 @@ background: #F4F4F4;
 .my_tribe_dimension{
     float : right;
 }
-
+.dimension_tribe_name{
+    width: 300px;
+    float:left;
+}
+.search_tribe_box{
+position:relative;
+padding-left:650px;
+}
 /* end of the code added */
 
