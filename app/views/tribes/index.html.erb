@@ -1,4 +1,16 @@
-<p class="my_tribe">All Tribes</p>
+  <div class="my_tribe">
+    <div class="dimension_tribe_name">All Tribes
+    </div>
+  </div>
+      <div class="search_tribe_box">
+          <%= form_tag tribes_path, :method => 'get' do %>
+        <p>
+            <%= text_field_tag :search, params[:search] %>      
+            <%= submit_tag "search", :name => nil, :class => 'global_button' %>
+        </p>
+        
+          <% end %>
+      </div>
 
 <% @tribes.each do |tribe| %>
   <br />
@@ -28,10 +40,10 @@
      </div>
      <div class="my_details">
         <div>
-         <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image2' )) %>
+         <%#= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image2' )) %>
         </div>
         <p class="tribe_created_text2">Tribe created by</p>
-        <p class="tribe_created_user_name2"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></p> 
+        <p class="tribe_created_user_name2"> <%#= FbGraph::User.new(tribe.created_by).fetch.name %></p> 
 
      </div> 
   </div>
