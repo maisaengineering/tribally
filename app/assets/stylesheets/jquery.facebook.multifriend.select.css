@@ -98,6 +98,7 @@ limitations under the License.
 .jfmfs-friend.selected {
     background-color: #3B5998;
     border: 1px solid #3B5998;
+    border-radius:5px;
     
     background: #6D84B4; /* for non-css3 browsers */
 
@@ -217,12 +218,14 @@ padding: .3em 1em .5em .4em;
 }
 
 div.ui-dialog{
-border: 1px solid rgb(170, 170, 170)/*{borderColorContent}*/;
-background: none repeat scroll 0 0 #F7F7F7;
-color: #7F7F7F;
-color: rgb(34, 34, 34)/*{fcContent}*/;
-margin-top:0px;
-margin-bottom: -5000px;
+    border: 2px solid #7F7F7F/*{borderColorContent}*/;
+    background: none repeat scroll 0 0 #F7F7F7;
+    color: #7F7F7F;
+    color: rgb(34, 34, 34)/*{fcContent}*/;
+    margin-top:0px;
+    margin-bottom: -1800px;
+
+    border-radius: 5px;
 }
 
 .ui-dialog-titlebar{
@@ -231,4 +234,5 @@ margin-bottom: -5000px;
     margin-bottom:-50px;
     padding-left: 10px;
     padding-top: 6px;
+    font-weight: bold;
 }

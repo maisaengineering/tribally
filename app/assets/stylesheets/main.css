@@ -807,10 +807,10 @@ textarea#offer_description{
 	border:1px solid #eeb44f;
 	display:inline-block;
 	color:#ffffff;
-	font-family:Trebuchet MS;
-	font-size:14px;
-	font-weight:bold;
-	padding:8px 2px;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:normal;
+	padding:5px 9px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cc9f52;
 }.orange_color_button_a:hover {
@@ -854,8 +854,8 @@ textarea#offer_description{
     font-weight: normal;
 }
 .tribe_name_box{
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: normal;
     margin-top: 10px;
     width: 400px;
     height: 80px;
@@ -874,7 +874,7 @@ textarea#offer_description{
 .add_friends_to_tribe{
     width: 245px;
     height: 95px;
-    padding-left: 90px;
+    padding-left: 70px;
     padding-right: 10px;
 }
 .add_friends_box{
@@ -904,9 +904,9 @@ textarea#offer_description{
     border-radius: 7px;
 }
 .tribe_created_text{
-    font-size:14px;
+    font-size:16px;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:5px;
 }
 .tribe_created_user_name{
     width:180px;
