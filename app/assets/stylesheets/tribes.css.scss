@@ -104,18 +104,19 @@ color:transparent;
 .button{
 background: #F4F4F4;
 border: 0px;
-color:#017FD6;
 font-size: 14px;
-padding: 2px 17px 3px 2px;
+padding: 2px 10px 3px 2px;
 float:left;
-margin-left:0px;
+margin-left:10px;
+height:40px;
+margin-top:35px;
+position:relative;
+border-radius:3px 3px 0 0;
 }
+
 .show_hide_box{
-margin-left:20px;
-
+width:60px;
 }
-
-
 
 .links_invite_p {
 	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;

@@ -144,7 +144,7 @@
             <% end %> 
              <script>
               $('document').ready(function(){
-                $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 2px -87px");
+                $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 8px -87px");
                 $("#<%= product.id %>aaa").click(function(){
                   
                   var attr_value = $('#<%= product.id %>aaa').attr('value');      
@@ -153,16 +153,15 @@
                   if(attr_value == 'Hide')
                     {          
                       $("#<%= product.id %>aaa").attr('value','Show');
-                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png)no-repeat");
+                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png)no-repeat 8px -5px");
                     }
                     else if(attr_value == 'Show'){          
                       $("#<%= product.id %>aaa").attr('value','Hide');
-                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 2px -87px");
+                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 8px -87px");
                     }
                 });    
               });
-            </script>  
-
+            </script>
           </td>
           <td>
             <div class="product_offers_small_box">
