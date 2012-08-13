@@ -1,7 +1,7 @@
 development:
   host: localhost
-  database: tribally_development  
-
+  database: tribally_development
+  
 test:
   host: localhost
   database: tribally_test
