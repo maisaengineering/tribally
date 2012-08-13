@@ -190,7 +190,7 @@ margin-top:10px;
 .tribe_links{
     margin-right:0px;
     margin-left:380px;
-    float:inherit;
+    float:left;
     width:280px;
     position:absolute;
 }
@@ -199,6 +199,8 @@ margin-top:10px;
     margin-left:665px;
     margin-right:5px;
     width:230px;
+    positon:relative;
+    float:left;
 }
 
 .my_tribe_name{
@@ -229,7 +231,7 @@ margin-top:10px;
    }
 
 .my_tribe_name_dimension2{
-    width: 445px;
+    width: 430px;
 }
 .tribe_created_text2{
     font-size:18px;
@@ -237,15 +239,17 @@ margin-top:10px;
     margin-top: -75px;
     margin-right:0px;
     padding-left:80px;
-    
+    position:relative;
+    float:left;
 }
 .tribe_created_user_name2{
     
     font-size:14px;
     color: #019BE1;
     margin-left: 7px;
-    margin-top:-5px;
+    margin-top:25px;
     padding-left:80px;
+    
     
 }
 .created_user_image2{
@@ -256,6 +260,8 @@ margin-top:10px;
     border: 3px solid #F4F4F4;
     border-radius: 7px;
     margin-right:10px;
+    positon:relative;
+    float:left;
 }
 /* start of go to tribe page dimensions */
 #fb_dimension{

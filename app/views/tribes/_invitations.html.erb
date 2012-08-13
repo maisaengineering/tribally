@@ -26,13 +26,13 @@
       title: 'Invite Participants',
       width: '725px',
       open: function(event, ui) { $j("#jfmfs-container").jfmfs(selectorObz); },
-      buttons: {                                             
+      buttons: {                                            
   Invite: function() {
                 var friendSelector = $j("#jfmfs-container").data('jfmfs');
                 var selectedFriends = friendSelector.getSelectedIds();
                 $j('#invitees_id').val(selectedFriends);
                 $j('#inviteBtn').val("Edit Participants (" + selectedFriends.length + ")");                                 
-
+              
                 $j(this).dialog( "close" );
               },
         Cancel: function() {
@@ -40,9 +40,8 @@
                 $j('#inviteBtn').val("INVITE PARTICIPANTS");    
                 $j(this).dialog( "close" );
               }
-
       }
-    });
+    })
   })          
 })(jQuery);                              
 </script>

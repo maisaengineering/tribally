@@ -371,6 +371,39 @@ input#user_password_confirmation{
     text-align:center;
 
 }
+.create_tribe_btn{
+        -moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05,  #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top,  #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:bold;
+	padding-top: 7px;
+        padding-bottom: 7px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+}.create_tribe_btn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+                text-decoration:none;
+                color:#fff;
+}.create_tribe_btn:active {
+	position:relative;
+	top:1px;
+}
+
 /* End signup form*/
 
 
@@ -777,7 +810,7 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:14px;
 	font-weight:bold;
-	padding:8px 6px;
+	padding:8px 2px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #cc9f52;
 }.orange_color_button_a:hover {
@@ -839,9 +872,10 @@ textarea#offer_description{
 }
 
 .add_friends_to_tribe{
-    width: 230px;
+    width: 245px;
     height: 95px;
-    padding-left: 0px;
+    padding-left: 90px;
+    padding-right: 10px;
 }
 .add_friends_box{
     width:240px;
@@ -854,10 +888,11 @@ textarea#offer_description{
     margin-top: 12px;
     border: 1px solid #CCC;
     border-radius: px;
+   
 }
 .input_fb_user_name{
     margin-top: 5px;
-    width: 220px;
+    width: 233px;
     height: 20px;
     border-radius:2px;
     }
