@@ -138,30 +138,31 @@
            <% if product_count == 0 %>
               <div class="show_hide_box">
                 <input type="button" value = 'Hide' class="button" id = "<%= product.id %>aaa" />
-            <% else %>              
-                <input type="button" value = 'Show' class="show_button" id = "<%= product.id %>aaa" />              
+            <% else %>
+                <input type="button" value = 'Show' class="button" id = "<%= product.id %>aaa" />              
               </div>
             <% end %> 
              <script>
               $('document').ready(function(){
-               
+                $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 2px -87px");
                 $("#<%= product.id %>aaa").click(function(){
+                  
                   var attr_value = $('#<%= product.id %>aaa').attr('value');      
                   $("#<%= product.id %>aaaa").toggle('fast');
+                  
                   if(attr_value == 'Hide')
-                    { 
-                     
-                      $('#<%= product.id %>aaa').attr('value','Show');
-                     
+                    {          
+                      $("#<%= product.id %>aaa").attr('value','Show');
+                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png)no-repeat");
                     }
-                    else if(attr_value == 'Show'){  
-                      
-                      $('#<%= product.id %>aaa').attr('value','Hide'); 
-                      
+                    else if(attr_value == 'Show'){          
+                      $("#<%= product.id %>aaa").attr('value','Hide');
+                      $("#<%= product.id %>aaa").css('background',"url(/assets/loginArrow.png) no-repeat 2px -87px");
                     }
                 });    
               });
             </script>  
+
           </td>
           <td>
             <div class="product_offers_small_box">

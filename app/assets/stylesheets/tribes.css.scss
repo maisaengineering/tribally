@@ -102,26 +102,20 @@ color:transparent;
 }
 
 .button{
-    background: #F4F4F4;
-    border: 0px;
-    font-size: 14px;
-    padding: 15px 5px 5px 2px;
-    background:transperent;
-    float:left;
-    margin-left:10px;
-    margin-top:35px;
-    cursor:pointer;
-    display:inline-block;
+background: #F4F4F4;
+border: 0px;
+color:#017FD6;
+font-size: 14px;
+padding: 2px 17px 3px 2px;
+float:left;
+margin-left:0px;
 }
-.hide_button{
-background: url("/assets/down_arrow.png") no-repeat;
+.show_hide_box{
+margin-left:20px;
+
 }
-.show_button{
-background: url("/assets/up_arrow.png") no-repeat;
-}
-.button.active {
-    background-position: transperent;
-}
+
+
 
 .links_invite_p {
 	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
