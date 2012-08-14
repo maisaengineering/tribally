@@ -11,7 +11,7 @@ class Tribe
   belongs_to :member
   has_many :products
   embeds_many :members
-    
+
   field :tribe_name, :type => String
   field :category, :type => String
   field :location, :type => String  
