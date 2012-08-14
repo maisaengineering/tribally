@@ -52,7 +52,7 @@ limitations under the License.
 }
 
 .jfmfs-friend.selected img {
-    border: 1px solid #233E75;
+    border: 1px solid #98D4F9;
 }
 
 .jfmfs-friend div {
@@ -81,7 +81,10 @@ limitations under the License.
     overflow-y:hidden;  
     margin-top:50px;  
     border-style: solid;
-    border-width:1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
     border-color: #7f7f7f;       
 }
 
@@ -96,19 +99,19 @@ limitations under the License.
 }
 
 .jfmfs-friend.selected {
-    background-color: #3B5998;
-    border: 1px solid #3B5998;
+    background-color: #98D4F9;
+    border: 1px solid #98D4F9;
     border-radius:5px;
     
     background: #6D84B4; /* for non-css3 browsers */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#233E75', endColorstr='#6D84B4'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#233E75), to(#6D84B4)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #233E75,  #6D84B4); /* for firefox 3.6+ */    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#98D4F9', endColorstr='#BFF2FF'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#98D4F9), to(#BFF2FF)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #98D4F9,  #BFF2FF); /* for firefox 3.6+ */    
 }
 
 .jfmfs-friend.selected div {
-    color: #FFFFFF;
+    color: #111111;
 }
 
 .hover {
@@ -135,7 +138,7 @@ div.jfmfs-button {
 }
 
 #jfmfs-friend-selector a.filter-link:hover, #jfmfs-friend-selector a.selected {
-    background-color: #6D84B4;
+    background-color: #98D4F9;
     -moz-border-radius: 5px; 
     -webkit-border-radius: 5px;
     color: #FFFFFF;

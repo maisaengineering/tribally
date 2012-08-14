@@ -45,7 +45,9 @@ class Tribe
    
   def self.search(search)
     if search
-      where('tribe.id LIKE ?' => "%#{search}%")
+      where('tribe_id ?LIKE'  => "%#{search}%")
+      
+     
     else
       find(:all)
     end
