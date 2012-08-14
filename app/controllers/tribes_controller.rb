@@ -1,12 +1,13 @@
 class TribesController < ApplicationController
   
   def index
+    
+   @tribes = Tribe.search(params[:search])
    
-   @tribes = Tribe.search(params[:search]) 
   end
   
   
-  def show
+  def show                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     @tribe = Tribe.find(params[:id])
     @invitee_uid = []
     if !@tribe.members.blank?

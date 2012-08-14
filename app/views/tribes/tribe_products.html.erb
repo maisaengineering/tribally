@@ -90,14 +90,14 @@
           <%= link_to (image_tag(FbGraph::User.new(@tribe.created_by).fetch.picture, :class => 'created_user_image' )) %>
         </td>
         <td>          
-          <div class="tribe_created_text">Tribe created by:</div>
-          <div class="tribe_created_user_name"> <%#= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
+          <div class="tribe_created_text"><b>Tribe created by:</b></div>
+          <div class="tribe_created_user_name"> <%= FbGraph::User.new(@tribe.created_by).fetch.name %></div>
           
          
           <table cellpadding="0" cellspacing="0" width="133" bgcolor=#FFFFFF>
           <tr>
             <td>
-              <iframe src="http://www.ratingcode.com/show.php?id=13442292269&st=2&bg=FFFFFF" border="0" width="115" height="37" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bgcolor=FFFFFF></iframe>
+              <iframe src="http://www.ratingcode.com/show.php?id=13442292269&st=2&bg=FFFFFF" border="0" width="115" height="37" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bgcolor=FFFFFF ></iframe>
             </td>
             </tr>
           </table>
@@ -138,9 +138,7 @@
            <% if product_count == 0 %>
               <div class="show_hide_box">
                 <input type="button" value = 'Hide' class="button" id = "<%= product.id %>aaa" />
-             
             <% else %>
-            
                 <input type="button" value = 'Show' class="button" id = "<%= product.id %>aaa" />              
               </div>
             <% end %> 
