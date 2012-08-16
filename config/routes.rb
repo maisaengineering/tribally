@@ -24,7 +24,7 @@ resources :tribes do
      end
 end
  
-  
+
 
   root :to => "tribes#index"
   devise_for :users,  :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -32,5 +32,6 @@ end
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   #end
   resources :users, :only => [:show, :index]
+    get "/business_account/index"
 end
 
