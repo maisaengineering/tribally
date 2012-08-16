@@ -6,19 +6,19 @@
   Looking for Tribally personal accounts? click <a href="/users/sign_in">here</a>
   </div>
   <div class="business_signup_main_box"> 
-    <%= form_tag  do %>
+    <%= form_tag businesses_path, :method => 'post' do %>
       <div class="business_sign_up_fields">
         <div class="business_fields1">Business name</div>
-        <%= text_field_tag :Business_name %>
+        <%= text_field_tag :business_name %>
       </div>
       <div class="business_sign_up_fields">
         <div class="business_fields1">Business email address</div> 
-        <%= text_field_tag :Business_email_address %>
+        <%= text_field_tag :business_email %>
       </div>
 
       <div class="business_sign_up_fields">
         <div class="business_fields">Business web address</div>
-        <%= email_field_tag :Business_web_address %>
+        <%= text_field_tag :website %>
       </div>
 
       <div class="business_sign_up_fields">

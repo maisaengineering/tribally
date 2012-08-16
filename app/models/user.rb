@@ -9,6 +9,7 @@ class User
   cattr_accessor :current_user
   
   has_one :member
+  has_many :businesses
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

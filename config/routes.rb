@@ -11,7 +11,11 @@ resources :products do
 	end
 end
 
-resources :businesses
+resources :businesses do
+  collection do
+    get "business_signup"
+  end
+end
 
   
 resources :tribes do
