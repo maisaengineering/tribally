@@ -1,0 +1,45 @@
+  <div class="business_sign_up_header">Create account with Tribally</div>
+<div class="business_container">
+  <div id="business_video"><embed src="http://vimeo.com/ghostlyint/presents-matthew-shlian"
+                                  autostart="false" width="558" height="320" controls="controls" /></div>
+  <div class="business_last_line">
+  Looking for Tribally personal accounts? click <a href="/users/sign_in">here</a>
+  </div>
+  <div class="business_signup_main_box"> 
+    <%= form_tag  do %>
+      <div class="business_sign_up_fields">
+        <div class="business_fields1">Business name</div>
+        <%= text_field_tag :Business_name %>
+      </div>
+      <div class="business_sign_up_fields">
+        <div class="business_fields1">Business email address</div> 
+        <%= text_field_tag :Business_email_address %>
+      </div>
+
+      <div class="business_sign_up_fields">
+        <div class="business_fields">Business web address</div>
+        <%= email_field_tag :Business_web_address %>
+      </div>
+
+      <div class="business_sign_up_fields">
+        <div class="business_fields">password </div>
+        <%= password_field_tag :password %>
+      </div>
+
+      <div class="business_sign_up_fields">
+        <div class="business_fields">password confirmation </div>
+        <%= password_field_tag :password_confirmation %>
+      </div>
+    <div class="business_checkbox">
+  <%= check_box_tag(:business_account) %>
+      <p class="terms_and_conditions">
+        I have accepted the <a href="#">terms and conditions </a>for Tribally business account</p>
+    </div>
+      <div class="business_sign_up_button_page"><%= submit_tag "Creat account", :class =>'create_account_btn' %></div>
+    <% end %>
+  </div>
+</div>
+  
+
+
+    

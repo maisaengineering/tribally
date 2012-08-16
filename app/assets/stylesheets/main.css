@@ -335,6 +335,132 @@ input#user_password_confirmation{
 .current_user_name{
     font-size:15px;
 }
+/* start of business account */
+.business_sign_up_page_box{
+    margin-left:100px;
+    margin-top:10px;
+}
+input#Business_name{
+    width: 250px;
+}
+input#Business_email_address{
+    width: 250px;
+}
+input#Business_web_address{
+    width: 250px;
+}
+input#password{
+    width: 250px;
+}
+input#password_confirmation{
+    width: 250px;
+}
+.business_checkbox{
+    margin-left: 50px;
+    width: 260px;
+}
+.business_signup_main_box{
+    background:#F5F5F5;
+    width:365px;
+    height:auto;
+    margin-left:580px;
+    padding-top:20px;
+    border:1px solid #E9E9E9;
+    border-radius:5px;
+    position: absolute;
+    float: left;
+}
+.business_fields{
+    padding-bottom: 5px;
+    font-family: Trebuchet MS;
+    font-weight: normal;
+}
+.business_fields1{
+    margin-bottom: -5px;
+    font-family: Trebuchet MS;
+    font-weight: normal;
+}
+.terms_and_conditions{
+    font-family:  Trebuchet MS;
+    margin-top: -20px;
+    margin-left: 17px;
+    font-weight: normal;
+}
+.business_sign_up_fields{
+    font-weight:normal;
+    font-size:15px;
+    margin-left: 50px;
+}
+.business_container{
+    width: 945px;
+    height: 500px;
+    border: 0px solid;
+    position: relative;
+    float: left;
+}
+#business_video{
+    margin-top: 20px;
+    margin-left: 2px;
+    width: 558px;
+    height: 320px;
+    border: 1px solid;
+    position: inherit;
+    float: left;
+}
+.business_last_line{
+    font-size: 15px;
+    margin-right: 558px;
+    margin-top: 30px;   
+    position:relative;
+    float: left;
+    font-family: Trebuchet MS;
+    font-weight: normal;
+}
+.business_sign_up_header{
+    font-size:20px;
+    font-weight:normal;
+    font-family: Trebuchet MS;
+    height:20px;
+    color:#000;
+}
+.create_account_btn{
+        -moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05,  #007CCC), color-stop(1, #007CCC) );
+	background:-moz-linear-gradient( center top,  #007CCC 5%, #019BE1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007CCC', endColorstr='#007CCC');
+	background-color:#007CCC;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:5px;
+	border:2px solid #0085CB;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:normal;
+	padding-top: 5px;
+        padding-bottom: 5px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+}.create_account_btn:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #007CCC), color-stop(1, #00bbff) );
+	background:-moz-linear-gradient( center top, #007CCC 5%, #007CCC 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007CCC', endColorstr='#007CCC');
+	background-color:#007CCC;
+                text-decoration:none;
+                color:#fff;
+}.create_account_btn:active {
+	position:relative;
+	top:1px;
+}
+.business_sign_up_button_page{
+    width:250px;
+    text-align:center;
+    margin-left: 50px;
+
+}
 /* Start sign up form */
 .sign_up_page_box{
     margin-left:100px;
