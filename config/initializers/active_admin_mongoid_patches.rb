@@ -1,5 +1,9 @@
+# Patches to make ActiveAdmin work with Mongoid.
+# For more information see https://github.com/gregbell/active_admin/issues/26 and https://gist.github.com/1809524.
+
 require "active_admin"
 require "active_admin/resource_controller"
+require 'ostruct'
 
 module ActiveAdmin
   class Namespace
@@ -11,7 +15,7 @@ module ActiveAdmin
 
   class Resource
     def resource_table_name
-      resource.collection_name
+      controller.resources_configuration[:self][:route_instance_name]
     end
 
     # Disable filters
@@ -19,7 +23,7 @@ module ActiveAdmin
     end
   end
 
-  class ResourceController < ActiveAdmin::BaseController
+  class ResourceController
     # Use #desc and #asc for sorting.
     def sort_order(chain)
       params[:order] ||= active_admin_config.sort_order
@@ -34,6 +38,68 @@ module ActiveAdmin
     # Disable filters
     def search(chain)
       chain
+    end
+
+  end
+
+end
+
+module Mongoid
+  module ActiveAdmin
+
+    ACTIVE_ADMIN_HIDDEN_COLUMNS = %w(_id _type)
+    ACTIVE_ADMIN_COLUMN_TYPES = { Bignum => :integer, Array => :string }
+
+    def column_for_attribute(attr)
+      self.class.columns.detect { |c| c.name == attr.to_s }
+    end
+
+    module ClassMethods
+      def content_columns
+        fields.map do |name, field|
+          next if ACTIVE_ADMIN_HIDDEN_COLUMNS.include?(name)
+          OpenStruct.new.tap do |c|
+            c.name = field.name
+            c.type = ACTIVE_ADMIN_COLUMN_TYPES[field.type] || field.type.to_s.downcase.to_sym
+          end
+        end.compact
+      end
+
+      def columns
+        content_columns
+      end
+    end
+
+  end
+end
+
+require 'mongoid/document'
+
+Mongoid::Document.send :include, Mongoid::ActiveAdmin
+Mongoid::Document::ClassMethods.send :include, Mongoid::ActiveAdmin::ClassMethods
+
+
+### PATCH THEM ALL!!!
+### Patch for relative paths in sass-rails
+require 'sass/rails/importer'
+
+if defined?(Sass::Rails::VERSION) && Sass::Rails::VERSION[0..3] >= '3.1.'
+  Rails.logger.warn ' == MONKEY == Patching sass-rails: https://github.com/rails/sass-rails/pull/70'
+  Rails.logger.warn " == MONKEY == Please update #{__FILE__} once Sass::Rails upstream has pulled in the fix"
+  # monkey patch to incorporate https://github.com/rails/sass-rails/pull/70
+  module Sass
+    module Rails
+      class Importer
+        def resolve(name, base_pathname = nil)
+          name = Pathname.new(name)
+          if base_pathname && base_pathname.to_s.size > 0
+            root = context.pathname.dirname
+            name = base_pathname.relative_path_from(root).join(name)
+          end
+          partial_name = name.dirname.join("_#{name.basename}")
+          @resolver.resolve(name) || @resolver.resolve(partial_name)
+        end
+      end
     end
   end
 end

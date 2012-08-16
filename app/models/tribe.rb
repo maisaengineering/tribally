@@ -11,7 +11,7 @@ class Tribe
   belongs_to :member
   has_many :products
   embeds_many :members
-    
+
   field :tribe_name, :type => String
   field :category, :type => String
   field :location, :type => String  
@@ -45,7 +45,9 @@ class Tribe
    
   def self.search(search)
     if search
-      where('tribe.id LIKE ?' => "%#{search}%")
+      where('tribe_id ?LIKE'  => "%#{search}%")
+      
+     
     else
       find(:all)
     end

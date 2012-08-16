@@ -18,7 +18,7 @@ limitations under the License.
 
 
 #ui-dialog-buttonset{
- border-style:solid #ccc;
+    border-style:solid #ccc;
     border-width:1px #ccc; 
 }
 #jfmfs-friend-selector input {
@@ -52,7 +52,7 @@ limitations under the License.
 }
 
 .jfmfs-friend.selected img {
-    border: 1px solid #233E75;
+    border: 1px solid #98D4F9;
 }
 
 .jfmfs-friend div {
@@ -76,12 +76,15 @@ limitations under the License.
 }
 
 #jfmfs-friend-selector {
-    width:725px;   
+    width:724px;   
     height:376px;
     overflow-y:hidden;  
     margin-top:50px;  
-    border-style:solid;
-    border-width:1px;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
     border-color: #7f7f7f;       
 }
 
@@ -96,18 +99,19 @@ limitations under the License.
 }
 
 .jfmfs-friend.selected {
-    background-color: #3B5998;
-    border: 1px solid #3B5998;
+    background-color: #98D4F9;
+    border: 1px solid #98D4F9;
+    border-radius:5px;
     
     background: #6D84B4; /* for non-css3 browsers */
 
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#233E75', endColorstr='#6D84B4'); /* for IE */
-    background: -webkit-gradient(linear, left top, left bottom, from(#233E75), to(#6D84B4)); /* for webkit browsers */
-    background: -moz-linear-gradient(top,  #233E75,  #6D84B4); /* for firefox 3.6+ */    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#98D4F9', endColorstr='#BFF2FF'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#98D4F9), to(#BFF2FF)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #98D4F9,  #BFF2FF); /* for firefox 3.6+ */    
 }
 
 .jfmfs-friend.selected div {
-    color: #FFFFFF;
+    color: #111111;
 }
 
 .hover {
@@ -134,10 +138,11 @@ div.jfmfs-button {
 }
 
 #jfmfs-friend-selector a.filter-link:hover, #jfmfs-friend-selector a.selected {
-    background-color: #6D84B4;
+    background-color: #98D4F9;
     -moz-border-radius: 5px; 
     -webkit-border-radius: 5px;
     color: #FFFFFF;
+    border-radius:6px;
 }
 
 #jfmfs-friend-selector .filter-link {
@@ -179,18 +184,58 @@ background-image: none;
 margin-left:590px;
 padding: .3em 1em .5em .4em;
 }
+.ui-dialog-buttonset button{
+  -moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05,  #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top,  #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:12px;
+	font-weight:normal;
+	padding-top: 3px;
+        padding-bottom: 3px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+        margin-right: 5px;
+}
+.ui-dialog-buttonset button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+                text-decoration:none;
+                color:#fff;
+}
+.ui-dialog-buttonset button:active {
+	position:relative;
+	top:1px;
+}
 
 div.ui-dialog{
-border: 1px solid rgb(170, 170, 170)/*{borderColorContent}*/;
-background: none repeat scroll 0 0 #F7F7F7;
-color: #7F7F7F;
-color: rgb(34, 34, 34)/*{fcContent}*/;
-margin-top:0px;
-margin-bottom:0px;
+    border: 2px solid #7F7F7F/*{borderColorContent}*/;
+    background: none repeat scroll 0 0 #F7F7F7;
+    color: #7F7F7F;
+    color: rgb(34, 34, 34)/*{fcContent}*/;
+    margin-top:0px;
+    margin-bottom: -1800px;
+
+    border-radius: 5px;
 }
 
 .ui-dialog-titlebar{
-height:20px;
-background: none repeat scroll 0 0 #98D4F9;
-margin-bottom:-50px;
+    height:20px;
+    background: none repeat scroll 0 0 #98D4F9;
+    margin-bottom:-50px;
+    padding-left: 10px;
+    padding-top: 6px;
+    font-weight: bold;
 }
