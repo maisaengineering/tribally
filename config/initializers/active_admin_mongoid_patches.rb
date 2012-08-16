@@ -68,6 +68,8 @@ module Mongoid
       def columns
         content_columns
       end
+	  def add_default_sidebar_sections
+	  end
     end
 
   end

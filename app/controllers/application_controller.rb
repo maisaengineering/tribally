@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  
   before_filter :authenticate_user!
   before_filter :define_current_user
   

@@ -14,7 +14,7 @@ end
 resources :businesses
 
   
-  resources :tribes do
+resources :tribes do
     collection do
       get "change_invitation_status"
       get "my_tribe"
@@ -22,7 +22,7 @@ resources :businesses
       get "i_want_this"
       get "invite_friend"
      end
-  end
+end
  
   
 

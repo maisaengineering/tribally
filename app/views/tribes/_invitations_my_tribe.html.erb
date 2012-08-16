@@ -33,7 +33,7 @@
                 var friendSelector = $j("#jfmfs-container").data('jfmfs');
                 var selectedFriends = friendSelector.getSelectedIds();
                 $j('#invitees_id').val(selectedFriends);
-                $j('form').submit();                                
+                $j('#invitees_id').submit();                                
                 $j(this).dialog( "close" );
               },
         Cancel: function() {

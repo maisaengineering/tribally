@@ -16,4 +16,5 @@ class Product
   field :description, :type => String
   field :product_url, :type => String
   field :price, :type => String
+  field :offers, :type => Array
 end

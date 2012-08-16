@@ -1,5 +1,5 @@
 class TribesController < ApplicationController
-  
+
   def index
     
    @tribes = Tribe.search(params[:search])
