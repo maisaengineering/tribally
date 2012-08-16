@@ -22,8 +22,11 @@
         </tr>
       </thead>
       <tbody>
-        <% product.offers.each do |product_offers| %>
-          <tr style="text-align:center;"  class="products_offers_list_box">
+        <% if product.offers.empty? %>
+            <td>no offers yet for this requested product. We're working to find great offers for your tribe soon.</td>
+         <% else %>
+           <% product.offers.each do |product_offers| %>
+            <tr style="text-align:center;"  class="products_offers_list_box">
               <td>
                 <div class="bussiness_logo_text">
                   Bussiness #X<br /><br />
@@ -58,7 +61,8 @@
                 </div>
                 <div><%= link_to "Accept this offer", '#', :class => 'orange_color_button'  %></div>
               </td>  
-          </tr>
+            </tr>
+          <%end%>
         <% end %>
       </tbody>
     </table>             

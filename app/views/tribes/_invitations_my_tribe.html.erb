@@ -1,15 +1,17 @@
 <%= stylesheet_link_tag('jquery.facebook.multifriend.select.css')%>
 <%= javascript_include_tag('jquery.facebook.multifriend.select') %>
 <%= form_tag invite_friend_tribes_path do -%>
-<span>            
-  <input id = "<%= tribe.id %>a" type="button" value="INVITE PARTICIPANTS" class="<%= tribe.id %>"/>  
-  <%= text_field_tag :invitees, nil , :id => "invitees_id", :class=> "hidden" %>
-  <div id="jfmfs-container-wrapper" style="display: none">
-    <div id="jfmfs-container">
+
+  <span>            
+    <input id = "<%= tribe.id %>a" type="button" value="INVITE PARTICIPANTS" class="<%= tribe.id %>"/>  
+    <%= text_field_tag :invitees, nil , :id => "invitees_id", :class=> "hidden" %>
+    <div id="jfmfs-container-wrapper" style="display: none">
+      <div id="jfmfs-container">
+      </div>
     </div>
-  </div>
-</span>
-<% end %>
+  </span>
+    <% end %>
+
 <script type="text/javascript" charset="utf-8">        
 (function($j) { 
   var selectorObz = {    
@@ -31,8 +33,7 @@
                 var friendSelector = $j("#jfmfs-container").data('jfmfs');
                 var selectedFriends = friendSelector.getSelectedIds();
                 $j('#invitees_id').val(selectedFriends);
-                $j('#<%= tribe.id %>a').val("Edit Participants (" + selectedFriends.length + ")");                                 
-
+                $j('form').submit();                                
                 $j(this).dialog( "close" );
               },
         Cancel: function() {

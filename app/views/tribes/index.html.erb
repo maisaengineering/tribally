@@ -1,4 +1,16 @@
-<p class="my_tribe">All Tribes</p>
+  <div class="my_tribe">
+    <div class="dimension_tribe_name">All Tribes
+    </div>
+  </div>
+      <div class="search_tribe_box">
+          <%= form_tag tribes_path, :method => 'get' do %>
+        <p>
+            <%= text_field_tag :search, params[:search] %>      
+            <%= submit_tag "search", :name => nil, :class => 'global_button' %>
+        </p>
+        
+          <% end %>
+      </div>
 
 <% @tribes.each do |tribe| %>
   <br />

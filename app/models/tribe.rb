@@ -31,8 +31,7 @@ class Tribe
       product.members.push([Member.new(:uid => uid, :status => 'accepted')])      
     end
   end
-  
-  private
+
   
   def self.all_member product
     members_uid = []
@@ -41,5 +40,16 @@ class Tribe
     end
     return members_uid
   end
+  
+ 
    
+  def self.search(search)
+    if search
+      where('tribe.id LIKE ?' => "%#{search}%")
+    else
+      find(:all)
+    end
+  end
+
+
 end

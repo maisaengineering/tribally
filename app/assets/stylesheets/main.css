@@ -437,7 +437,7 @@ input#user_password_confirmation{
     background:#fff;
     width:280px;
     height:60px;
-    margin-left:30px;
+    margin-left:0px;
     margin-top:10px;
     border:1px solid #D1D1D1;
     border-radius:5px;
@@ -472,7 +472,7 @@ input#user_password_confirmation{
     background:#fff;
     width:200px;
     height:60px;
-    margin-left:30px;
+    margin-left:20px;
     margin-top:10px;
     border:1px solid #D1D1D1;
     border-radius:5px; 

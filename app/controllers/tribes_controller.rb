@@ -1,8 +1,10 @@
 class TribesController < ApplicationController
   
   def index
-    @tribes = Tribe.all
+   
+   @tribes = Tribe.search(params[:search]) 
   end
+  
   
   def show
     @tribe = Tribe.find(params[:id])
@@ -81,7 +83,16 @@ class TribesController < ApplicationController
   end
   
   def invite_friend
-    raise "Maisa"
+  @tribe = Tribe.where(:_id => params[:id]).first
+        if !params[:invitees].blank? 
+            invitee_list = params[:invitees].split(",")      
+            invitee_list.each do |each_invitee_uid|        
+              @tribe.members.push(Member.new(:uid => each_invitee_uid))
+          end
+        else
+          raise"maisa"
+        end
+     redirect_to my_tribe_tribes_path
   end
   
   #def i_want_this    

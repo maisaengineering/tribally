@@ -1,5 +1,9 @@
 Tribally::Application.routes.draw do
  
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
 resources :products do
 	collection do 
 		post "add_comment"
@@ -17,6 +21,7 @@ resources :businesses
       get "tribe_products"
       get "i_want_this"
       get "invite_friend"
+      
      end
   end
  

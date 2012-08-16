@@ -28,3 +28,4 @@ gem "omniauth-facebook"
 gem 'fb_graph', '2.1.12'
 gem "client_side_validations", "~> 3.2.0.beta.1"
 gem 'client_side_validations-mongoid'
+gem 'activeadmin-mongoid'
