@@ -1,8 +1,8 @@
 Tribally::Application.routes.draw do
  
-  ActiveAdmin.routes(self)
+ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+devise_for :admin_users, ActiveAdmin::Devise.config
 
 resources :products do
 	collection do 
@@ -11,7 +11,11 @@ resources :products do
 	end
 end
 
-resources :businesses
+resources :businesses do
+  collection do
+    get "business_signup"
+  end
+end
 
   
 resources :tribes do
