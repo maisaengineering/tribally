@@ -7,6 +7,8 @@ class Tribe
   
   #validates_presence_of :tribe_name, :message => "Please enter tribe name"
   #validates_presence_of :location, :message => "Please enter tribe location"  
+  
+  scope :location, where(:location => 'Hyderabad')
 
   belongs_to :member
   has_many :products
@@ -16,10 +18,10 @@ class Tribe
   field :category, :type => String
   field :location, :type => String  
   field :offers, :type => String
-  field :amount_saved, :type => Integer
+  #field :amount_saved, :type => Integer
   field :created_by, :type => String
   field :members, :type => Array
-  #field :products, :type => Array
+  field :products, :type => Array
   
 
   #attr_accessible :tribe_name, :location, :product_name

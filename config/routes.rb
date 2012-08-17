@@ -1,8 +1,8 @@
 Tribally::Application.routes.draw do
  
-  ActiveAdmin.routes(self)
+ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+devise_for :admin_users, ActiveAdmin::Devise.config
 
 resources :products do
 	collection do 
@@ -36,6 +36,5 @@ end
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   #end
   resources :users, :only => [:show, :index]
-    get "/business_account/index"
 end
 
