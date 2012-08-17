@@ -9,7 +9,7 @@ ActiveAdmin::Dashboards.build do
    section "All Tribes" do
     ul do
       Tribe.all.collect do |tribe|
-        li link_to(tribe.tribe_name, admin_tribes_path())
+        li link_to(tribe.tribe_name, admin_tribe_path(tribe))
       end
      end
    end

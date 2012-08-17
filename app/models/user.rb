@@ -17,6 +17,14 @@ class User
   devise :database_authenticatable, :registerable, :confirmable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   ## Database authenticatable
+  index :email, :unique => true  
+  field :fname
+  field :lname
+  field :provider 
+  field :uid
+  field :token
+  field :image_url
+  field :role, :type => String, :default => ''
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
 
@@ -52,16 +60,10 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
-  index :email, :unique => true  
-  field :fname
-  field :lname
-  field :provider 
-  field :uid
-  field :token
-  field :image_url
+
 
   #validates_presence_of :name
-  attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid, :token, :image_url
+  attr_accessible :fname, :lname, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :provider, :uid, :token, :image_url,:role
   
   def facebook
     FbGraph::User.new('me', :access_token => User.current_user.token).fetch
