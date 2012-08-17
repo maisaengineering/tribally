@@ -36,6 +36,5 @@ end
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   #end
   resources :users, :only => [:show, :index]
-    get "/business_account/index"
 end
 
