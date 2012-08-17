@@ -6,13 +6,36 @@ ActiveAdmin::Dashboards.build do
   
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
-   section "All Tribes" do
+  
+  section "All Tribes" do
+    table_for Tribe.all.collect do |tribe|
+      column :tribe_name do |tribe|
+        link_to tribe.tribe_name, [:admin, tribe]
+      end
+      column :location
+      column :category      
+    end
+    strong( link_to "View all Tribes", admin_tribes_path)    
+  end
+   
+  section "All Products" do
     ul do
-      Tribe.all.collect do |tribe|
-        li link_to(tribe.tribe_name, admin_tribes_path())
+      Product.all.collect do |product|
+        li link_to(product.product_name, admin_product_path(product))
       end
      end
-   end
+  end
+  
+  section "All Users" do
+    table_for User.all.collect do |user|
+      column "First name", :fname do |user|
+        link_to user.fname, [:admin, user]
+      end
+      column "Last name", :lname
+      column :email      
+    end
+    strong( link_to "View all Users", admin_users_path)
+  end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
