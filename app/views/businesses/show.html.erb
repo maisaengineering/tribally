@@ -1,11 +1,18 @@
 <p id="notice"><%= notice %></p>
-
+<%  @user.each do |each_details| %>
 <p>
   <b>Business name:</b>
-  <%= @business.business_name %>
+  <%= each_details.fname %>
 </p>
+
 <p>
-  <%= @business.business_email %>
+  <b>Business email:</b>
+  <%= each_details.email %>
+</p>
+<%end%>
+<p>
+  <b>Website:</b>
+  <%= @business.website %>
 </p>
 
  
