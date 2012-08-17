@@ -868,8 +868,7 @@ textarea#offer_description{
 	font-family:Trebuchet MS;
 	font-size:14px;
 	font-weight:bold;
-	padding-top: 7px;
-        padding-bottom: 7px;
+	padding: 7px;
 	text-decoration:none;
 	text-shadow:1px 1px 0px #528ecc;
 }.global_button:hover {
