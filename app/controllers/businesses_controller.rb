@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  #skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!  
   def index
     @businesses = Business.all
   end
@@ -10,7 +10,7 @@ class BusinessesController < ApplicationController
 
   def new
     #render action: "business_signup" 
-    @business = Business.new
+    @business = Business.new    
   end
 
   def edit
@@ -47,4 +47,5 @@ class BusinessesController < ApplicationController
   def business_signup
     
   end
+    
 end
