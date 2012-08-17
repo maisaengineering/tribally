@@ -9,6 +9,7 @@ class BusinessesController < ApplicationController
   end
 
   def new
+    #render action: "business_signup" 
     @business = Business.new
   end
 

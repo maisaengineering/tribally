@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th> Business name </th>
+    <th> Business email</th>
     <th> Website </th>
     <th> Offers history </th>
     <th> Invoices </th>
@@ -12,6 +13,7 @@
 <% @businesses.each do |business| %>
   <tr>
     <td><%= business.business_name %></td>
+    <td><%= business.business_email %></td>
     <td><%= business.website %></td>
     <td><%= business.offers_history%></td>
     <td><%= business.invoices%></td>
