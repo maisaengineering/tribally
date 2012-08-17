@@ -1,38 +1,30 @@
-<%= form_for @business, :validate => true do |f| %>
-  
-     <div class="field">
-        <%= f.label :Business name %>
-        <%= text_field :business_name %>
-     </div>
-      
-     <div class="field">
-        <%= f.label :Business email address %>
-        <%= text_field :business_email %>
-     </div>
 
-     <div class="field">
-        <%= f.label :Business web address %>
+<%= form_tag("businesses/update", :method => 'post') do %>
+      <div class="business_sign_up_fields">
+        <div class="business_fields1">Business name</div>
+        <%= text_field_tag :business_name %>
+      </div>
+      <div class="business_sign_up_fields">
+        <div class="business_fields1">Business email address</div> 
+        <%= text_field_tag :business_email %>
+      </div>
+
+      <div class="business_sign_up_fields">
+        <div class="business_fields">Business web address</div>
         <%= text_field_tag :website %>
-     </div>
-
-     <div class="field">
-        <%= f.label :password %>
-        <%= password_field_tag :password %>
-     </div>
+      </div>
+      <div class="business_sign_up_fields">
+        <div class="business_fields">Offer history </div>
+        <%= text_field_tag :offer_history %>
+      </div>
+      <div class="business_sign_up_fields">
+        <div class="business_fields">Invoices </div>
+        <%= text_field_tag :invoices %>
+      </div>
+      <div class="business_sign_up_fields">
+        <div class="business_fields">Account data </div>
+        <%= text_field_tag :account_data %>
+      </div>
+      <div class="business_sign_up_button_page"><%= submit_tag "Update account", :class =>'create_account_btn' %></div>
+    <% end %>
   
-    <div class="field">
-       <%= f.label :offers_history %>
-       <%= f.text_field :offers_history %>
-    </div>
-    <div class="field">
-       <%= f.label :invoices %>
-       <%= f.text_field :invoices %>
-    </div>
-    <div class="field">
-       <%= f.label :account_data %>
-       <%= f.text_field :account_data %>
-    </div>
-    <div class="actions">
-       <%= f.submit %>
-    </div>
-<% end %>

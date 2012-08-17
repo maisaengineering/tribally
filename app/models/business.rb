@@ -1,14 +1,14 @@
 class Business
   include Mongoid::Document
   
-  belongs_to :user
+  belongs_to :users
   
   field :business_name, :type => String
   field :website, :type => String
   field :business_email, :type => String
-  #field :offers_history, :type => String
-  #field :invoices, :type =>String
-  #field :account_data, :type =>String
+  field :offers_history, :type => String
+  field :invoices, :type =>String
+  field :account_data, :type =>String
 
   #validates_presence_of :business_name
   validates_presence_of :website

@@ -10,19 +10,24 @@
     <th> Account data </th>
   </tr>
 
-<% @businesses.each do |business| %>
+
+  
+      <% @businesses.each do |business| %>
   <tr>
-    <td><%= business.business_name %></td>
-    <td><%= business.business_email %></td>
+    <td><%#= business.fname %></td>
+    <td><%#= business.email %></td>
+    
+
     <td><%= business.website %></td>
-    <td><%= business.offers_history%></td>
-    <td><%= business.invoices%></td>
-    <td><%= business.account_data%></td>
+    <td><%#= business.offers_history%></td>
+    <td><%#= business.invoices%></td>
+    <td><%#= business.account_data%></td>
     <td><%= link_to 'Show', business %></td>
     <td><%= link_to 'Edit', edit_business_path(business) %></td>
     <td><%= link_to 'Destroy', business, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+
 </table>
 
 <br />
