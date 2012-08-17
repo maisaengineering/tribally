@@ -43,8 +43,4 @@ class BusinessesController < ApplicationController
     @business.destroy
      redirect_to businesses_url 
   end
-  
-  def business_signup
-    
-  end
 end
