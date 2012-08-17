@@ -96,6 +96,7 @@ class TribesController < ApplicationController
      redirect_to my_tribe_tribes_path
   end
   
+  
   #def i_want_this    
   #  product = Product.where(:tribe_id => params[:tribe_id]).first
   #  product.members.push([Members.new(:uid => current_user.uid, :status => 'accepted')])
