@@ -65,7 +65,8 @@
           <%end%>
         <% end %>
       </tbody>
-    </table>             
+    </table>     
+  <% if !current_user.role.empty? %>
     <div id="offers_portal_box" class="products_offers_list_box">
       <div class="make_an_offer_text">Make an offer for this product</div>
          <%= form_tag create_offer_products_path, :methods => 'post' do %>
@@ -115,6 +116,8 @@
                 </table>
           <% end %>
      </div>
+    <% end %>
+    
      <script>
           $(".products_offers_list_box:even").css("background-color","#D0D0D0"); 
           $(".products_offers_list_box:odd").css("background-color","#E8E8E8"); 
