@@ -41,10 +41,10 @@ ActiveAdmin.register Tribe do
         column "Product" do |product| 
           product.product_name          
         end
-        column "Product" do |product|           
+        column "Description" do |product|           
           product.description          
         end
-        column "Product" do |product|           
+        column "Price" do |product|           
           number_to_currency product.price
         end  
       end
@@ -55,7 +55,7 @@ ActiveAdmin.register Tribe do
         column "Member" do |member| 
           member.uid          
         end
-        column "Member" do |member| 
+        column "Status" do |member| 
           member.status          
         end          
       end
