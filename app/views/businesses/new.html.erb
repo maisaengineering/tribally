@@ -10,11 +10,11 @@
     <%= form_tag @business, :method => 'post' do %>
       <div class="business_sign_up_fields">
         <div class="business_fields1">Business name</div>
-        <%= text_field_tag :business_name %>
+        <%= text_field_tag :fname %>
       </div>
       <div class="business_sign_up_fields">
         <div class="business_fields1">Business email address</div> 
-        <%= text_field_tag :business_email %>
+        <%= text_field_tag :email %>
       </div>
 
       <div class="business_sign_up_fields">
@@ -47,3 +47,4 @@
 <%#= render 'business_signup' %>
 
 <%= link_to 'Back', businesses_path %>
+

@@ -1,7 +1,7 @@
 class Business
   include Mongoid::Document
   
-  belongs_to :users
+  belongs_to :user
   
   field :business_name, :type => String
   field :website, :type => String

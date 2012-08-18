@@ -12,16 +12,20 @@
 
 
   
-      <% @businesses.each do |business| %>
+    <% @businesses.each do |business| %>  
+  <%#=business.user_id%>
+ <%  @user = User.where("_id" => business.user_id) %>
+ 
   <tr>
-    <td><%#= business.fname %></td>
-    <td><%#= business.email %></td>
+    <%@user.each do |user_details|%>
+    <td><%= user_details.fname %></td>
+    <td><%= user_details.email %></td>
+    <%end%>
     
-
     <td><%= business.website %></td>
-    <td><%#= business.offers_history%></td>
-    <td><%#= business.invoices%></td>
-    <td><%#= business.account_data%></td>
+    <td><%= business.offers_history%></td>
+    <td><%= business.invoices%></td>
+    <td><%= business.account_data%></td>
     <td><%= link_to 'Show', business %></td>
     <td><%= link_to 'Edit', edit_business_path(business) %></td>
     <td><%= link_to 'Destroy', business, confirm: 'Are you sure?', method: :delete %></td>
