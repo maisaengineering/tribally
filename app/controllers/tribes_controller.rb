@@ -84,10 +84,10 @@ class TribesController < ApplicationController
   end
   
   def invite_friend
-    @tribe = Tribe.where(:_id => params[:tribe_id]).first
-      if !params[:invitees].blank? 
-          invitee_list = params[:invitees].split(",")      
-          invitee_list.each do |each_invitee_uid|        
+    @tribe = Tribe.where(:tribe_id => params[:tribe_id]).first
+      if !params[:invitees].blank?
+          invitee_list = params[:invitees].split(",")
+          invitee_list.each do |each_invitee_uid|
             @tribe.members.push([Member.new(:uid => each_invitee_uid)])
       end
       else
