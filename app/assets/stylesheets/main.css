@@ -35,58 +35,240 @@ li {
 .main_body{
     padding: 0px 25px 50px 25px;
 }
-
+/* new css for footer*/
 .footer_box{
     background:#fff;
-    border:2px dotted #D1D1D1;
+    border-top:3px dashed #D1D1D1;
+    margin-left: 30px;
+    width: 940px;
+   
 }
 .footer_container{
-    margin-left:15%;
-    width:998px;
-    height:250px;
+    margin-left:30px;
+    width:940px;
+    height:220px;
+}
+.offerus_solar_title{
+    position: relative;
+    float: left;
+    margin-left: 420px;
+    margin-top: 20px;
+    width: 280px;
+}
+.footer_inner_container{
+    
+        background:-webkit-gradient( linear, left 50, right 50, color-stop(0.60, #009FE2), color-stop(0.85, #C5EBF8) );
+	background:-moz-linear-gradient( center left,  #009FE2 60%, #C5EBF8 85% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#009FE2', endColorstr='#C5EBF8');
+	background-color:#009FE2;
+        width: 940px;
+        height: 150px;
+        margin-top: 50px;
+        border-top-left-radius:8px;
+        border-top-right-radius:8px;
+       
+}
+.footer_last{
+    background:-webkit-gradient( linear, left20 , right 80, color-stop(0.07, #00B5E4), color-stop(1, #00B3E4) );
+	background:-moz-linear-gradient( center left,  #00B5E4 20%, #00B3E4 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00B5E4', endColorstr='#00B3E4');
+	background-color:#00B3E4;
+        width: 940px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-bottom-left-radius:8px;
+        border-bottom-right-radius:8px;
+        position: relative;
+        margin-top: 0px;
+        float: left;
+    
+}
+.copy_right_link{
+    padding-top: 20px;
+    margin-left: 10px;
+    color: #fff;
+    font-size:16px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
 }
 .footer_about_contact_box{
     height:120px;
 }
-.about_footer_page{
-    color:#000;
-    font-weight:normal;
+.about_footer_page a{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
 }
-.getintouch_footer_page{
-    color:#000;
-    font-weight:normal;
+.get_in_touch_container{
+    position: relative;
+    float: left;
+    width: 150px;
+    
 }
-.footer_aboutus_box{
-    width:250px;
-    text-align:center;
+.solar_img{
+    padding-left:  220px;
+    position: relative;
+    float: left;
+    
 }
-.footer_contactus_box{
-    width:250px;
-    text-align:center;
+.get_in_touch_text{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 20px;
+    line-height: 25px;
+}
+.contact_us_link a{
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+}
+.About_link_footer{
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    padding-top: 20px;
+    width: 210px;
+    position: relative;
+    float: left;
+    line-height: 25px;
+}
+.for_solar_retailers{
+    position: relative;
+    float: left;
+    width: 250px;
+}
+.text_for_solar_retailers{
+    font-size:20px;
+    font-weight:bold;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 25px; 
+}
+.link_making_offers a{
+    font-size: 18px;
+    color: #fff;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    
 }
 .fb_like_borderbox{
     width:250px;
     padding-left:200px;
 }
-.About_link_footer{
-    font-size:18px;
+/*css for 2nd footer*/
+
+.for_business{
+    position: relative;
+    float: left;
+    width: 250px;
+}
+.text_for_business{
+    font-size:20px;
     font-weight:bold;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 25px; 
 }
-.footer_privacy_terms_table{
-    width:1000px;
-    margin-top:30px;
+.link_tribes_offers a{
+    font-size: 18px;
+    color: #fff;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
 }
-.privacy_footer_link{
+.offer_us_img{
+    padding-left:  75px;
+    padding-top: 20px;
+    position: relative;
+    float: left;
+    
+}
+
+.footer_inner_2container{   
+        background:-webkit-gradient( linear, left 50, right 50, color-stop(0.60, #009FE2), color-stop(0.85, #C5EBF8) );
+	background:-moz-linear-gradient( center left,  #009FE2 60%, #C5EBF8 85% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#009FE2', endColorstr='#C5EBF8');
+	background-color:#009FE2;
+        width: 940px;
+        height: 150px;
+        margin-top: 50px;
+        border-top-left-radius:8px;
+        border-top-right-radius:8px;
+       
+}
+.footer_2last{
+        background:-webkit-gradient( linear, left20 , right 80, color-stop(0.07, #00B5E4), color-stop(1, #00B3E4) );
+	background:-moz-linear-gradient( center left,  #00B5E4 20%, #00B3E4 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00B5E4', endColorstr='#00B3E4');
+	background-color:#00B3E4;
+        width: 940px;
+        height: 50px;
+        margin-bottom: 20px;
+        border-bottom-left-radius:8px;
+        border-bottom-right-radius:8px;
+        position: relative;
+        margin-top: 0px;
+        float: left;
+    
+}
+.copy_right_2link{
+    padding-top: 20px;
+    margin-left: 10px;
+    color: #fff;
     font-size:16px;
-    color:#000;
+    font-family: Trebuchet MS;
+    font-weight: bold;
 }
-.terms_condition_link{
-    font-size:16px;
-    color:#000;
+.about_2footer_page a{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
 }
-.copy_right_link{
-    font-size:16px;
-    color:#000;
+.get_in_touch_2container{
+    position: relative;
+    float: left;
+    width: 150px;
+    
+}
+.get_in_touch_2text{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 20px;
+    line-height: 25px;
+}
+.contact_us_2link a{
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+}
+.About_link_2footer{
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    padding-top: 20px;
+    width: 210px;
+    position: relative;
+    float: left;
+    line-height: 25px;
 }
 /* Start menubar */
 .menu_first{
