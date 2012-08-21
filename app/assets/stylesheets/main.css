@@ -850,7 +850,6 @@ textarea#offer_description{
     width:300px;
 }
 
-
 .global_button {
 	-moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
@@ -882,8 +881,6 @@ textarea#offer_description{
 	position:relative;
 	top:1px;
 }
-
-
 
 a.orange_color_button:hover{
     background: rgb(255, 138, 0);
