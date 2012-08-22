@@ -25,6 +25,7 @@ resources :tribes do
       get "tribe_products"
       get "i_want_this"
       post "invite_friend"
+      get "solar"
      end
 end
  
