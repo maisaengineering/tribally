@@ -5,6 +5,8 @@ class Member
   
   belongs_to :user  
   embedded_in :tribe
+  embedded_in :product_group
+  embeds_many :members
   
   field :uid, :type => String
   field :status, :type => String, default: 'thinking'

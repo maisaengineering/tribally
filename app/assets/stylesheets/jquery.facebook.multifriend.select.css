@@ -185,7 +185,7 @@ margin-left:590px;
 padding: .3em 1em .5em .4em;
 }
 .ui-dialog-buttonset button{
-  -moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
+         -moz-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	-webkit-box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	box-shadow:inset 0px 0px 0px 0px #bbdaf7;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05,  #79bbff), color-stop(1, #378de5) );

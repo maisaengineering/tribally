@@ -22,7 +22,6 @@ class BusinessesController < ApplicationController
 
   def edit
     @business = Business.find(params[:id])
-    
     #raise @business.website.inspect
     #raise @business.user.email.inspect
     @user = User.where("_id" => @business.user_id)
