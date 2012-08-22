@@ -270,6 +270,83 @@ li {
     float: left;
     line-height: 25px;
 }
+/*css for 4 steps */
+.easy_steps_heading{
+    font-size: 23px;
+    font-family: Trebuchet MS; 
+}
+.first_step{
+    width: 150px;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+}
+.first_img{
+    margin-left: 30px;
+}
+.easy_steps{
+    width: 940px;
+    height: 200px;
+    border: 0px solid;
+    margin-left: 30px;
+    
+}
+.first_img_text{
+    font-family: Trebuchet MS;
+    color: #8F8F8F;
+    font-size: 16px; 
+    text-align: center;
+}
+.second_step{
+    width: 160px;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.second_img{
+    margin-left: 38px;
+}
+.second_img_text{
+    font-family: Trebuchet MS;
+    color: #8F8F8F;
+    font-size: 16px; 
+    width: 190px;
+    text-align: center;
+}
+.third_step{
+    width: 160px;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.third_img{
+    margin-left: 38px;
+}
+.third_img_text{
+    font-family: Trebuchet MS;
+    color: #8F8F8F;
+    font-size: 16px;   
+    text-align: center;
+}
+.fourth_step{
+    width: 160px;
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.fourth_img{
+    margin-left: 38px;
+}
+.fourth_img_text{
+    font-family: Trebuchet MS;
+    color: #8F8F8F;
+    font-size: 16px;  
+    text-align: center;
+}
+
 /* Start menubar */
 .menu_first{
     float:left;
