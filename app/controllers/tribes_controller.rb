@@ -94,6 +94,9 @@ class TribesController < ApplicationController
       end
       redirect_to my_tribe_tribes_path
   end
+  def solar
+    
+  end
   
   
   #def i_want_this    
