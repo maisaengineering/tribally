@@ -180,8 +180,8 @@
           <td>
             <div class="products_want_this_box">
               <div class="wants_box"> 
-                <span class="want_number"><% @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
-                <%= @ad.size %><br/><span class="size">Wants this</span>              
+                <span class="want_number"><%# @ad = no_of_wants(params[:id], product.product_name, current_user.uid )  %></span>
+                <%#= @ad.size %><br/><span class="size">Wants this</span>              
                 <div class="i_want_this">
                   <%= link_to "I want this", tribe_products_tribes_path(:id => params[:id], :product_name => product.product_name), :class => 'global_button' %>                
                 </div>
