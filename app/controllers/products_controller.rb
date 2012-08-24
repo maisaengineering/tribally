@@ -70,5 +70,8 @@ class ProductsController < ApplicationController
     :offer_name => params[:offer_name], :offer_description => params[:offer_description], :offer_price => params[:offer_price])])    
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
+  def solar
+    
+  end
 end
 
