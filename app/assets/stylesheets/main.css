@@ -1652,28 +1652,32 @@ a.orange_color_button_a{
    padding-top: 20px;
 }
 .menu_search{
-    width: 280px;
-    height: 35px;
-    margin-left: 20px;
-    border-radius: 5px;
-    border: 1px solid #CCCCCC;
-    background-color: #fff;
-    background: url("/assets/down.png") no-repeat 250px 10px;
+    margin-left: 0px;
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #F9A943;
+    height: 38px;
+    top: 25%;
+    vertical-align: top;
+    padding-top: 10px;
+    width: 110%;
+    
 }
 .post_search{
     width: 280px;
-    height: 35px;
     margin-left: 20px;
     border-radius: 5px;
     border: 1px solid #CCCCCC;
-    background-color: #fff;
-    background: url("/assets/down.png") no-repeat 250px 10px;
+    background: url("/assets/down.png") no-repeat 250px 10px white;
+    border: 1px solid #E9E9E9;
+    height: 38px;
+    overflow: hidden;
 }
 .search_arrow_button{
     background: url("/assets/down.png") no-repeat 250px 10px;
 }
 .post_code_font{
-    font-family: Trebuchet MS;
+   font-family: Trebuchet MS;
     font-size: 18px;
     color: #314B58;
     padding-left: 20px;
