@@ -9,6 +9,7 @@ resources :products do
 		post "add_comment"
     post "create_offer"
     get "solar"
+    post "product_group"
 	end
 end
 
