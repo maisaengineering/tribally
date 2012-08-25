@@ -9,11 +9,9 @@ resources :products do
 		post "add_comment"
     post "create_offer"
     get "solar"
-<<<<<<< HEAD
-    get "solar_offers"
-=======
     post "product_group"
->>>>>>> c730e2a5bbf46eca4c2c32838c9cc8e35354b35e
+    get "solar_offers"
+
 	end
 end
 
