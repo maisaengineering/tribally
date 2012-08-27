@@ -1,4 +1,5 @@
-// Copyright 2010 Mike Brevoort http://mike.brevoort.com @mbrevoort
+ 
+// // Copyright 2010 Mike Brevoort http://mike.brevoort.com @mbrevoort
 // 
 // v1.0 jquery-facebook-multi-friend-selector
 // 

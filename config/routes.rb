@@ -11,7 +11,7 @@ resources :products do
     get "solar"
     post "product_group"
     get "solar_offers"
-
+    get "solar_group_offers"
 	end
 end
 

@@ -80,5 +80,8 @@ class ProductsController < ApplicationController
   def solar_offers
     
   end
+  def solar_group_offers
+    
+  end
 end
 
