@@ -221,10 +221,10 @@ padding: .3em 1em .5em .4em;
 }
 
 div.ui-dialog{
-    border: 2px solid #7F7F7F/*{borderColorContent}*/;
+    border: 2px solid #7F7F7F;/*{borderColorContent}*/
     background: none repeat scroll 0 0 #F7F7F7;
     color: #7F7F7F;
-    color: rgb(34, 34, 34)/*{fcContent}*/;
+    color: rgb(34, 34, 34);/*{fcContent}*/
     margin-top:0px;
     margin-bottom: -1800px;
 

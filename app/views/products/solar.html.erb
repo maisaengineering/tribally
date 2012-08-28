@@ -1,0 +1,48 @@
+<div class="offer_solar_main_page">
+    <div class="offer_use_solar_main_text">
+      Offerussolar.com negotiates great solar deals for community groups.
+    </div>
+  <div class="solar_logo_img"><%=  image_tag("/assets/solar_logo.png") %></div>
+    <div class="solar_video"></div>
+    <div class="solar_group_join_text">
+      Join on offerussolar.com group, and watch as you receive better offers as your group grows!
+    </div>
+    <div class="get_started">
+        <div class="get_started_text">Get started!</div>
+          <p class="quick_color">(its quick,easy and free)</p>
+        <div class="get_started_inner_border"></div>
+        <div class="post_code_text">enter your postcode and click start</div>
+                          <%= form_tag product_group_products_path do  %>	       
+                            <div class="start_search">
+                              <%= text_field_tag :zipcode %>
+                            </div>
+                            <div class="start_button">
+                              <%= submit_tag("Start") %>
+                            </div>
+                          <% end %>
+    </div>
+</div>
+
+
+<div class="easy_steps">
+    <div class="easy_steps_heading">How it works-4 easy steps</div>
+    <div class="join_solar">
+        <div class="join_solar_img"><%= link_to image_tag("/assets/join.png") %></div>
+        <p class="join_solar_img_text">1.Join a solar buying group in your area</p>
+    </div>
+    <div class="invite_solar">
+        <div class="invite_solar_img"><%= link_to image_tag("/assets/invite_img.png") %></div>
+        <p class="invite_solar_img_text">2.Invite others to increase your buying power</p>
+    </div>
+    <div class="discount_group_offer">
+        <div class="discount_group_offer_img"><%= link_to image_tag("/assets/discount_offer_img.png") %></div>
+        <p class="discount_group_offer_img_text">3.Receive discounted group offer.</p>
+    </div>
+    <div class="choose_offer">
+        <div class="choose_offer_img"><%= link_to image_tag("/assets/chose_offer.png") %></div>
+        <p class="choose_offer_img_text">4.Compare, choose an offer and save</p>
+    </div>
+</div>
+
+
+ 

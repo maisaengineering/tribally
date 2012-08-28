@@ -70,5 +70,18 @@ class ProductsController < ApplicationController
     :offer_name => params[:offer_name], :offer_description => params[:offer_description], :offer_price => params[:offer_price])])    
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
+  def solar
+
+  end
+  def product_group
+   @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])    
+    redirect_to solar_products_path()
+  end
+  def solar_offers
+    
+  end
+  def solar_group_offers
+    
+  end
 end
 
