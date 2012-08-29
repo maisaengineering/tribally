@@ -1,7 +1,7 @@
 
 
 
-<%= form_for(@business) do |f|  %>
+<%= form_for(@business , :html => { :multipart => true }) do |f|  %>
   <%  @user.each do |user| %>
       <%#=user.fname %>
  
@@ -34,7 +34,11 @@
         <%= f.label :Account_data %>
         <%= f.text_field :account_data %>
       </div>
-
+      
+      <div class="field">
+        <%= f.label :avatar %><br />
+        <%= f.file_field :avatar %>
+      </div>
     
        <div class="actions">
           <%= f.submit %>

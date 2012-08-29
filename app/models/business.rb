@@ -1,7 +1,9 @@
 class Business
   include Mongoid::Document
-  
+  include Mongoid::Paperclip
   belongs_to :user
+  
+  has_mongoid_attached_file :avatar
   
   field :business_name, :type => String
   field :website, :type => String
@@ -16,6 +18,6 @@ class Business
   #validates_presence_of :invoices
   #validates_presence_of :account_data
   
-  attr_accessible :business_name, :website, :business_email, :offers_history, :invoices, :account_data
+      attr_accessible :business_name, :website, :business_email, :offers_history, :invoices, :account_data, :avatar
 
 end
