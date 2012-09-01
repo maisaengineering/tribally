@@ -660,7 +660,7 @@ li {
 #loginButton .span {
     color:#017FD6;
     font-size: 14px;
-    padding: 2px 17px 3px 2px;
+    padding: 0px 17px 3px 2px;
     background: url("/assets/loginArrow.png") no-repeat 42px 2px;
     float:left;
     margin-left:0px;
@@ -762,6 +762,9 @@ input#user_lname{
 input#user_password_confirmation{
     width:250px;
 }
+input ,textarea#user_password_confirmation{
+    width:250px;
+}
 /* End login form */
 
 .current_user_iamge{
@@ -779,21 +782,7 @@ input#user_password_confirmation{
     margin-left:100px;
     margin-top:10px;
 }
-input#Business_name{
-    width: 250px;
-}
-input#Business_email_address{
-    width: 250px;
-}
-input#Business_web_address{
-    width: 250px;
-}
-input#password{
-    width: 250px;
-}
-input#password_confirmation{
-    width: 250px;
-}
+
 .business_checkbox{
     margin-left: 50px;
     width: 260px;
@@ -840,16 +829,16 @@ input#password_confirmation{
 #business_video{
     margin-top: 20px;
     margin-left: 2px;
-    width: 558px;
+    width: 560px;
     height: 320px;
-    border: 1px solid;
+   
     position: inherit;
     float: left;
 }
 .business_last_line{
     font-size: 15px;
     margin-right: 558px;
-    margin-top: 30px;   
+    margin-top: 50px;   
     position:relative;
     float: left;
     font-family: Trebuchet MS;
@@ -911,8 +900,36 @@ input#password_confirmation{
     height:auto;
     padding-left:50px;
     padding-top:20px;
-    border:1px solid #E9E9E9;
+    border:3px solid #E9E9E9;
     border-radius:5px;
+}
+.sign_up_fields input[type="text"] {
+   
+    margin-top: 0;
+}
+p input[type="text"] {
+   
+    margin-top: 0;
+}
+.facebook_sign_up_text h1 {
+    color: #333333;
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.facebook_sign_up_text h3 {
+    color: #6F6F6F;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    
+    padding-bottom: 15px;
+}
+.facebook_sign_up_text{
+   height: 100px;
+    margin-left: 75px;
+    margin-top: -180px;
+    overflow: hidden;
+    width: 340px;
 }
 .sign_up_fields{
     font-weight:normal;
@@ -921,8 +938,8 @@ input#password_confirmation{
 .facebook_connect_button{
     width: 290px;
     height: 60px;
-    margin-left:100px;
-    margin-top:-30px;
+    margin-left:75px;
+    margin-top:0px;
     overflow:hidden;
 }
 .sign_up_header{
@@ -1596,7 +1613,6 @@ a.orange_color_button_a{
     height:280px;
     margin-left:35px;
     margin-top:-20px;
-    border:1px solid #fff;
     background-color: #fff;
 }
 .solar_group_join_text{
@@ -2522,7 +2538,7 @@ a.orange_color_button_a{
     position: relative;
     float: left;
     margin-top: 44px;
-    margin-bottom: 10px;
+  
     
 }
 .business_img{
@@ -2600,16 +2616,18 @@ a.orange_color_button_a{
 
 .i_want_this_display{
     width:124px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
    
     background-color: #F4F4F4; 
 }
+
 .offers_my_details{
     width: 930px;
     height: auto;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 0px solid #CCCCCC;
+    border-top: 3px dotted #CCCCCC; 
     position: relative;
     float: left;
 }
@@ -2665,15 +2683,23 @@ a.orange_color_button_a{
     position: relative;
     text-align: right;
     margin-top: 92px;
+  
 }
 .my_details_fields label{
     font-size: 15px;
 }
-.my_details_fieldstag{
+.my_details_fieldstag   input[type="text"],textarea{
     position: relative;
     float: left;
     margin-left: 245px;
-    margin-top: -36px;
+    margin-top: -28px;
+    border: 0 solid #CCCCCC;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+}
+.my_details_fieldstag textarea:focus{
+    border-color: #FFF;
+    box-shadow:0 0 0 rgba(0,0,0,0.15);
 }
 .my_details_field_email label{
     font-size: 15px;
@@ -2683,6 +2709,107 @@ a.orange_color_button_a{
     position: relative;
     text-align: right;
     margin-top: 10px;
+}
+.your_details_fields label{
+    width: 70px;
+    position: relative;
+    text-align: left;
+    padding-left: 15px;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    margin-top: 0px;
+    line-height: 75%;
+    color: #464646;
+  
+}
+.first_3fields{
+    width:450px;
+    position: relative;
+    float: left;
+}
+.your_details_field_address label{
+    width: 70px;
+    float: left;
+    text-align: left;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    line-height: 75%;
+    color: #464646;
+}
+.your_details_fieldstag_address input[type="text"]{
+    position: relative;
+    float: left;
+    margin-left: 0px;
+    margin-top: -7px;
+    border: 0 solid #CCCCCC;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+
+}
+.your_details_field_suburb label{
+    width: 70px;
+    float: left;
+    text-align: left;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    line-height: 75%;
+    color: #464646;
+    position: relative;
+    margin-left: -328px;
+    margin-top: 15px;
+}
+.your_details_fieldstag_suburb input[type="text"]{
+    margin-left: 60px;
+    float: left;
+    margin-top: -8px;
+    border: 0 solid #CCCCCC;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+}
+.your_details_pnfields label{
+    width: 130px;
+    position: relative;
+    text-align: left;
+    padding-left: 15px;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    margin-top: 0px;
+    line-height: 75%;
+    color: #464646;
+}
+.your_details_pnfieldstag input[type="text"]{
+     position: relative;
+    float: left;
+    margin-left: 130px;
+    margin-top: -23px;
+    border: 0 solid #CCCCCC;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+}
+
+.your_details_fieldstag   input[type="text"],textarea{
+    position: relative;
+    float: left;
+    margin-left: 70px;
+    margin-top: -23px;
+    border: 0 solid #CCCCCC;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+}
+.thats_my_house{
+    background: -moz-linear-gradient(center top , #99D8F9 0%, #32B6FB 50%, #37B5F6) repeat scroll 0 0 transparent;
+    border: 1px solid #37A9E6;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 1px 3px rgba(18, 17, 18, 0.5), 0 0 3px #F5EDF5 inset;
+    color: #FFFFFF;
+    
+    font-family: Trebuchet MS;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    padding: 5px 12px;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 #FFFFFF;
 }
 .solar_comments_container{
     width: 930px;
@@ -2733,3 +2860,168 @@ a.orange_color_button_a{
 margin-left: 10px;
 }
  
+.btn-primary {
+    background-color: #019BE1;
+    background-image: -moz-linear-gradient(center top , #019BE1, #019BE1);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.btn-primary:hover, .btn-primary:active {
+    background-color: #019BE1;
+}
+
+/* edit sign up form */
+
+.edit_signup_form{
+    background-color: #EFEFEF;
+    border: 3px solid #CDCDCD;
+    margin-left: 50px;
+    padding-left: 40px;
+    width: 400px;
+    float: left;
+    border-radius:8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cancel_my_account{
+    background-color: #EFEFEF;
+    border: 3px solid #CDCDCD;
+    margin-left: 50px;
+    padding-left: 20px;
+    border-radius:5px;
+    width: 250px;
+    float: left;
+    margin-top: 200px;
+    
+}
+.cancel_my_account:hover{
+    background-color: #FFFFFF;
+}
+.edit_form_outerborder{
+    border: 2px solid #98D4F9;
+    border-radius:10px;
+    float:left;
+    width: 925px;
+}
+.edit_update_btn input{
+    background-color: #019BE1;
+    background-image: -moz-linear-gradient(center top , #019BE1, #019BE1);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-width: 1px;
+    border-radius:8px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 20px;
+    padding: 6px 30px;
+    text-align: center; 
+    color: #FAFAFA;
+
+}
+.business_post_form{
+    position: relative;
+    float: left;
+    
+    border: 1px solid #F4F4F4;
+    margin-left: 20px;
+    width: 891px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.business_image input{
+    width: 162px;
+    float: left;
+    
+    margin-top: 35px;
+}
+.system_size_post{
+    position: relative;
+    float: left;
+    width: 110px;
+    height: 100px;
+    background-color: #F4F4F4;
+    margin-top: -27px;
+    
+}
+.font_for_edit_form{
+    font-size: 15px;
+}
+.system_size_field input{
+    width:100px;
+    margin-top: 1px;
+    border: 1px solid #7E7E7E;
+}
+.group_discount_price{
+    width:235px;
+    position: relative;
+    float: left;
+    margin-left: 0px;
+    margin-top: -25px;
+}
+.group_discount_price_field input{
+    width:150px;
+    height: 20px;
+    font-size: 20px;
+    margin-top: 1px;
+}
+.warrenty{
+    position: relative;
+    float: left;
+    width: 100px;
+    margin-top: -25px;
+    height: 100px;
+    background-color: #F4F4F4;
+   
+}
+.warrenty_field input{
+    width: 90px;
+    margin-top: 1px;
+    
+}
+.more_info{
+    position: relative;
+    float: left;
+    width: 160px;
+    height: 100px;
+    margin-top: -25px;
+}
+.more_info_text input{
+    width: 130px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+.edit_form_create_button{
+    width:124px;
+    height: 100px;
+    background-color: #F4F4F4;
+    position: relative;
+    float: left;
+    margin-top: -27px;
+    
+}
+.edit_form_create_button input{
+    margin-left: 5px;
+    background-color: #019BE1;
+    background-image: -moz-linear-gradient(center top , #019BE1, #019BE1);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-width: 1px;
+    border-radius:8px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 20px;
+    padding: 6px 30px;
+    text-align: center; 
+    color: #FAFAFA;
+}
+.comment_field textarea {
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+    float: left;
+    font-size: 17px;
+    margin-top: 0px;
+    position: relative;
+}

@@ -74,8 +74,8 @@ class ProductsController < ApplicationController
 
   end
   def product_group
-   
-   @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])    
+    product = Product.where(:_id => params[:product_id]).first	
+   @product.product_groups.push([ProductGroup.new(:zipcode => params[:zipcode])])    
     redirect_to solar_products_path()
   end
   def solar_offers

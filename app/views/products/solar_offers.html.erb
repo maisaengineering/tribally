@@ -31,68 +31,125 @@
           <div class="u_r_member">You're a member!</div>
           <div class="solar_invite_others"><center>Invite others</center></div>
           <div class="solar_leave_this_group"><center>Leave this group</center></div>
-         <% else %> 
+          <% else %> 
           <div class="text_for_accesssing_this_tribe">You're not a member of this group yet.Fill out the 'my details'section below to get access to this group's local offers</div>
-     <% end  %>
+          <% end %>
       </div>
-     
-  <div class="solar_down_border"></div>
-  <div class="solar_boxoffer_details">
-    <p class="text_for_offers_for_this_group">Offer for this group:</p>
-    <div class="offer_table" cellspacing="0" cellpadding="0" border="0" style="opacity:1;">
-      <span class="font_for_offer_business">Business</span>
-      <span class="font_for_offer_system_size">System size</span>
-      <span class="font_for_offer_group_discount">Group discount pricing</span>
-      <span class="font_for_offer_warrenty">Warrenty</span>
-      <span class="font_for_offer_more_info">More info</span>
-      <span class="font_for_offer_i_want_this">I want this!</span>
+    <% if user_signed_in? %> 
+    <div class="offers_my_details">
+     <p class="offers_my_details_text">Your details</p><br /><br />
+       <%= form_tag do %> 
+       <div class="first_3fields">
+           <div class="your_details_fields"><%= label_tag(:fname, "Name:") %></div>    
+           <div class="your_details_fieldstag"><%= text_field_tag(:fname) %></div>
+            
+          <div class="your_details_fields"><%= label_tag(:email, "Email:") %></div>
+          <div class="your_details_fieldstag"><%= text_field_tag(:email) %></div>
+
+          <div class="your_details_pnfields"> <%= label_tag(:phone_number, "phone number:") %></div>
+          <div class="your_details_pnfieldstag"> <%= text_field_tag(:phone_number) %></div>
+       </div>
+          <div class="your_details_field_address"><%= label_tag(:address, "Address:") %></div>
+          <div class="your_details_fieldstag_address"><%= text_field_tag(:address) %></div>
+          <br />
+          <div class="your_details_field_suburb"><%= label_tag(:suburb, "Suburb:") %></div>
+          <div class="your_details_fieldstag_suburb"><%= text_field_tag(:suburb) %></div>
     </div>
-    <% if user_signed_in? %>
-   
-    <div class="solar_table_container">
-      <div class="business_img"><%= image_tag "/assets/images.jpeg" %>
-      </div>
-      <div class="system_size"></div>
-      <div class="discount_rate"></div>
-      <div class="warrenty_display"></div>
-      <div class="more_info_display"></div>
-      <div class="i_want_this_display">
-        <input type="button" value="Choose" class="choose_button" />
-      </div>
-        </div>
-    <% else %> 
-     <div class="text_for_member_signin">Offers made to this group are displayed here.You'll need to be signed in and a member of this group to view these offers.<a href="#">Sign in</a> or fill out your details above and click 'join this group' to create a free account.</div>
+          <div><input type="button" value="That's my house" class="thats_my_house"/><%#= submit_tag("Join this group") %></div>
       
       <% end %>
-  
-    
+      <% else %> 
+      <p class="offers_my_details_text">My details</p><br />
+      <p class="description_for_my_details">These details aren't shared wit anyone else in the group,and we'll only share your details with solar retailer if you accept this offer</p>
+      <div class="my_details_form">
+
+          <%= form_tag do %> 
+
+           <div class="my_details_fields"><%= label_tag(:fname, "Name:") %></div>    
+           <div class="my_details_fieldstag"><%= text_field_tag(:fname) %></div>
+
+          <div class="my_details_field_email"><%= label_tag(:email, "Email:") %></div>
+          <div class="my_details_fieldstag"><%= text_field_tag(:email) %></div>
+
+          <div class="my_details_field_email"> <%= label_tag(:phone_number, "phone number:") %></div>
+          <div class="my_details_fieldstag"> <%= text_field_tag(:phone_number) %></div>
+
+          <div class="my_details_field_email"> <%= label_tag(:size, "Size of system I'm looking for:") %></div>
+          <div class="my_details_fieldstag"> <%= text_field_tag(:integer) %></div><br />
+
+          <div class="my_details_field_email"><%= label_tag(:address, "Address:") %></div>
+          <div class="my_details_fieldstag"><%= text_area_tag(:address) %></div>
+
+          <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
+      </div>
+    <% end %>
   </div>
-  <div class="offers_my_details">
-    <p class="offers_my_details_text">My details</p><br />
-    <p class="description_for_my_details">These details aren't shared wit anyone else in the group,and we'll only share your details with solar retailer if you accept this offer</p>
-    <div class="my_details_form">
-     
-        <%= form_tag do %> 
-      
-      <div class="my_details_fields"><%= label_tag(:fname, "Name:") %></div>    
-      <div class="my_details_fieldstag"><%= text_field_tag(:fname) %></div>
-     
-      <div class="my_details_field_email"><%= label_tag(:email, "Email:") %></div>
-      <div class="my_details_fieldstag"><%= text_field_tag(:email) %></div>
-      <div class="my_details_field_email"> <%= label_tag(:phone_number, "phone number:") %></div>
-        <div class="my_details_fieldstag"> <%= text_field_tag(:phone_number) %></div>
-        <div class="my_details_field_email"> <%= label_tag(:size, "Size of system I'm looking for:") %></div>
-        <div class="my_details_fieldstag"> <%= text_field_tag(:integer) %></div><br />
-      
-        <div class="my_details_field_email"><%= label_tag(:address, "Address:") %></div>
-        <div class="my_details_fieldstag"><%= text_area_tag(:address) %></div>
-        <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
+     <% end %>
+
+  <div class="solar_down_border"></div>
+  <div class="solar_boxoffer_details">
+          <p class="text_for_offers_for_this_group">Offer for this group:</p>
+          <div class="offer_table" cellspacing="0" cellpadding="0" border="0" style="opacity:1;">
+            <span class="font_for_offer_business">Business</span>
+            <span class="font_for_offer_system_size">System size</span>
+            <span class="font_for_offer_group_discount">Group discount pricing</span>
+            <span class="font_for_offer_warrenty">Warrenty</span>
+            <span class="font_for_offer_more_info">More info</span>
+            <span class="font_for_offer_i_want_this">I want this!</span>
+          </div>
+          <% if user_signed_in? %>
+
+          <div class="solar_table_container">
+            <div class="business_img"><%= image_tag "/assets/images.jpeg" %>
+            </div>
+            <div class="system_size"></div>
+            <div class="discount_rate"></div>
+            <div class="warrenty_display"></div>
+            <div class="more_info_display"></div>
+            <div class="i_want_this_display">
+              <input type="button" value="Choose" class="choose_button" />
+            </div>
+              </div>
+          <% else %> 
+           <div class="text_for_member_signin">Offers made to this group are displayed here.You'll need to be signed in and a member of this group to view these offers.<a href="#">Sign in</a> or fill out your details above and click 'join this group' to create a free account.</div>
+
+            <% end %>
+           <div class="business_post_form">
+           <%= form_tag( :html => { :multipart => true }) do |f|  %>
+             
+              <div class="business_image">
+              <p class="font_for_edit_form">logo</p> 
+              <%= file_field_tag :Upload %>
+              </div>
+             <div class="system_size_post">
                
-        <% end %>
-     
-    
-    </div>
+                <div class="system_size_field"><%= text_field_tag :system_size %></div>
+                <p class="font_for_edit_form">System size</p>
+             </div>
+             <div class="group_discount_price">
+               
+               <div class="group_discount_price_field"><center>
+               <%= text_field_tag :group_discount_price %></center>
+               </div>
+               <center class="font_for_edit_form">Group discount price</center>
+             </div>
+             <div class="warrenty">
+               
+                <div class="warrenty_field"><%= text_field_tag :warrenty %></div>
+                <center class="font_for_edit_form"> warrenty</center>
+             </div>
+             <div class="more_info">
+               
+               <div class="more_info_text"><%= text_field_tag :more_info %></div>
+               <center class="font_for_edit_form">More info</center>
+             </div>
+              <div class="edit_form_create_button">
+                <center><%= submit_tag :Create%></center>
+              </div>
+           <% end %>
+           </div>
   </div>
+  
   <div class="solar_comments_container">
     <div class="solar_comment_text">Comments</div>
     <%# if product.comments.empty? %>
@@ -103,7 +160,7 @@
     <div id="leave" class="solar_comments_body_box" style ="display:none">
     <%= form_tag do  %>
                          
-      <div class="field">
+      <div class="comment_field">
         <%= text_area_tag :body %>
       </div>
       <div class="actions">
