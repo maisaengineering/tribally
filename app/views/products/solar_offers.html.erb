@@ -119,7 +119,7 @@
              
               <div class="business_image">
               <p class="font_for_edit_form">logo</p> 
-              <%= file_field_tag :Upload %>
+              <%= file_field_tag "avatar" %>
               </div>
              <div class="system_size_post">
                
@@ -158,7 +158,7 @@
     <span class="commentlink" id="#leave">Leave a comment</span>
   </div>
     <div id="leave" class="solar_comments_body_box" style ="display:none">
-    <%= form_tag do  %>
+    <%= form_tag do %>
                          
       <div class="comment_field">
         <%= text_area_tag :body %>
@@ -170,7 +170,6 @@
   </div> 
    
   </div>
-</div>
 
 <script>
  $(function(){
