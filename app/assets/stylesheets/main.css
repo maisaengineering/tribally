@@ -1,8 +1,13 @@
 /* Css styles */
+.img_size img{
+    max-width: 140px;
+    max-height: 120px;
+}
 /*solar header*/
 a.brand {
     margin-left: 0px;
 }
+
 .navigation{
     margin-left: 35px;
     width: 510px;
@@ -2113,11 +2118,8 @@ a.orange_color_button_a{
 		#FFFFFF 0%,
 		#FAFAFA 50%,
 		#F2F2F2 70%);
-	background: -webkit-gradient(
-		linear, left top, left bottom, 
-		from(#FFFFFF),
-		color-stop(0.50, #FAFAFA),
-		to(0.70,#F2F2F2));
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.50, #FAFAFA), color-stop(0.85, #F2F2F2) );
+   
         position: relative;
         float: left;
 }
@@ -2525,33 +2527,34 @@ a.orange_color_button_a{
 }
 .business_img{
     width:162px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
 }
+
 .system_size{
     width:110px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
     background-color: #F4F4F4;
 }
 .discount_rate{
     width: 237px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
 }
 .warrenty_display{
     width:96px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
     background-color: #F4F4F4; 
 }
 .more_info_display{
     width:162px;
-    height: 100px;
+    height: 120px;
     position: relative;
     float: left;
   

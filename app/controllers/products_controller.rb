@@ -36,9 +36,9 @@ class ProductsController < ApplicationController
   end
 
   def create    
-    @tribe = Tribe.where(:_id => params[:tribe]).first    
-    @tribe.products.create(:product_name => params[:product_name], :members => [Member.new(:uid => current_user.uid)])
-    redirect_to tribe_products_tribes_path(:id => @tribe._id)
+    @product = Product.where(:_id => params[:product_id]).first
+    @product.product_groups.push([Group_product.new(:zipcode => params[:zipcode])])
+    redirect_to solar_offers_products_path()
   end
 
   def update
@@ -71,17 +71,12 @@ class ProductsController < ApplicationController
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
   def solar
-
+    @product = Product.new
+    @product.product_groups.build  
   end
-  def product_group
-   @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])    
-    redirect_to solar_products_path()
+  def solar_offers 
   end
-  def solar_offers
-    
-  end
-  def solar_group_offers
-    
+  def solar_group_offers 
   end
 end
 

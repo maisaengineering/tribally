@@ -3,8 +3,8 @@
       Offerussolar.com negotiates great solar deals for community groups.
     </div>
   <div class="solar_logo_img"><%=  image_tag("/assets/solar_logo.png") %></div>
-    <div class="solar_video"></div>
-    <div class="solar_group_join_text">
+    <div class="solar_video"><iframe src="http://player.vimeo.com/video/26905273?title=0&amp;byline=0&amp;autoplay=0&amp;loop=0" width="470" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+     <div class="solar_group_join_text">
       Join on offerussolar.com group, and watch as you receive better offers as your group grows!
     </div>
     <div class="get_started">
@@ -12,14 +12,8 @@
           <p class="quick_color">(its quick,easy and free)</p>
         <div class="get_started_inner_border"></div>
         <div class="post_code_text">enter your postcode and click start</div>
-                          <%= form_tag product_group_products_path do  %>	       
-                            <div class="start_search">
-                              <%= text_field_tag :zipcode %>
-                            </div>
-                            <div class="start_button">
-                              <%= submit_tag("Start") %>
-                            </div>
-                          <% end %>
+            
+            <%= render 'form' %>
     </div>
 </div>
 

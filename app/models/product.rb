@@ -3,6 +3,7 @@ class Product
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   
+  
   embeds_many :offers
   belongs_to :tribe
   embeds_many :comments  

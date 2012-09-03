@@ -26,6 +26,9 @@
   <b>Account data:</b>
   <%= @business.account_data %>
 </p>
+<div class="img_size">
+<%= image_tag @business.avatar %>
+</div>
 
  
 <%= link_to 'Edit', edit_business_path(@business) %> |
