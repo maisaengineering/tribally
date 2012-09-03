@@ -18,4 +18,10 @@ class Product
   field :product_url, :type => String
   field :price, :type => String
   field :offers, :type => Array
+  field :postcode, :type => String
+  field :map_lat, :type => Float
+  field :map_lng, :type => Float
+  field :street_address, :type => String
+  field :suburb, :type => String
+  field :state, :type => String
 end

@@ -71,12 +71,12 @@ class ProductsController < ApplicationController
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
   def solar
-
+    
   end
   def product_group
-   
-   @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])
-    redirect_to solar_products_path()
+   product = Product.where(:_id => params[:product_id]).first
+   product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])
+   redirect_to solar_products_path()
   end
   def solar_offers
     
