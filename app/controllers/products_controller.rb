@@ -71,17 +71,18 @@ class ProductsController < ApplicationController
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
   def solar
-
-  end
-  def product_group
-    raise params.inspect
-    @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])
-    redirect_to solar_products_path()
-  end
-  def solar_offers
     
   end
+  
+  def product_group       
+   product = Product.all.first   
+   product.product_groups.push([ProductGroup.new(:zipcode => params[:product][:zipcode], :map_lng => params[:product][:map_lng], :map_lat => params[:product][:map_lat], :members => [Member.new(:uid => current_user.uid)])]) if Product.where("product_groups.zipcode" => params[:product][:zipcode]).first.nil?
+   redirect_to solar_products_path()
+  end
+  
+  def solar_offers  
+  end
+  
   def solar_group_offers
-    
   end
 end

@@ -1,3 +1,4 @@
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
 <div class="offer_solar_main_page">
     <div class="offer_use_solar_main_text">
       Offerussolar.com negotiates great solar deals for community groups.
@@ -12,15 +13,32 @@
           <p class="quick_color">(its quick,easy and free)</p>
         <div class="get_started_inner_border"></div>
         <div class="post_code_text">enter your postcode and click start</div>
-          <%= form_tag product_group_products_path do %>
+          <%= form_tag product_group_products_path , :methods => 'post' do %>
             <div class="start_search">
-              <%= text_field_tag :zipcode %>
-              <%= hidden_field_tag :product_id%>
+              <input type="hidden" name="product[street_address]" value="" id="street_address" />
+              <input type="hidden" name="product[suburb]" value=""  id="suburb" />
+              <input type="text" name="product[zipcode]" value="" id="postcode_quote" />
             </div>
+            <div class="field" style="display:none;">
+              <select name="product[state]" id="state" style="width: 210px;">
+                      <option value=""></option>
+                      <option value="ACT" >ACT</option>
+                      <option value="NSW" >NSW</option>
+                      <option value="NT" >NT</option>
+                      <option value="QLD" >QLD</option>
+                      <option value="SA" >SA</option>
+                      <option value="TAS" >TAS</option>
+                      <option value="VIC" >VIC</option>
+                      <option value="WA" >WA</option>
+              </select>
+          </div>
             <div class="start_button">
-              <%= submit_tag("Start") %>
+              <input type="hidden" name="product[map_lat]" id="map_lat" value="" />
+              <input type="hidden" name="product[map_lng]" id="map_lng" value="" />
+              <input type="submit" name="product[submit1]" value="Start"/>
             </div>
           <% end %>
+        <div  id="map_container" style="display:none;"></div>
     </div>
 </div>
 
