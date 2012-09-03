@@ -77,10 +77,17 @@ class ProductsController < ApplicationController
   def product_group       
    product = Product.all.first   
    product.product_groups.push([ProductGroup.new(:zipcode => params[:product][:zipcode], :map_lng => params[:product][:map_lng], :map_lat => params[:product][:map_lat], :members => [Member.new(:uid => current_user.uid)])]) if Product.where("product_groups.zipcode" => params[:product][:zipcode]).first.nil?
-   redirect_to solar_products_path()
+   redirect_to solar_offers_products_path(:zipcode => params[:product][:zipcode])
   end
   
   def solar_offers  
+    @zipcode = params[:zipcode]
+    @group_details = Product.where("product_groups.zipcode" => params[:zipcode]).first
+    @group_details.product_groups.each do |each_product_group|
+      if each_product_group.zipcode == params[:zipcode]
+        @current_zipcode = each_product_group 
+      end
+    end
   end
   
   def solar_group_offers
