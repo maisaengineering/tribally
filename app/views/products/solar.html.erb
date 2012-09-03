@@ -12,8 +12,15 @@
           <p class="quick_color">(its quick,easy and free)</p>
         <div class="get_started_inner_border"></div>
         <div class="post_code_text">enter your postcode and click start</div>
-            
-            <%= render 'form' %>
+          <%= form_tag product_group_products_path do %>
+            <div class="start_search">
+              <%= text_field_tag :zipcode %>
+              <%= hidden_field_tag :product_id%>
+            </div>
+            <div class="start_button">
+              <%= submit_tag("Start") %>
+            </div>
+          <% end %>
     </div>
 </div>
 

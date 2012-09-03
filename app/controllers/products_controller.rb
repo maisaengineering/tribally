@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @product.offers.build 
+    @product.offers.build
 
   end
 
@@ -35,10 +35,10 @@ class ProductsController < ApplicationController
     as = @product.offers
   end
 
-  def create    
-    @product = Product.where(:_id => params[:product_id]).first
-    @product.product_groups.push([Group_product.new(:zipcode => params[:zipcode])])
-    redirect_to solar_offers_products_path()
+  def create
+    @tribe = Tribe.where(:_id => params[:tribe]).first
+    @tribe.products.create(:product_name => params[:product_name], :members => [Member.new(:uid => current_user.uid)])
+    redirect_to tribe_products_tribes_path(:id => @tribe._id)
   end
 
   def update
@@ -46,37 +46,42 @@ class ProductsController < ApplicationController
     @product.offers.destroy
     #@product.destroy
       if @product.update_attributes(params[:product])
-        redirect_to @product, notice: 'Product was successfully updated.' 
+        redirect_to @product, notice: 'Product was successfully updated.'
       else
-        render action: "edit" 
-      end 
+        render action: "edit"
+      end
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_url 
+    redirect_to products_url
   end
 
-  def add_comment    
-    product = Product.where(:_id => params[:product_id]).first	
-    product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])    
+  def add_comment
+    product = Product.where(:_id => params[:product_id]).first
+    product.comments.push([Comment.new(:user_id => params[:user_id], :body => params[:body])])
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
   
   def create_offer
-    product = Product.where(:_id => params[:product_id]).first	
+    product = Product.where(:_id => params[:product_id]).first
     product.offers.push([Offer.new(:retails_price => params[:retails_price],:min_no_of_buyer => params[:min_no_of_buyer], \
-    :offer_name => params[:offer_name], :offer_description => params[:offer_description], :offer_price => params[:offer_price])])    
+    :offer_name => params[:offer_name], :offer_description => params[:offer_description], :offer_price => params[:offer_price])])
     redirect_to tribe_products_tribes_path(:id => product.tribe_id.to_s)
   end
   def solar
-    @product = Product.new
-    @product.product_groups.build  
+
   end
-  def solar_offers 
+  def product_group
+    raise params.inspect
+    @product.product_groups.push([Product_group.new(:zipcode => params[:zipcode])])
+    redirect_to solar_products_path()
   end
-  def solar_group_offers 
+  def solar_offers
+    
+  end
+  def solar_group_offers
+    
   end
 end
-
