@@ -2843,11 +2843,7 @@ a.orange_color_button_a{
 .soalr_comments_body_box{
     margin-left:15px;
 }
-.field text_field_tag#body{
-    width:800px;
-    height:60px;
-    margin-left: 10px;
-}
+
 #body {
     border-radius: 5px 5px 5px 5px;
     display: block;
@@ -2950,7 +2946,7 @@ margin-left: 10px;
 .system_size_field input{
     width:100px;
     margin-top: 1px;
-    border: 1px solid #7E7E7E;
+    border: 1px solid;
 }
 .group_discount_price{
     width:235px;

@@ -81,9 +81,9 @@
           <div class="my_details_fieldstag"><%= text_area_tag(:address) %></div>
 
           <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
+         <% end %>
       </div>
-    <% end %>
-  </div>
+  
      <% end %>
 
   <div class="solar_down_border"></div>
@@ -100,8 +100,7 @@
           <% if user_signed_in? %>
 
           <div class="solar_table_container">
-            <div class="business_img"><%= image_tag "/assets/images.jpeg" %>
-            </div>
+            <div class="business_img"><%= image_tag "/assets/images.jpeg" %></div>
             <div class="system_size"></div>
             <div class="discount_rate"></div>
             <div class="warrenty_display"></div>
@@ -117,60 +116,60 @@
            <div class="business_post_form">
            <%= form_tag( :html => { :multipart => true }) do |f|  %>
              
-              <div class="business_image">
-              <p class="font_for_edit_form">logo</p> 
-              <%= file_field_tag "avatar" %>
-              </div>
-             <div class="system_size_post">
-               
-                <div class="system_size_field"><%= text_field_tag :system_size %></div>
-                <p class="font_for_edit_form">System size</p>
-             </div>
-             <div class="group_discount_price">
-               
-               <div class="group_discount_price_field"><center>
-               <%= text_field_tag :group_discount_price %></center>
-               </div>
-               <center class="font_for_edit_form">Group discount price</center>
-             </div>
-             <div class="warrenty">
-               
-                <div class="warrenty_field"><%= text_field_tag :warrenty %></div>
-                <center class="font_for_edit_form"> warrenty</center>
-             </div>
-             <div class="more_info">
-               
-               <div class="more_info_text"><%= text_field_tag :more_info %></div>
-               <center class="font_for_edit_form">More info</center>
-             </div>
-              <div class="edit_form_create_button">
-                <center><%= submit_tag :Create%></center>
-              </div>
+                  <div class="business_image">
+                  <p class="font_for_edit_form">logo</p> 
+                  <%= file_field_tag "avatar" %>
+                  </div>
+                 <div class="system_size_post">
+
+                    <div class="system_size_field"><%= text_field_tag :system_size %></div>
+                    <p class="font_for_edit_form">System size</p>
+                 </div>
+                 <div class="group_discount_price">
+
+                   <div class="group_discount_price_field"><center>
+                   <%= text_field_tag :group_discount_price %></center>
+                   </div>
+                   <center class="font_for_edit_form">Group discount price</center>
+                 </div>
+                 <div class="warrenty">
+
+                    <div class="warrenty_field"><%= text_field_tag :warrenty %></div>
+                    <center class="font_for_edit_form"> warrenty</center>
+                 </div>
+                 <div class="more_info">
+
+                   <div class="more_info_text"><%= text_field_tag :more_info %></div>
+                   <center class="font_for_edit_form">More info</center>
+                 </div>
+                  <div class="edit_form_create_button">
+                    <center><%= submit_tag :Create%></center>
+                  </div>
            <% end %>
            </div>
   </div>
-  
-  <div class="solar_comments_container">
-    <div class="solar_comment_text">Comments</div>
-    <%# if product.comments.empty? %>
-  <div class="solar_No_comments_header">
-    <span class="solar_No_comments_text">No comments yet.</span>
-    <span class="commentlink" id="#leave">Leave a comment</span>
-  </div>
-    <div id="leave" class="solar_comments_body_box" style ="display:none">
-    <%= form_tag do %>
-                         
-      <div class="comment_field">
-        <%= text_area_tag :body %>
-      </div>
-      <div class="actions">
-      <%= submit_tag "Submit", :class => 'global_button' %>
-      </div>
-    <% end %>
-  </div> 
-   
-  </div>
 
+ 
+
+        <div class="solar_comments_container">
+          <div class="solar_comment_text">Comments</div>
+          <%# if product.comments.empty? %>
+          <div class="solar_No_comments_header">
+            <span class="solar_No_comments_text">No comments yet.</span>
+            <span class="commentlink" id="#leave">Leave a comment</span>
+          </div>
+              <div id="leave" class="solar_comments_body_box" style ="display:none">
+              <%= form_tag do %>
+                <div class="comment_field">
+                  <%= text_area_tag :body %>
+                </div>
+                <div class="actions">
+                <%= submit_tag "Submit", :class => 'global_button' %>
+                </div>
+              <% end %>
+            </div> 
+         </div>
+</div>
 <script>
  $(function(){
    $('.commentlink').click(function(event){      
