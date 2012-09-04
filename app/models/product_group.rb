@@ -7,5 +7,6 @@ class ProductGroup
   embeds_many :members
   
   field :zipcode, :type => String
-   attr_accessible :zipcode
+  field :map_lat, :type => Float
+  field :map_lng, :type => Float  
 end

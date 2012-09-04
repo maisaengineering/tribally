@@ -9,7 +9,7 @@ class Product
   embeds_many :comments  
   embeds_many :product_groups
   
-  validates_presence_of :product_name, :message => "Please enter tribe first product"
+  #validates_presence_of :product_name, :message => "Please enter tribe first product"
   
   field :business_name, :type => String
   field :members, :type => String
@@ -18,4 +18,10 @@ class Product
   field :product_url, :type => String
   field :price, :type => String
   field :offers, :type => Array
+  field :postcode, :type => String
+  field :map_lat, :type => Float
+  field :map_lng, :type => Float
+  field :street_address, :type => String
+  field :suburb, :type => String
+  field :state, :type => String
 end

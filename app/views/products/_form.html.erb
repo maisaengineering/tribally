@@ -38,8 +38,8 @@
     <%= f.text_field :price %>
   </div>
   
-  <% @product.offers.each_with_index do |offer, index| %>      
-  <%= f.fields_for "offers[]", offer do |offer_fields| %>   
+  <% @product.offers.each_with_index do |offer, index| %>
+  <%= f.fields_for "offers[]", offer do |offer_fields| %>
     <div class="field">
       <%= offer_fields.label :price_discount %>
       <%= offer_fields.text_field :price_discount %>
@@ -48,11 +48,10 @@
       <%= offer_fields.label :minimum_order_quantity %>
       <%= offer_fields.text_field :min_no_of_buyer %>
     </div>
-  <% end %> 
+  <% end %>
   <% end %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-

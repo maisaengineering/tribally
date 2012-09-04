@@ -1,7 +1,7 @@
 <div class="solar_offer_container">
         <div class="solar_offer_head_dimension">
             <div class="solar_offer_details_box">
-              <span class="solar_offer_details_text">Offerussolar.com group near Stepny,50062</span>
+              <span class="solar_offer_details_text">Offerussolar.com group near XXXXX,<%= @zipcode %></span>
             </div>
              <div class="solar_fb_dimension">
                   <div class="addthis_toolbox addthis_default_style"  id="fb_dimension_in_solar">
@@ -13,10 +13,12 @@
                <div class="solar_offer_count"><center class="count_number">Offers:</center></div>  
         </div>
       <div class="solar_offer_detailed_container">
-          <div class="solar_location_container"></div>
+          <div class="solar_location_container">            
+            <%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=500x470&sensor=false" %>            
+          </div>
           <div class="solar_offer_description">This is local solar i want this product how can i purchase this product can you explain me clear.</div>
           <div class="solar_member_count_box"><br />
-            <span class="solar_number_dimension"><center>1</center></span>
+            <span class="solar_number_dimension"><center><%= people(@zipcode) %></center></span>
             <span class="solar_member_font"><center>people</center></span>
           </div>
           <div class="solar_offer_details"><br />
