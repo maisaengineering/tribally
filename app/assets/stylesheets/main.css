@@ -2189,31 +2189,32 @@ a.orange_color_button_a{
  }
  .solar_offer_detailed_container{
      border-top: 1px solid #CCCCCC;
-     height: 370px;
+     height: 350px;
      width: 930px;
      border-radius:5px;
      position: relative;
      float: left;
  }
  .solar_location_container{
-     width: 380px;
-     height: 340px;
+     width: 390px;
+     height: 320px;
      margin-left: 5px;
      margin-top: 10px;
-     border: 1px solid #CCCCCC;
+     border: 2px solid #CCCCCC;
      position: relative;
      float: left;
+     padding: 1px;
      
  }
  .solar_offer_description{
      padding-left: 435px;
-     padding-top: 30px;
+     padding-top: 20px;
      position: absolute;
      float: left;
-     font-size: 23px;
+     font-size: 25px;
      font-family:  Trebuchet MS;
      line-height: 25px;
-     width: 400px;
+     width: 470px;
      
      float: left;
  }
@@ -2221,7 +2222,7 @@ a.orange_color_button_a{
     width: 145px;
     height:105px;
     margin-left: 435px;
-    margin-top: 185px;
+    margin-top: 180px;
     font-family: Trebuchet MS;
     font-size: 17px;
     color: #fff;
@@ -2265,7 +2266,7 @@ a.orange_color_button_a{
     width: 145px;
     height:105px;
     margin-left:600px;
-    margin-top: 185px;
+    margin-top: 180px;
     font-family: Trebuchet MS;
     font-size: 17px;
     color: #fff;
@@ -2309,7 +2310,7 @@ a.orange_color_button_a{
     width: 145px;
     height:105px;
     margin-left:765px;
-    margin-top: 185px;
+    margin-top: 180px;
     font-family: Trebuchet MS;
     font-size: 17px;
     color: #fff;
@@ -2393,7 +2394,7 @@ a.orange_color_button_a{
 		0px -1px 0px rgba(000,000,000,0.2),
 		0px 1px 0px rgba(255,255,255,1);
         margin-left: 600px;
-        margin-top: 310px;
+        margin-top: 300px;
       
         padding-bottom: 5px;
         padding-top: 8px;
@@ -2433,7 +2434,7 @@ a.orange_color_button_a{
 		0px -1px 0px rgba(000,000,000,0.2),
 		0px 1px 0px rgba(255,255,255,1);
         margin-left: 765px;
-        margin-top: -42px;     
+        margin-top: -36px;     
         padding-bottom: 5px;
         padding-top: 8px;
         position: relative;
@@ -2807,10 +2808,40 @@ a.orange_color_button_a{
     font-family: Trebuchet MS;
     font-size: 18px;
     margin-bottom: 10px;
-    margin-left: 15px;
+    margin-left: -760px;
+    margin-top: 80px;
     padding: 5px 12px;
     position: relative;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 #FFFFFF;
+}
+.system_size_looking_for{
+    border-top: 3px dotted #CDCDCD;
+    
+    width: 925px;
+    float: left;
+}
+.system_size_looking_for_text{
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: Trebuchet MS;
+    font-size: 25px;
+}
+.system_size_looking_for_desc{
+    padding-left: 20px;
+    font-family: Trebuchet MS;
+    font-size: 18px;
+}
+.selecting_system_size{
+    width: 600px;
+    height: 70px;
+    float: left;
+    position: relative;
+    
+}
+.help_me_choose{
+    float: left;
+    font: 16px Trebuchet MS;
+    
 }
 .solar_comments_container{
     width: 930px;

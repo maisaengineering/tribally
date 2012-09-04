@@ -14,7 +14,7 @@
         </div>
       <div class="solar_offer_detailed_container">
           <div class="solar_location_container">            
-            <%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=500x470&sensor=false" %>            
+            <%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=572x470&sensor=false" %>            
           </div>
           <div class="solar_offer_description">This is local solar i want this product how can i purchase this product can you explain me clear.</div>
           <div class="solar_member_count_box"><br />
@@ -40,27 +40,32 @@
     <% if user_signed_in? %> 
     <div class="offers_my_details">
      <p class="offers_my_details_text">Your details</p><br /><br />
-       <%= form_tag do %> 
-       <div class="first_3fields">
-           <div class="your_details_fields"><%= label_tag(:fname, "Name:") %></div>    
-           <div class="your_details_fieldstag"><%= text_field_tag(:fname) %></div>
-            
-          <div class="your_details_fields"><%= label_tag(:email, "Email:") %></div>
-          <div class="your_details_fieldstag"><%= text_field_tag(:email) %></div>
+         <%= form_tag do %> 
+           <div class="first_3fields">
+                 <div class="your_details_fields"><%= label_tag(:fname, "Name:") %></div>    
+                 <div class="your_details_fieldstag"><%= text_field_tag(:fname) %></div>
 
-          <div class="your_details_pnfields"> <%= label_tag(:phone_number, "phone number:") %></div>
-          <div class="your_details_pnfieldstag"> <%= text_field_tag(:phone_number) %></div>
-       </div>
-          <div class="your_details_field_address"><%= label_tag(:address, "Address:") %></div>
-          <div class="your_details_fieldstag_address"><%= text_field_tag(:address) %></div>
-          <br />
-          <div class="your_details_field_suburb"><%= label_tag(:suburb, "Suburb:") %></div>
-          <div class="your_details_fieldstag_suburb"><%= text_field_tag(:suburb) %></div>
-    </div>
-          <div><input type="button" value="That's my house" class="thats_my_house"/><%#= submit_tag("Join this group") %></div>
+                <div class="your_details_fields"><%= label_tag(:email, "Email:") %></div>
+                <div class="your_details_fieldstag"><%= text_field_tag(:email) %></div>
+
+                <div class="your_details_pnfields"> <%= label_tag(:phone_number, "phone number:") %></div>
+                <div class="your_details_pnfieldstag"> <%= text_field_tag(:phone_number) %></div>
+           </div>
+           <div>
+                <div class="your_details_field_address"><%= label_tag(:address, "Address:") %></div>
+                <div class="your_details_fieldstag_address"><%= text_field_tag(:address) %></div>
+                <br />
+                <div class="your_details_field_suburb"><%= label_tag(:suburb, "Suburb:") %></div>
+                <div class="your_details_fieldstag_suburb"><%= text_field_tag(:suburb) %></div>
+           </div>
+   
+            <div><input type="button" value="That's my house!" class="thats_my_house"/><%#= submit_tag("Join this group") %></div>
       
-      <% end %>
-      <% else %> 
+        <% end %> 
+    </div>
+  
+    <% else %>
+      <% comment do %>
       <p class="offers_my_details_text">My details</p><br />
       <p class="description_for_my_details">These details aren't shared wit anyone else in the group,and we'll only share your details with solar retailer if you accept this offer</p>
       <div class="my_details_form">
@@ -85,8 +90,16 @@
           <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
          <% end %>
       </div>
+      <% end %>
   
      <% end %>
+      <div class="system_size_looking_for">
+        <p class="system_size_looking_for_text">What is the system size your looking for ?</p>
+        <p class="system_size_looking_for_desc">Tell us roughly what size system you're looking for.This will help solar companies provide offers to this group.</p>
+        <div class="selecting_system_size">hai</div>
+      </div>
+      
+     
 
   <div class="solar_down_border"></div>
   <div class="solar_boxoffer_details">
@@ -115,7 +128,9 @@
            <div class="text_for_member_signin">Offers made to this group are displayed here.You'll need to be signed in and a member of this group to view these offers.<a href="#">Sign in</a> or fill out your details above and click 'join this group' to create a free account.</div>
 
             <% end %>
+           <% comment do %>
            <div class="business_post_form">
+             
            <%= form_tag( :html => { :multipart => true }) do |f|  %>
              
                   <div class="business_image">
@@ -148,7 +163,8 @@
                     <center><%= submit_tag :Create%></center>
                   </div>
            <% end %>
-           </div>
+             
+           </div><% end %>
   </div>
 
  
