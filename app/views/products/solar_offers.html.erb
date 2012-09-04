@@ -22,21 +22,21 @@
             <span class="solar_member_font"><center>people</center></span>
           </div>
           <div class="solar_offer_details"><br />
-            <span class="solar_offer_boxcount"><center>0</center></span>
+            <span class="solar_offer_boxcount"><center><%= no_of_offers(@zipcode) %></center></span>
             <span class="solar_offer_text"><center>offers</center></span>
           </div>
-            <div class="solar_time_left_details"><br />
+          <div class="solar_time_left_details"><br />
             <span class="solar_time_left"><center>12</center></span>
             <span class="solar_time_left_text"><center>days left</center></span>
           </div>
-          <% if user_signed_in? %>
-          <div class="u_r_member">You're a member!</div>
-          <div class="solar_invite_others"><center>Invite others</center></div>
-          <div class="solar_leave_this_group"><center>Leave this group</center></div>
-         <% else %> 
-          <div class="text_for_accesssing_this_tribe">You're not a member of this group yet.Fill out the 'my details'section below to get access to this group's local offers</div>
-     <% end  %>
-      </div>
+          <% if is_member(@zipcode, current_user.uid) == true %>
+            <div class="u_r_member">You're a member!</div>
+            <div class="solar_invite_others"><center>Invite others</center></div>
+            <div class="solar_leave_this_group"><center>Leave this group</center></div>
+          <% else %>
+            <div class="text_for_accesssing_this_tribe">You're not a member of this group yet.Fill out the 'my details'section below to get access to this group's local offers</div>
+          <% end %>      
+     </div>
      
   <div class="solar_down_border"></div>
   <div class="solar_boxoffer_details">
