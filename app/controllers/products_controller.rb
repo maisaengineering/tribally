@@ -82,7 +82,7 @@ class ProductsController < ApplicationController
   
   def solar_offers  
     @zipcode = params[:zipcode]
-    @group_details = Product.where("product_groups.zipcode" => params[:zipcode]).first
+    @group_details = Product.where("product_groups.zipcode" => params[:zipcode]).first    
     @group_details.product_groups.each do |each_product_group|
       if each_product_group.zipcode == params[:zipcode]
         @current_zipcode = each_product_group 

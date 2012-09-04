@@ -49,23 +49,22 @@
       <span class="font_for_offer_more_info">More info</span>
       <span class="font_for_offer_i_want_this">I want this!</span>
     </div>
-    <% if user_signed_in? %>
-   
-    <div class="solar_table_container">
-      <div class="business_img"><%= image_tag "/assets/images.jpeg" %>
+    <% if is_member(@zipcode, current_user.uid) == true %>       
+      <div class="solar_table_container">
+        <% if @group_details.offers.size > 0 %>
+          <div class="business_img"><%= image_tag "/assets/images.jpeg" %></div>
+          <div class="system_size"></div>
+          <div class="discount_rate"></div>
+          <div class="warrenty_display"></div>
+          <div class="more_info_display"></div>
+          <div class="i_want_this_display">
+            <input type="button" value="Choose" class="choose_button" />
+          </div>
+        <% end %>        
       </div>
-      <div class="system_size"></div>
-      <div class="discount_rate"></div>
-      <div class="warrenty_display"></div>
-      <div class="more_info_display"></div>
-      <div class="i_want_this_display">
-        <input type="button" value="Choose" class="choose_button" />
-      </div>
-        </div>
     <% else %> 
-     <div class="text_for_member_signin">Offers made to this group are displayed here.You'll need to be signed in and a member of this group to view these offers.<a href="#">Sign in</a> or fill out your details above and click 'join this group' to create a free account.</div>
-      
-      <% end %>
+      <div class="text_for_member_signin">Offers made to this group are displayed here.You'll need to be signed in and a member of this group to view these offers.<a href="#">Sign in</a> or fill out your details above and click 'join this group' to create a free account.</div>      
+    <% end %>
   
     
   </div>
