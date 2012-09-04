@@ -22,14 +22,15 @@
             <span class="solar_member_font"><center>people</center></span>
           </div>
           <div class="solar_offer_details"><br />
-            <span class="solar_offer_boxcount"><center>0</center></span>
+            <span class="solar_offer_boxcount"><center><%= no_of_offers(@zipcode) %></center></span>
             <span class="solar_offer_text"><center>offers</center></span>
           </div>
-            <div class="solar_time_left_details"><br />
+          <div class="solar_time_left_details"><br />
             <span class="solar_time_left"><center>12</center></span>
             <span class="solar_time_left_text"><center>days left</center></span>
           </div>
-          <% if user_signed_in? %>
+          
+           <% if is_member(@zipcode, current_user.uid) == true %>
           <div class="u_r_member">You're a member!</div>
           <div class="solar_invite_others"><center>Invite others</center></div>
           <div class="solar_leave_this_group"><center>Leave this group</center></div>
@@ -57,49 +58,26 @@
                 <br />
                 <div class="your_details_field_suburb"><%= label_tag(:suburb, "Suburb:") %></div>
                 <div class="your_details_fieldstag_suburb"><%= text_field_tag(:suburb) %></div>
+                <div><input type="button" value="That's my house!" class="thats_my_house"/><%#= submit_tag("Join this group") %></div>
            </div>
-   
-            <div><input type="button" value="That's my house!" class="thats_my_house"/><%#= submit_tag("Join this group") %></div>
-      
-        <% end %> 
-    </div>
-  
-    <% else %>
-      <% comment do %>
-      <p class="offers_my_details_text">My details</p><br />
-      <p class="description_for_my_details">These details aren't shared wit anyone else in the group,and we'll only share your details with solar retailer if you accept this offer</p>
-      <div class="my_details_form">
-
-          <%= form_tag do %> 
-
-           <div class="my_details_fields"><%= label_tag(:fname, "Name:") %></div>    
-           <div class="my_details_fieldstag"><%= text_field_tag(:fname) %></div>
-
-          <div class="my_details_field_email"><%= label_tag(:email, "Email:") %></div>
-          <div class="my_details_fieldstag"><%= text_field_tag(:email) %></div>
-
-          <div class="my_details_field_email"> <%= label_tag(:phone_number, "phone number:") %></div>
-          <div class="my_details_fieldstag"> <%= text_field_tag(:phone_number) %></div>
-
-          <div class="my_details_field_email"> <%= label_tag(:size, "Size of system I'm looking for:") %></div>
-          <div class="my_details_fieldstag"> <%= text_field_tag(:integer) %></div><br />
-
-          <div class="my_details_field_email"><%= label_tag(:address, "Address:") %></div>
-          <div class="my_details_fieldstag"><%= text_area_tag(:address) %></div>
-
-          <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
-         <% end %>
-      </div>
-      <% end %>
-  
+          <% end %>
+     </div>
      <% end %>
       <div class="system_size_looking_for">
         <p class="system_size_looking_for_text">What is the system size your looking for ?</p>
         <p class="system_size_looking_for_desc">Tell us roughly what size system you're looking for.This will help solar companies provide offers to this group.</p>
         <div class="selecting_system_size">hai</div>
+        <div class="help_me_choose"><%= link_to "Help me choose!" %> </div>
+        <div class="table_for_system_size">
+          <div class="iimage"><%= image_tag "/assets/i.png" %></div>
+          <div class="selecting_system_size_box">
+            <p id="you_have_selected_header">You've selected approximately 0KW.You'll receive group offers for systems around this size.</p>
+            <p id="approximate_cost">Approximate cost:</p>
+            <p id="approximate_saving">Approximate savings for day:</p>
+            <p id="green_house">Green house reduced per year:</p>
+          </div>
+        </div>
       </div>
-      
-     
 
   <div class="solar_down_border"></div>
   <div class="solar_boxoffer_details">
@@ -164,7 +142,8 @@
                   </div>
            <% end %>
              
-           </div><% end %>
+           </div>
+        <% end %>
   </div>
 
  
@@ -195,3 +174,29 @@
    });
 });
 </script>
+<% comment do %>
+      <p class="offers_my_details_text">My details</p><br />
+      <p class="description_for_my_details">These details aren't shared wit anyone else in the group,and we'll only share your details with solar retailer if you accept this offer</p>
+      <div class="my_details_form">
+
+          <%= form_tag do %> 
+
+           <div class="my_details_fields"><%= label_tag(:fname, "Name:") %></div>    
+           <div class="my_details_fieldstag"><%= text_field_tag(:fname) %></div>
+
+          <div class="my_details_field_email"><%= label_tag(:email, "Email:") %></div>
+          <div class="my_details_fieldstag"><%= text_field_tag(:email) %></div>
+
+          <div class="my_details_field_email"> <%= label_tag(:phone_number, "phone number:") %></div>
+          <div class="my_details_fieldstag"> <%= text_field_tag(:phone_number) %></div>
+
+          <div class="my_details_field_email"> <%= label_tag(:size, "Size of system I'm looking for:") %></div>
+          <div class="my_details_fieldstag"> <%= text_field_tag(:integer) %></div><br />
+
+          <div class="my_details_field_email"><%= label_tag(:address, "Address:") %></div>
+          <div class="my_details_fieldstag"><%= text_area_tag(:address) %></div>
+
+          <div><input type="button" value="Join this group" class="my_details_join_this_group"/><%#= submit_tag("Join this group") %></div>
+         <% end %>
+      </div>
+      <% end %>

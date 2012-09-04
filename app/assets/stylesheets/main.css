@@ -2456,6 +2456,7 @@ a.orange_color_button_a{
     border-bottom: 3px dotted #D1D1D1;
     position: relative;
     float: left;
+    padding-bottom: 10px;
 }
 .offer_table{
     background-color: #019BE1;
@@ -2838,10 +2839,52 @@ a.orange_color_button_a{
     position: relative;
     
 }
-.help_me_choose{
+.help_me_choose a{
     float: left;
-    font: 16px Trebuchet MS;
+    font: 18px Trebuchet MS;
+    padding-left: 185px;
+    padding-top: 20px;
+}
+.table_for_system_size{
+    border: 1px solid #A9E9FF;
+    border-radius:5px;
+    margin-left: 20px;
+    width: 890px;
+    height: 140px;
+    float: left;
+}
+.iimage{
+    padding-left:5px;
+    width: 80px;
+    padding-top: 5px;
+    position: relative;
+    float: left;
+}
+.selecting_system_size_box{
+    padding-left: 0px;
+    float: left;
+}
+#you_have_selected_header{
+  
+    font: 17px Trebuchet MS;
+    padding-top: 15px;
+}
+#approximate_cost{
     
+    font: 17px Trebuchet MS;
+    padding-top: 20px;
+   
+}
+#approximate_saving{
+    
+    font: 17px Trebuchet MS;
+}
+#green_house{
+    font: 17px Trebuchet MS;
+}
+.selecting_system_size_box p{
+    margin-top: -5px;
+    line-height: 10px;
 }
 .solar_comments_container{
     width: 930px;
