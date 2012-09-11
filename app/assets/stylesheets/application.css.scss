@@ -12,6 +12,8 @@
  *= require bootstrap_and_overrides
  *= require businesses
  *= require home
+ *= require demos
+ *= require jquery.ui.all
  *= require jquery.countdown
  *= require jquery.facebook.multifriend.select
  *= require main
@@ -20,7 +22,8 @@
  *= require tribes
  *= require users
 */
-
+#demo-frame > div.demo { padding: 10px !important; }
+	
 
 .content {
     background-color: #eee;

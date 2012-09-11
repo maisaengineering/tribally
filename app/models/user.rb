@@ -10,6 +10,7 @@ class User
   
   has_one :member
   has_many :businesses
+  has_one :product
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

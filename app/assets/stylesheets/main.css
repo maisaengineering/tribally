@@ -1685,7 +1685,7 @@ a.orange_color_button_a{
    
     margin-top: 10px;
     cursor: pointer;
-    padding: 10px 50px;
+    padding: 10px 50px;   
     border-radius: 7px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -2441,6 +2441,15 @@ a.orange_color_button_a{
         float: left;
         width: 145px;
 }
+.text_for_accesssing_this_tribe{
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    position: relative;
+    float: left;
+    margin-left: 435px;
+    margin-top: -35px;
+ 
+}
 .solar_down_border{
     background:#fff;
     border-top:3px dotted #D1D1D1;
@@ -2695,15 +2704,10 @@ a.orange_color_button_a{
     position: relative;
     float: left;
     margin-left: 245px;
-    margin-top: -28px;
-    border: 0 solid #CCCCCC;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+    margin-top: -28px;    
     font-size: 17px;
 }
-.my_details_fieldstag textarea:focus{
-    border-color: #FFF;
-    box-shadow:0 0 0 rgba(0,0,0,0.15);
-}
+
 .my_details_field_email label{
     font-size: 15px;
 }
@@ -2790,7 +2794,7 @@ a.orange_color_button_a{
     font-size: 17px;
 }
 
-.your_details_fieldstag   input[type="text"],textarea{
+.your_details_fieldstag   input[type="text"]{
     position: relative;
     float: left;
     margin-left: 70px;
@@ -2801,6 +2805,7 @@ a.orange_color_button_a{
 }
 .thats_my_house{
     background: -moz-linear-gradient(center top , #99D8F9 0%, #32B6FB 50%, #37B5F6) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#99D8F9),color-stop(0.50, #32B6FB),to(#37B5F6));
     border: 1px solid #37A9E6;
     border-radius: 8px 8px 8px 8px;
     box-shadow: 0 1px 3px rgba(18, 17, 18, 0.5), 0 0 3px #F5EDF5 inset;
@@ -2833,12 +2838,14 @@ a.orange_color_button_a{
     font-size: 18px;
 }
 .selecting_system_size{
-    width: 600px;
+    width: 580px;
     height: 70px;
     float: left;
+    padding-left: 20px;
     position: relative;
     
 }
+
 .help_me_choose a{
     float: left;
     font: 18px Trebuchet MS;
@@ -2891,6 +2898,7 @@ a.orange_color_button_a{
     height: auto;
     position: relative;
     float: left;
+    border-top: 1px solid #CDCDCD;
 }
 .solar_comment_text{
     padding-left: 15px;
