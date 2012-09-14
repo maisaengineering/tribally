@@ -1,6 +1,6 @@
 Tribally::Application.routes.draw do
  
-  resources :locations
+resources :locations
 
 ActiveAdmin.routes(self)
 
