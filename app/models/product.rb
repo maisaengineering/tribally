@@ -7,7 +7,7 @@ class Product
   embeds_many :offers
   belongs_to :tribe
   embeds_many :comments  
-  embeds_many :product_groups
+  embeds_many :product_groups  
   
   #validates_presence_of :product_name, :message => "Please enter tribe first product"
   
@@ -24,4 +24,6 @@ class Product
   field :street_address, :type => String
   field :suburb, :type => String
   field :state, :type => String
+  
+  
 end
