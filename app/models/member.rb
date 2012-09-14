@@ -3,7 +3,7 @@ class Member
   include Mongoid::Timestamps::Created
   include Mongoid::Timestamps::Updated
   
-  belongs_to :user  
+  #belongs_to :user  
   embedded_in :tribe
   embedded_in :product_group  
   
