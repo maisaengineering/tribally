@@ -1614,6 +1614,7 @@ a.orange_color_button_a{
     margin-left:35px;
     margin-top:-20px;
     background-color: #fff;
+    float: left;
 }
 .solar_group_join_text{
     width:305px;
@@ -1624,9 +1625,10 @@ a.orange_color_button_a{
     margin-left:545px;
     margin-top: -285px;
     font-family: Trebuchet MS;
+   float: left;
 }
 .get_started{
-    position: absolute;
+    
     float: left;
     width: 335px;
     height: 190px;
@@ -1634,6 +1636,7 @@ a.orange_color_button_a{
     background-color: #fff;
     border-radius:10px;
     margin-left: 550px;
+    margin-top: -200px;
 }
 .get_started_text{
     padding-left: 15px;
@@ -1672,6 +1675,9 @@ a.orange_color_button_a{
    border-radius:5px;
    position: relative;
    float: left;
+   background-color: white;
+    border: 1px solid #CCCCCC;
+    margin-top: 12px;
 }
 .start_button:hover input{
     background: #FFB962;
@@ -2845,7 +2851,6 @@ a.orange_color_button_a{
     position: relative;
     
 }
-
 .help_me_choose a{
     float: left;
     font: 18px Trebuchet MS;
@@ -3011,7 +3016,6 @@ margin-left: 10px;
 .business_image input{
     width: 162px;
     float: left;
-    
     margin-top: 35px;
 }
 .system_size_post{
@@ -3104,4 +3108,210 @@ margin-left: 10px;
     margin-top: 0px;
     position: relative;
   
+}
+.make_an_offer_group_container{
+    border-top: 2px dotted #CDCDCD;
+    float: left;
+    width: 915px;
+}
+.make_an_offer_group_text{
+    font-size: 25px;
+    font-family: Trebuchet MS;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.summary_of_buying_group{
+    border-top: 3px dotted #CDCDCD;
+    float: left;
+    width: 925px;
+}
+.buying_group_text{
+    font-size: 25px;
+    font-family: Trebuchet MS;
+    padding-left: 15px;
+    padding-top: 30px;
+    float: left;
+}
+.systems_text{
+    float: left;
+    margin-left: 200px;
+    font-size: 23px;
+    font-family: Trebuchet MS;
+    padding-top: 30px;
+}
+.size_table{
+    margin-left: 20px;
+    padding-top: 20px;
+    float: left;
+    width:880px;
+    height: 100px;
+}
+.table_size_dimension{
+    margin-top: 30px;
+    float: left;
+}
+.appox_font{
+    font-size: 18px;
+    font-family: Trebuchet MS;
+    line-height: 20px;
+}
+.step_1_container{
+    margin-left: 40px;
+    margin-top: 30px;
+    width: 400px;
+}
+.step_1_container_text{
+    font-family:  Trebuchet MS;
+    font-size: 17px;
+    margin-bottom: 20px;
+    width: 400px;
+    
+}
+.employmentHistoryForm{
+    width: 250px;
+    border: 0px solid;
+    
+}
+.table_for_size input[type="text"]{
+    width: 117px;
+    border: 1px solid;
+    margin-top: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    margin-top: 0px;
+    border-radius:0px;
+    float: left;
+    margin-bottom: 0px;
+}
+.addbuttonmore input[type="text"]{
+    width: 117px;
+    border: 1px solid;
+    margin-top: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    margin-top: 0px;
+    border-radius:0px;
+    float: left;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.table_for_retail_price input[type="text"]{
+    width: 113px;
+    border: 1px solid;
+    margin-top: 0px;
+    float: left;
+    border-radius:0px;
+    margin-bottom: 0px;
+    
+
+}
+.historyform{
+    width: 125px;
+    border: 1px solid;
+    float: left;
+}
+.historyform1{
+    float: left;
+    width: 121px;
+    border: 1px solid;
+}
+#deleterow input{
+    margin-left: 260px;
+    float: left;
+    margin-top: -35px;
+    border: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    width: 100px;
+    cursor: pointer;
+    
+}
+.step_2_group_container{
+    float: left;
+    margin-left: 450px;
+    position: absolute;
+    margin-top: -40px;
+}
+.step_2_group_text{
+    font-family:  Trebuchet MS;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.group_discount_table{
+    border: 0px solid;
+    width: 300px;
+}
+.buyer_box{
+    width: 148px;
+    border: 1px solid;
+    float: left;
+}
+.discount_rate_box{
+    float: left;
+    width: 148px;
+    border: 1px solid;
+}
+.adding_box_buyer input[type="text"]{
+    width: 140px;
+    border: 1px solid;
+    margin-top: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    margin-top: 0px;
+    border-radius:0px;
+    float: left;
+    margin-bottom: 0px;
+}
+.adding_bulk_discount input[type="text"]{
+    width: 140px;
+    border: 1px solid;
+    margin-top: 0px;
+    float: left;
+    border-radius:0px;
+    margin-bottom: 0px;
+
+}
+#deleterow_for_discount input{
+    margin-left: 300px;
+    float: left;
+    margin-top: -35px;
+    border: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    width: 100px;
+    cursor: pointer;
+}
+.Add_morebutton input[type="text"]{
+    width: 140px;
+    border: 1px solid;
+    margin-top: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.075) inset;
+    margin-top: 0px;
+    border-radius:0px;
+    float: left;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+.step_3_container{
+    margin-left: 40px;
+    float: left;
+    
+}
+.step_3_text{
+    font-family:  Trebuchet MS;
+    font-size: 17px;
+    padding-top: 20px;
+}
+.fixed_extra textarea{
+    float: left;
+    margin-left: 0px;
+    margin-top: 10px;
+    width: 840px;
+    height: 70px;
+}
+.fixed_extra_rate_desc{
+    padding-top: 20px;
+    float: left;
+    font-family:  Trebuchet MS;
+    font-size: 18px;
+    line-height: 25px;
+}
+.make_offer input{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

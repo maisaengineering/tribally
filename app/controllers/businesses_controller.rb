@@ -34,7 +34,7 @@ class BusinessesController < ApplicationController
 
   def create
     #raise params.inspect
-    @user = User.new(:fname => params[:fname], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation])        
+    @user = User.new(:fname => params[:fname], :email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation], :role => "business")        
     if @user.save
       @user.businesses.create!(:website => params[:website])
       redirect_to @user, notice: 'Business was successfully created.'
