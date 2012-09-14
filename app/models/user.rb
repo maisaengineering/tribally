@@ -8,7 +8,7 @@ class User
   
   cattr_accessor :current_user
   
-  has_one :member
+  #has_one :member
   has_many :businesses
   has_one :product
   
