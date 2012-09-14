@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     data = access_token.extra.raw_info    
     provider = access_token.provider
     
-    if provider == 'facebook'            
+    if provider == 'facebook'           
       email =  data.email
       name =  data.name
       first_name =  data.first_name
