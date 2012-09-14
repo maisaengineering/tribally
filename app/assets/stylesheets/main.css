@@ -1614,6 +1614,7 @@ a.orange_color_button_a{
     margin-left:35px;
     margin-top:-20px;
     background-color: #fff;
+    float: left;
 }
 .solar_group_join_text{
     width:305px;
@@ -1624,9 +1625,10 @@ a.orange_color_button_a{
     margin-left:545px;
     margin-top: -285px;
     font-family: Trebuchet MS;
+   float: left;
 }
 .get_started{
-    position: absolute;
+    
     float: left;
     width: 335px;
     height: 190px;
@@ -1634,6 +1636,7 @@ a.orange_color_button_a{
     background-color: #fff;
     border-radius:10px;
     margin-left: 550px;
+    margin-top: -200px;
 }
 .get_started_text{
     padding-left: 15px;
