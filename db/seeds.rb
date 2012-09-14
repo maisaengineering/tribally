@@ -12,3 +12,11 @@ user = User.create! :fname => 'Tribally', :lname => 'Maisa', :email => 'tribally
 puts 'New user created: ' << user.fname
 admin = AdminUser.create :email => 'triballymaisa@gmail.com', :password => 'maisa1234', :password_confirmation => 'maisa1234'
 puts 'New admin created: ' << admin.email
+ 
+puts "Creating Default Tribe"
+tribe = Tribe.create(:tribe_name => 'Offerussolar')
+puts "New tribe created: " << tribe.tribe_name
+
+puts "Creating Solar product"
+product = tribe.products.create(:product_name => 'solar', :offers => [Offer.new(:size => '1k', :retails_price => '100', :offer_price => '75', :min_no_of_buyer => '2' ), Offer.new(:size => '1k', :retails_price => '100', :offer_price => '60', :min_no_of_buyer => '5' )])
+puts "Product solar created: " << product.product_name
