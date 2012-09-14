@@ -80,10 +80,6 @@ class ProductsController < ApplicationController
    redirect_to solar_offers_products_path(:zipcode => params[:product][:zipcode])
   end
   
-  def product_offer
-   product.offers.push([Offer.new(:size => params[:size], :retails_price => params[:retails_price], :min_mo_of_buyer => params[:min_no_of_buyer], :offer_price => params[:offer_price])])
-   redirect_to_solar_offers_products_path(:zipcode => params[:product][:zipcode])
-  end
   
   def solar_offers  
     @zipcode = params[:zipcode]
