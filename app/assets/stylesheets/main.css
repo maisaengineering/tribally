@@ -2119,7 +2119,215 @@ a.orange_color_button_a{
         padding-right: 25px;
         padding-left: 25px;
 }
+/*solar create new group*/
+.new_group_details_container{
+    border: 1px solid #CDCDCD;
+    background: #BBE8F8;
+    border-radius:10px;
+    width: 930px;
+    height: auto;
+    margin-top: 30px;
+    box-shadow: inset 1px 1px #fff;
+    position: relative;
+    float: left; 
 
+}
+.new_location_of_country{
+    padding-left: 280px;
+    padding-top: 15px;
+    line-height: 25px;
+    font-size: 23px;
+    font-family: Trebuchet MS;
+    color: #5C707B;
+}
+.link_for_location_of_country{
+    color: #38B4F3;
+}
+.new_location_of_group{
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid #CDCDCD;
+    position: relative;
+    float: left;
+    width: 240px;
+    height: 194px;
+   
+}
+.new_description_for_tribe{
+    padding-left: 280px;
+    font-family: Trebuchet MS;;
+    font-size: 19px;
+    padding-top: 16px;
+    width:620px;
+}
+
+.new_group_box {
+    width: 145px;
+    height:105px;
+    margin-left: 20px;
+    margin-top: 15px;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    color: #fff;
+    background: -moz-linear-gradient(
+    top,
+    #94D7FA 20%,
+    #31B7FD 50%,
+    #37B5F4 85%);
+    background: -webkit-gradient(
+    linear, left top, left bottom, 
+    from( #94D7FA),
+    color-stop(0.50, #31B7FD),
+    to(#37B5F4));
+    
+    border: 1px solid #37A9E6;
+    -moz-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    -webkit-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    text-shadow:
+    0px -1px 0px rgba(000,000,000,0.2),
+    0px 1px 0px rgba(255,255,255,1);
+    position: relative;
+    float: left;
+    
+}
+.new_number_dimension{
+    font-size: 45px;
+    line-height: 42px;
+}
+.group_font{
+    font-size: 22px;
+    line-height: 120px;
+}
+.new_offer_details{
+    width: 145px;
+    height:105px;
+    margin-left:445px;
+    margin-top: 15px;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    color: #fff;
+    background: -moz-linear-gradient(
+    top,
+    #94D7FA 20%,
+    #31B7FD 50%,
+    #37B5F4 85%);
+    background: -webkit-gradient(
+    linear, left top, left bottom, 
+    from( #94D7FA),
+    color-stop(0.50, #31B7FD),
+    to(#37B5F4));
+    border: 1px solid #37A9E6;
+    -moz-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    -webkit-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    text-shadow:
+    0px -1px 0px rgba(000,000,000,0.2),
+    0px 1px 0px rgba(255,255,255,1);
+    position: absolute;
+    float: left;    
+}
+.new_offer_count{
+    font-size: 45px;
+    line-height: 42px;
+    
+}
+.new_offer_text{
+    font-size: 22px;
+    line-height: 37px;
+}
+.time_left_details{
+    width: 145px;
+    height:105px;
+    margin-left:610px;
+    margin-top: 15px;
+    font-family: Trebuchet MS;
+    font-size: 17px;
+    color: #fff;
+    background: -moz-linear-gradient(
+    top,
+    #94D7FA 20%,
+    #31B7FD 50%,
+    #37B5F4 85%);
+    background: -webkit-gradient(
+    linear, left top, left bottom, 
+    from(#94D7FA),
+    color-stop(0.50, #31B7FD),
+    to(#37B5F4));
+    
+    border: 1px solid #37A9E6;
+    -moz-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    -webkit-box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    box-shadow:
+    0px 1px 3px rgba(18,17,18,0.5),
+    inset 0px 0px 3px rgba(245,237,245,1);
+    text-shadow:
+    0px -1px 0px rgba(000,000,000,0.2),
+    0px 1px 0px rgba(255,255,255,1);
+    position: absolute;
+    float: left;    
+    margin-bottom: 20px;
+}
+
+.time_left{
+ 
+    font-size: 45px;
+    line-height: 42px;
+ 
+}
+.time_left_text{
+    font-size: 22px;
+    line-height: 37px;
+}
+.get_started_btn input{
+    
+    cursor: pointer;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: -moz-linear-gradient(top, #FDE094 0%, #FFA549 50%, #FF8600 51%, #FFB164 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FDE094), color-stop(50%,#FFA549), color-stop(51%,#FF8600), color-stop(100%,#FFB164)); /* Chrome,Safari4+ */
+    -webkit-box-shadow: inset 0 1px 0 #ffebab,1px 1px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: inset 0 1px 0 #ffebab,1px 1px 3px rgba(0,0,0,.25);
+
+    box-shadow: inset 0 1px 0 #ffebab,1px 1px 3px rgba(0,0,0,.25);
+    border: 1px solid #FF7F00;
+    text-shadow: 1px 1px 0 rgb(153, 94, 0);
+     margin-left: 775px;
+     margin-top: -130px;
+     margin-right: 15px;
+     padding:5px 13px;
+
+}
+.new_group_text{
+    font-family: Trebuchet MS;
+    font-size: 23px;
+    margin-top: 20px;
+    float: left;
+}
 /* css for solar offers page*/
 
 .solar_offer_container{
