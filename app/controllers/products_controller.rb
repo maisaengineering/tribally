@@ -79,10 +79,7 @@ class ProductsController < ApplicationController
    product = Product.all.first   
    product.product_groups.push([ProductGroup.new(:zipcode => params[:product][:zipcode], :map_lng => params[:product][:map_lng], :map_lat => params[:product][:map_lat])]) if Product.where("product_groups.zipcode" => params[:product][:zipcode]).first.nil?
    redirect_to solar_offers_products_path(:zipcode => params[:product][:zipcode])
-  #@product_new = Product.new
-  
-  #"fname"=>"a", "email"=>"a@gmail.com", "phone_number"=>"a", "size"=>"a", "address"=>"a\r\n",
-  #@product_new.product_groups.create(:fname => params[:fname], :email => prams[:email]) 
+   product.offers.push(:size => params[:product][:size], :retails_price => params[:product][:retails_price], :min_mo_of_buyer => params[:products][:min_no_of_buyer], :offer_price => params[:products][:offer_price])
   end
   
   def solar_offers  
