@@ -42,8 +42,8 @@
             $("#state").focus(function(){doAddrGeocoding()});
             $("#state").blur(function(){doAddrGeocoding()});
             $("#state").change(function(){doAddrGeocoding()});
-            $("#postcode_quote").focus(function(){doAddrGeocoding()});
-            $("#postcode_quote").blur(function(){doAddrGeocoding()});
+            $("#postcode_quote").click(function(){doAddrGeocoding()});
+            $("#postcode_quote").click(function(){doAddrGeocoding()});
     }
 
     function doAddrGeocoding() {
