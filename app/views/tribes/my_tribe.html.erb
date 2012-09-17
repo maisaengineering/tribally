@@ -33,10 +33,10 @@
      </div>
      <div class="my_details">
         <div>
-         <%#= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image2' )) %>
+         <%= link_to (image_tag(FbGraph::User.new(tribe.created_by).fetch.picture, :class => 'created_user_image2' )) %>
         </div>
         <p class="tribe_created_text2">Tribe created by</p>
-        <p class="tribe_created_user_name2"> <%#= FbGraph::User.new(tribe.created_by).fetch.name %></p> 
+        <p class="tribe_created_user_name2"> <%= FbGraph::User.new(tribe.created_by).fetch.name %></p> 
 
      </div> 
   </div>

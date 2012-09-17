@@ -97,9 +97,10 @@ class ProductsController < ApplicationController
   end
   
   def solar_group_offers
+     @product = Product.all.first
      @zipcode = params[:zipcode]
      @zipcode = Product.where("product_groups.zipcode" => params[:zipcode]).first
-       
+   
   end
   def solar_new_group_offers
     @zipcode = params[:zipcode]

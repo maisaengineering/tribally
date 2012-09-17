@@ -31,7 +31,8 @@
         <%= password_field_tag :password_confirmation %>
       </div>
     <div class="business_checkbox">
-  <%= check_box_tag(:business_account) %>
+        <%#= check_box_tag :terms %>
+       <input type="checkbox"  name="checkbox1" onclick="checkTerms();"/>
       <p class="terms_and_conditions">
         I have accepted the <a href="#">terms and conditions </a>for Tribally business account</p>
     </div>
@@ -40,6 +41,18 @@
   </div>
 </div>
   
+  <script>
+  function checkTerms() {
+     if(document.business.checkbox1.checked)
+     {
+         document.business.commit.disabled=false;
+     }
+     else
+     {
+         document.business.commit.disabled=true;
+     }
+ }
+  </script>
 
 
     
