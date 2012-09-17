@@ -75,9 +75,14 @@ class ProductsController < ApplicationController
   end
   
   def product_group   
-   product = Product.all.first      
-   product.product_groups.push([ProductGroup.new(:zipcode => params[:product][:zipcode], :map_lng => params[:product][:map_lng], :map_lat => params[:product][:map_lat])]) if Product.where("product_groups.zipcode" => params[:product][:zipcode]).first.nil?
-   redirect_to solar_offers_products_path(:zipcode => params[:product][:zipcode])
+   product = Product.all.first
+   if Product.where("product_groups.zipcode" => params[:product][:zipcode]).first.nil?
+   product.product_groups.push([ProductGroup.new(:zipcode => params[:product][:zipcode], :map_lng => params[:product][:map_lng], :map_lat => params[:product][:map_lat])]) 
+   #render :text=>"text"
+   redirect_to solar_new_group_offers_products_path(:zipcode => params[:product][:zipcode])
+   else
+      redirect_to solar_group_offers_products_path(:zipcode => params[:product][:zipcode])
+   end     
   end
   
   
@@ -92,5 +97,11 @@ class ProductsController < ApplicationController
   end
   
   def solar_group_offers
+     @zipcode = params[:zipcode]
+     @zipcode = Product.where("product_groups.zipcode" => params[:zipcode]).first
+       
+  end
+  def solar_new_group_offers
+    @zipcode = params[:zipcode]
   end
 end

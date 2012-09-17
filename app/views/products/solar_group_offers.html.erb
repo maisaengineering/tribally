@@ -1,15 +1,16 @@
 <div class="group_text_header">
-    <div class="group_location_text">Showing group near 5069,South Australia</div>
+    <div class="group_location_text">Showing group near <%= params[:zipcode]  %> ,South Australia</div>
     <div class="group_offer_post_code_text">Postcode</div>
     <div class="group_offer_post_code_input_box">
       <input type="text" />
     </div>
     <div class="group_post_search"><input type="button" value="search"/></div>
 </div><br /> <br/>
-<div class="group_details_container">
-      
-
-      <div class="location_of_group"></div>
+ <%#  @zipcode.product_groups.each do |each_product_group| %>
+  <%# if each_product_group.zipcode == params[:zipcode] %>
+ <%#  if each_product_group.zipcode.first.nil? %>
+  <div class="group_details_container">
+      <div class="location_of_group"><%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=572x470&sensor=false" %> </div>
       <div class="location_of_country">
         <a href="#" class="link_for_location_of_country">Solar power systems</a> in Adelaide,South Australia
       </div>
@@ -29,4 +30,10 @@
       </div>
       <div class="view_this_group"><input type="button" value="View group" /></div>
     
-</div>
+  </div>
+  
+ 
+  
+ 
+   <%# end %>
+   

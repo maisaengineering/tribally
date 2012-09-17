@@ -17,7 +17,7 @@ class Business
   #validates_presence_of :offers_history
   #validates_presence_of :invoices
   #validates_presence_of :account_data
-  
+ 
       attr_accessible :business_name, :website, :business_email, :offers_history, :invoices, :account_data, :avatar
 
 end
