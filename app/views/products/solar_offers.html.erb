@@ -1,5 +1,4 @@
 
-
 <div class="solar_offer_container">
         <div class="solar_offer_head_dimension">
             <div class="solar_offer_details_box">
@@ -16,7 +15,13 @@
         </div>
       <div class="solar_offer_detailed_container">
           <div class="solar_location_container">            
-            <%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=572x470&sensor=false" %>            
+            <%= gmaps({
+		"circles"    => { "data" => '[
+				 {"lng": -122.214897, "lat": 37.772323, "radius": 5000.000784806152880, "strokeColor": "#FF0000"},
+				]' 
+		}
+		})
+	    %>           
           </div>
           <div class="solar_offer_description">This is local solar i want this product how can i purchase this product can you explain me clear.</div>
           <div class="solar_member_count_box"><br />

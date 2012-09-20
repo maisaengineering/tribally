@@ -1,3 +1,9 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
     var map;
     var geocoder;
     var marker;
@@ -42,8 +48,9 @@
             $("#state").focus(function(){doAddrGeocoding()});
             $("#state").blur(function(){doAddrGeocoding()});
             $("#state").change(function(){doAddrGeocoding()});
-            $("#postcode_quote").click(function(){doAddrGeocoding()});
-            $("#postcode_quote").click(function(){doAddrGeocoding()});
+            $("#postcode_quote").blur(function(){doAddrGeocoding()});
+            $("#postcode_quote").blur(function(){doAddrGeocoding()});
+         <!--   $("#postcode_quote").blur(function(){doAddrGeocoding()}); -->
     }
 
     function doAddrGeocoding() {
@@ -100,17 +107,19 @@
 
     $(document).ready(function() {
             // Center of Australia
-            var latlng = new google.maps.LatLng(-26.564946,135.336912);
+            //var latlng = new google.maps.LatLng(-26.564946,135.336912);
             //extra added
-            //var mapDiv = $('#map_container');
-            //var lat1 = mapDiv.data('latitude'),
-               // lng1 = mapDiv.data('longitude');
-            //var latlng = new google.maps.LatLng(lat1, lng1);
+            var mapDiv = $('#map_container');
+            var lat1 = mapDiv.data('latitude'),
+                lng1 = mapDiv.data('longitude');
+            var latlng = new google.maps.LatLng(lat1, lng1);
             //upto here
+
             var myOptions = {
-                            zoom: 4,
+                            zoom: 13,
                             center: latlng,
                             mapTypeId: google.maps.MapTypeId.HYBRID
+                          
             };
             map = new google.maps.Map(document.getElementById("map_container"),myOptions);
 
@@ -120,3 +129,4 @@
 
             bindAddressInputs();
     });
+ 

@@ -1,3 +1,5 @@
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false",'google_map' %>
+
 <div class="group_text_header">
     <div class="group_location_text">Showing group near <%= params[:zipcode]  %> ,South Australia</div>
     <div class="group_offer_post_code_text">Postcode</div>
@@ -10,7 +12,11 @@
   <% if each_product_group.zipcode == params[:zipcode] %>
   
   <div class="group_details_container">
-      <div class="location_of_group"><%= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=572x470&sensor=false" %> </div>
+      <div class="location_of_group">
+        <div  id="map_container" data-latitude="<%= @searched_group.map_lat %>" data-longitude="<%= @searched_group.map_lng %>" style="width: 240px;height: 195px;">
+        
+        </div>
+<%#= image_tag "http://maps.google.com/maps/api/staticmap?center=37.386052,-122.083851&zoom=13&markers=37.386052,-122.083851&size=572x470&sensor=false" %> </div>
       <div class="location_of_country">
         <a href="#" class="link_for_location_of_country">Solar power systems</a> <%= params[:zipcode] %> in Adelaide,South Australia
       </div>

@@ -1,4 +1,4 @@
-<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false",'google_location' %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false",'google_map' %>
 <div class="offer_solar_main_page">
     <div class="offer_use_solar_main_text">
       Offerussolar.com negotiates great solar deals for community groups.
@@ -17,7 +17,7 @@
             <div class="start_search">
               <input type="hidden" name="product[street_address]" value="" id="street_address" />
               <input type="hidden" name="product[suburb]" value=""  id="suburb" />
-              <input type="text" name="product[zipcode]" value="" id="postcode_quote" autocomplete ="off" />
+              <input type="text" name="product[zipcode]" value="" id="postcode_quote" autocomplete ="off"  />
             </div>
             <div class="field" style="display:none;">
               <select name="product[state]" id="state" style="width: 210px;">
@@ -38,7 +38,7 @@
               <input type="submit" name="product[submit1]" value="Start"/>
             </div>
           <% end %>
-        <div  id="map_container"></div>
+        <div  id="map_container" style="width: 200px; height: 200px; display: none;"></div>
     </div>
 </div>
 

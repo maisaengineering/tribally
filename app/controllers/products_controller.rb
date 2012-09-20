@@ -88,7 +88,9 @@ class ProductsController < ApplicationController
   
   def solar_offers  
     @zipcode = params[:zipcode]
-    @group_details = Product.where("product_groups.zipcode" => params[:zipcode]).first    
+    @group_details = Product.where("product_groups.zipcode" => params[:zipcode]).first
+
+    #render :text => @group_details.inspect and return    
     @group_details.product_groups.each do |each_product_group|
       if each_product_group.zipcode == params[:zipcode]
         @current_zipcode = each_product_group 
@@ -101,8 +103,25 @@ class ProductsController < ApplicationController
      @zipcode = params[:zipcode]
      @zipcode = Product.where("product_groups.zipcode" => params[:zipcode]).first
    
+
+     #raise params[:zipcode].inspect
+     @first_product = Product.all.first
+     @first_product.product_groups.each do |each_product_group|
+        if each_product_group.zipcode == params[:zipcode]
+          @searched_group = each_product_group
+        end
+     end     
+  
+       
+
   end
   def solar_new_group_offers
     @zipcode = params[:zipcode]
+    @first_product = Product.all.first
+     @first_product.product_groups.each do |each_product_group|
+        if each_product_group.zipcode == params[:zipcode]
+          @searched_group = each_product_group
+        end
+     end
   end
 end
